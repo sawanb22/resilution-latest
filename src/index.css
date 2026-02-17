@@ -13,6 +13,10 @@
   src: url(./assets/MACRO_FREE.otf);
 }
 
+@font-face {
+  font-family: "GACCO";
+  src: url(./assets/MACRO_FREE.otf);
+}
 
 @font-face {
   font-family: "arial";
