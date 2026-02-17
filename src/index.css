@@ -46,3 +46,10 @@ body {
   font-family: "arial";
   scroll-behavior: smooth;
 }
+
+/* Ensure all sections stretch full-width in production builds */
+section {
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}

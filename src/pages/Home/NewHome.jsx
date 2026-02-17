@@ -296,7 +296,7 @@ const NewHome = () => {
             {/* ═══════════════════ RESILUTION ENGINE ═══════════════════ */}
             {/* ═══════════════════ RESILUTION ENGINE ═══════════════════ */}
             {/* ═══════════════════ RESILUTION ENGINE (DESKTOP) ═══════════════════ */}
-            <section id="engine" className="hidden md:block bg-black pt-20 pb-0 px-8 md:px-16 text-white relative overflow-hidden">
+            <section id="engine" className="hidden md:block bg-black pt-20 pb-0 px-8 md:px-16 text-white relative overflow-hidden w-full">
                 <div className="max-w-[1300px] mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-10">
                         <h2 className="font-['GACCO'] text-[36px] font-medium uppercase tracking-wide leading-relaxed">
@@ -336,7 +336,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ RESILUTION ENGINE (MOBILE) ═══════════════════ */}
-            <section id="engine-mobile" className="block md:hidden bg-black pt-12 pb-12 px-4 text-white">
+            <section id="engine-mobile" className="block md:hidden bg-black pt-12 pb-12 px-4 text-white w-full">
                 <h2 className="font-['GACCO'] text-2xl font-light uppercase tracking-wide leading-relaxed mb-4">
                     THE <span className="bg-[#C8FF80] text-black px-2 py-0.5 font-medium inline-block">RESILUTION</span><br />ENGINE
                 </h2>
@@ -367,7 +367,7 @@ const NewHome = () => {
             {/* ═══════════════════ BENEFITS ═══════════════════ */}
             {/* ═══════════════════ BENEFITS ═══════════════════ */}
             {/* ═══════════════════ BENEFITS (DESKTOP) ═══════════════════ */}
-            <section id="benefits" className="hidden md:flex bg-white py-24 px-8 md:px-16 text-black justify-center -mt-20 relative z-10">
+            <section id="benefits" className="hidden md:flex bg-white py-24 px-8 md:px-16 text-black justify-center -mt-20 relative z-10 w-full">
                 <div className="w-full max-w-[1440px] flex flex-col items-center">
                     <h2 data-aos="fade-up" className="font-['GACCO'] font-light uppercase tracking-wide mb-6 text-center flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[1033px] text-[36px]">
                         BENEFITS FOR <span className="bg-[#C8FF80] px-3 py-1 font-medium">BUSINESSES & INVESTORS</span>
@@ -439,7 +439,7 @@ const NewHome = () => {
             {/* ═══════════════════ HOW IT WORKS ═══════════════════ */}
             {/* ═══════════════════ HOW IT WORKS ═══════════════════ */}
             {/* ═══════════════════ HOW IT WORKS (DESKTOP) ═══════════════════ */}
-            <section id="how-it-works" className="hidden md:block bg-white py-24 px-8 md:px-16 text-black">
+            <section id="how-it-works" className="hidden md:block bg-white py-24 px-8 md:px-16 text-black w-full">
                 <div className="max-w-[1300px] mx-auto flex flex-col items-center">
                     <h2 data-aos="fade-up" className="font-['GACCO'] text-[36px] font-light uppercase tracking-wide mb-6 text-center">
                         HOW <span className="bg-[#C8FF80] px-3 py-1 font-medium">RESILUTION WORKS</span>
@@ -465,7 +465,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ HOW IT WORKS (MOBILE) ═══════════════════ */}
-            <section id="how-it-works-mobile" className="block md:hidden bg-white py-12 px-4 text-black">
+            <section id="how-it-works-mobile" className="block md:hidden bg-white py-12 px-4 text-black w-full">
                 <h2 className="font-['GACCO'] text-2xl font-light uppercase tracking-wide mb-4 text-center">
                     HOW <span className="bg-[#C8FF80] px-2 py-0.5 font-medium">RESILUTION WORKS</span>
                 </h2>
@@ -634,7 +634,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ ECOSYSTEM (MOBILE) ═══════════════════ */}
-            <section id="ecosystem-mobile" className="block md:hidden bg-black py-12 px-4 relative overflow-hidden">
+            <section id="ecosystem-mobile" className="block md:hidden bg-black py-12 px-4 relative overflow-hidden w-full">
                 <div className="relative z-20 flex flex-col items-center text-center">
                     <h2 className="font-['GACCO'] text-[36px] font-medium uppercase text-[#C8FF80] tracking-wide mb-4">
                         The Resilution Ecosystem
@@ -1124,7 +1124,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ TOKENOMICS & UTILITY (MOBILE) ═══════════════════ */}
-            <section id="tokenomics-mobile" className="block md:hidden bg-black py-12 px-4">
+            <section id="tokenomics-mobile" className="block md:hidden bg-black py-12 px-4 w-full">
                 <div className="text-center mb-8">
                     <h2 className="font-['GACCO'] uppercase text-[#C8FF80] tracking-wide text-[36px] font-medium mb-4">
                         TOKENOMICS & UTILITY
@@ -1330,7 +1330,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ TOKEN DISTRIBUTION (MOBILE) ═══════════════════ */}
-            <section id="distribution-mobile" className="block md:hidden bg-black py-12 px-4">
+            <section id="distribution-mobile" className="block md:hidden bg-black py-12 px-4 w-full">
                 <div className="text-center mb-8">
                     <h2 className="font-['GACCO'] uppercase text-[#C8FF80] tracking-wide text-[36px] font-medium mb-4">
                         TOKEN DISTRIBUTION
@@ -1457,7 +1457,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ ROADMAP (MOBILE) ═══════════════════ */}
-            <section id="roadmap-mobile" className="block md:hidden bg-[#F5F5F0] py-12 px-4">
+            <section id="roadmap-mobile" className="block md:hidden bg-[#F5F5F0] py-12 px-4 w-full">
                 <div className="text-center mb-10">
                     <h2 className="font-['GACCO'] text-[36px] font-medium uppercase text-black mb-4">
                         PRODUCT <span className="font-['GACCO'] bg-[#C8FF80] px-2 py-0.5">ROADMAP</span>
@@ -1571,7 +1571,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ COMMUNITY (MOBILE) ═══════════════════ */}
-            <section id="community-mobile" className="block md:hidden bg-black py-16 px-4">
+            <section id="community-mobile" className="block md:hidden bg-black py-16 px-4 w-full">
                 <div className="text-center mb-10">
                     <h2 className="font-['GACCO'] text-[36px] font-medium uppercase text-[#C8FF80] mb-4">
                         JOIN THE <br /> RESILUTION COMMUNITY
@@ -1615,7 +1615,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ FAQ ═══════════════════ */}
-            <section className="bg-white text-black py-24" id="faq">
+            <section className="bg-white text-black py-24 w-full" id="faq">
                 <div className="max-w-[1000px] mx-auto px-4 md:px-16">
                     <h2 data-aos="fade-up" className="font-['GACCO'] text-center uppercase mb-20" style={{ fontSize: '36px', lineHeight: '42px', fontWeight: 500 }}>Frequently Asked Questions</h2>
                     <div className="space-y-0">
