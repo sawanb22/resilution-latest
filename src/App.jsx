@@ -34,7 +34,8 @@ function MetaRouteTracker() {
   return null
 }
 
-function App() {
+function MainLayout() {
+  const location = useLocation()
   const [showPopup, setShowPopup] = useState(false)
 
   useEffect(() => {
@@ -62,32 +63,41 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        {/* Meta Pixel route tracking */}
-        <MetaRouteTracker />
+      {/* Meta Pixel route tracking */}
+      <MetaRouteTracker />
 
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/why-resilution' element={<Resilution />} />
-          <Route path="/blockchain-paradigm" element={<Work />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/new-home" element={<NewHome />} />
-        </Routes>
-        <Footer />
+      {/* Conditionally render Navbar - hide on /new-home */}
+      {location.pathname !== '/new-home' && <Navbar />}
 
-        {/* Eden Chat Widget - Fresh implementation with Socket.IO */}
-        <EdenChatWidget
-          middlewareUrl={MIDDLEWARE_URL}
-          assetsPath="/chat-widget"
-          initialOpen={false}
-          heartbeatInterval={25000}
-        />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/why-resilution' element={<Resilution />} />
+        <Route path="/blockchain-paradigm" element={<Work />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/new-home" element={<NewHome />} />
+      </Routes>
 
-        {/* Newsletter Popup - Shows after 3 seconds on first visit */}
-        {showPopup && <NewsletterPopup onClose={handleClosePopup} />}
-      </BrowserRouter>
+      <Footer />
+
+      {/* Eden Chat Widget - Fresh implementation with Socket.IO */}
+      <EdenChatWidget
+        middlewareUrl={MIDDLEWARE_URL}
+        assetsPath="/chat-widget"
+        initialOpen={false}
+        heartbeatInterval={25000}
+      />
+
+      {/* Newsletter Popup - Shows after 3 seconds on first visit */}
+      {showPopup && <NewsletterPopup onClose={handleClosePopup} />}
     </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <MainLayout />
+    </BrowserRouter>
   )
 }
 

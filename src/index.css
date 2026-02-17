@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 
-@theme{
+@theme {
   --breakpoint-vs: 400px;
   --breakpoint-sx: 500px;
 }
@@ -10,6 +10,11 @@
 
 @font-face {
   font-family: "macro";
+  src: url(./assets/MACRO_FREE.otf);
+}
+
+@font-face {
+  font-family: "GACCO";
   src: url(./assets/MACRO_FREE.otf);
 }
 
@@ -32,7 +37,8 @@ a {
   font-weight: 500;
   text-decoration: inherit;
 }
-html{
+
+html {
   scroll-behavior: smooth;
 }
 
