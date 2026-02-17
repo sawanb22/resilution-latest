@@ -1,0 +1,159 @@
+.accr_elem {
+    /* height: 0; */
+    /* overflow: hidden; */
+    /* display: none; */
+    transition: .5s;
+}
+
+/* .accr_elem.active>div:last-child{
+    height: 75px;
+    animation: Opner 0.5s ease;
+} */
+
+@keyframes Opner {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 75px;
+    }
+}
+
+.logo {
+    animation: changer 2s linear;
+}
+
+@keyframes changer {
+    0% {
+        mix-blend-mode: darken;
+    }
+
+    35% {
+        mix-blend-mode: color-burn;
+    }
+
+    70% {
+        mix-blend-mode: color;
+    }
+
+    95% {
+        mix-blend-mode: difference;
+    }
+}
+
+.accr_elem>div:first-child img {
+    transform: rotate(180deg);
+    transition: .5s;
+}
+
+.scene {
+    translate: -60px 15px;
+}
+
+.scene canvas {
+    width: 900px !important;
+    height: 900px !important;
+
+}
+
+.imganim {
+    animation: mover 10s ease-in-out infinite;
+}
+
+@keyframes mover {
+    0% {
+        translate: 0 0 0;
+    }
+
+    10% {
+        translate: 5px 3px 2px;
+    }
+
+    20% {
+
+        translate: 2px 3px 2px;
+    }
+
+    30% {
+        translate: 5px 3px 1px;
+
+    }
+
+    40% {
+        translate: 5px 3px 5px;
+
+    }
+
+    50% {
+        translate: 1px 5px 2px;
+    }
+
+    60% {
+        translate: 0 0 5px;
+    }
+
+    70% {
+        translate: 5px 3px 2px;
+    }
+
+    80% {
+
+        translate: 2px 3px 2px;
+    }
+
+    90% {
+        translate: 5px 3px 1px;
+
+    }
+
+    100% {
+        translate: 0px 0px 0px;
+
+    }
+
+}
+
+
+
+@media (min-width:1535px) {
+    .scene canvas {
+        width: 1050px !important;
+        height: 1050px !important;
+
+    }
+}
+
+@media (min-width: 1600px) {
+    .video {
+        left: 50%;
+    }
+}
+
+@media (min-width: 2000px) {
+    .video {
+        left: 38%;
+    }
+}
+
+@media (max-width:1280px) {
+    .scene {
+        translate: -60px 5px;
+    }
+
+    .scene canvas {
+        width: 800px !important;
+        height: 800px !important;
+    }
+}
+
+@media(max-width:1024px) {
+    .scene {
+        translate: -60px 15px;
+    }
+
+    .scene canvas {
+        width: 770px !important;
+        height: 770px !important;
+    }
+}

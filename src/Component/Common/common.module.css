@@ -1,0 +1,27 @@
+.nav .menubtn span{
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 5px;
+    background: var(--savegreen);
+    transition: .3s;
+}
+.nav .menubtn.active span:first-child{
+    transform: rotate(45deg) translate(4px, 4px);
+}
+.nav .menubtn.active span:nth-child(2){
+    opacity: 0;
+}
+.nav .menubtn.active span:last-child{
+    transform: rotate(-45deg) translate(4px, -4px);
+}
+
+
+.nav .snav{
+    height: 0;
+    overflow: hidden;
+    transition: .3s;
+}
+.nav .snav.active{
+    height: 186px;
+}

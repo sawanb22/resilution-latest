@@ -1,0 +1,119 @@
+.test {
+  font-family: MACRO;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.92px;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+}
+
+button {
+  cursor: pointer;
+  transition: .3s;
+}
+button span,
+button div{
+  transition: .3s;
+}
+
+.b_hover,
+.w_hover,
+.g_hover {
+  border: 1px solid transparent;
+}
+
+.g_hover:hover {
+  background: #f8fff1;
+  border: 1px solid var(--savegreen);
+  box-shadow: 5px 5px 0px 0px var(--savegreen);
+}
+
+.w_hover:hover {
+  box-shadow: 5px 5px 0px 0px #fff;
+  color: #fff;
+  border: 1px solid #fff;
+  background: #00000000;
+}
+
+.b_hover:hover {
+  box-shadow: 5px 5px 0px 0px #000;
+  color: #000;
+  border: 1px solid #000;
+  background: #ffffff;
+}
+
+
+.gr_card,
+.g_card {
+  transition: .3s;
+  /* width: 373px; */
+  /* height: 261px; */
+
+
+  /* font-family: MACRO;
+font-weight: 400;
+font-size: 50px;
+line-height: 72px;
+letter-spacing: 6%; */
+
+}
+
+.g_card:hover {
+  background: var(--savegreen);
+}
+
+.gr_card:hover span,
+.g_card:hover span {
+  background: #fff;
+}
+
+.gr_card:hover {
+  background: #ACB5BD;
+}
+
+
+.show>div:first-child img {
+  transform: rotate(0deg) !important;
+}
+
+input::-webkit-inner-spin-button{
+  display: none;
+}
+.why_card{
+  transition: .3s;
+}
+.why_card.show button img{
+  /* transform: scaleY(-1); */
+  scale: -1;
+}
+
+/* @media (min-width:1536px) {
+  .gr_card,
+.g_card{
+  width: 460px;
+  min-height: 321px;
+}
+} */
+
+@media (min-width:1280px) {
+
+  .gr_card,
+  .g_card {
+    width: 373px;
+  }
+}
+@media (min-width:1536px) {
+  .gr_card,
+  .g_card {
+    width: 410px;
+  }
+}
+@media (max-width:1279px) and (min-width:640px) {
+  .sm\:container{
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+}

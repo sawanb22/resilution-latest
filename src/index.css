@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+
+@theme{
+  --breakpoint-vs: 400px;
+  --breakpoint-sx: 500px;
+}
+
+
+
+@font-face {
+  font-family: "macro";
+  src: url(./assets/MACRO_FREE.otf);
+}
+
+
+@font-face {
+  font-family: "arial";
+  src: url(./assets/ARIAL.TTF);
+}
+
+
+
+:root {
+  font-weight: 400;
+  --dark: #000;
+  --light: #fff;
+  --savegreen: #C8FF80;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "arial";
+  scroll-behavior: smooth;
+}

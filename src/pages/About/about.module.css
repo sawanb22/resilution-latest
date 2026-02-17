@@ -1,0 +1,52 @@
+.scene canvas{
+    width: 800px !important;
+    height: 800px !important;
+}
+
+
+.img1{
+    animation: scaler 15s ease-in-out infinite;
+}
+@keyframes scaler {
+    0%{
+        scale: 1 1;
+        translate: 0 0;
+    }
+    40%{
+        scale: 1 1.1;
+        translate: 0 -20px;
+    }
+    60%{
+        scale:1 1.1;
+        translate: 0 -20px;
+    }
+    100%{
+        scale: 1 1;
+        translate: 0 0px;
+    }
+}
+.img2{
+    animation: scaler 15s ease-in-out infinite;
+}
+@keyframes scaler {
+    0%{
+        scale: 1 1;
+    }
+    40%{
+        scale: 1 1.1;
+    }
+    60%{
+        scale:1 1.1;
+    }
+    100%{
+        scale: 1 1;
+    }
+}
+
+@media (max-width:640px) {
+    .scene canvas{
+        width: 500px !important;
+        height: 500px !important;
+    }
+    
+}

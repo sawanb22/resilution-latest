@@ -1,0 +1,51 @@
+/* Widget global styles - placeholder colors and input focus states */
+
+/* Placeholder styling for dark theme inputs */
+.eden-input::placeholder {
+  color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+.eden-input::-webkit-input-placeholder {
+  color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+.eden-input::-moz-placeholder {
+  color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+.eden-input:-ms-input-placeholder {
+  color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+/* Focus highlight for all inputs */
+.eden-input:focus {
+  box-shadow: 0 0 0 2px rgba(199, 255, 122, 0.15) !important;
+}
+
+/* Force input text to be white */
+.eden-input {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Handle Chrome autofill which can override colors and background */
+input.eden-input:-webkit-autofill,
+input.eden-input:-webkit-autofill:hover,
+input.eden-input:-webkit-autofill:focus,
+textarea.eden-input:-webkit-autofill,
+textarea.eden-input:-webkit-autofill:hover,
+textarea.eden-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 0px 1000px #2a3238 inset !important;
+  background-color: #2a3238 !important;
+}
+
+/* Ensure inputs have the same dark background by default */
+.eden-input {
+  background-color: #2a3238 !important;
+}
+

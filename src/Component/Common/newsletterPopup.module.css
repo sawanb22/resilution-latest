@@ -1,0 +1,280 @@
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlay.fadeOut {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Modal */
+.modal {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-radius: 16px;
+  padding: 48px 40px;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal.slideOut {
+  animation: slideOut 0.3s ease-out forwards;
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
+
+/* Close button */
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Title */
+.title {
+  font-family: 'GACCO', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 32px 0;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+}
+
+/* Form */
+.form {
+  margin-bottom: 32px;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.emailInput {
+  flex: 1;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  padding: 14px 18px;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.emailInput::placeholder {
+  color: #6a6a6a;
+}
+
+.emailInput:focus {
+  border-color: #C8FF80;
+}
+
+.subscribeButton {
+  background: #C8FF80;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.subscribeButton:hover {
+  background: #b8ef70;
+  transform: translateY(-1px);
+}
+
+.subscribeButton:active {
+  transform: translateY(0);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #2a2a2a;
+  margin: 32px 0;
+}
+
+/* Social text */
+.socialText {
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  color: #b0b0b0;
+  text-align: center;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+/* Discord button */
+.discordButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #C8FF80;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+  margin: 0 auto 28px auto;
+  width: fit-content;
+}
+
+.discordButton:hover {
+  background: #b8ef70;
+  transform: translateY(-1px);
+}
+
+.discordButton:active {
+  transform: translateY(0);
+}
+
+.discordIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Social icons */
+.socialIcons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialIcons a {
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialIcons a:hover {
+  color: #C8FF80;
+  transform: scale(1.15);
+}
+
+.socialIcons svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .modal {
+    padding: 36px 24px;
+    margin: 0 16px;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .inputGroup {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .subscribeButton,
+  .discordButton {
+    width: 100%;
+  }
+
+  .closeButton {
+    top: 16px;
+    right: 16px;
+    font-size: 24px;
+  }
+
+  .socialText {
+    font-size: 14px;
+  }
+}

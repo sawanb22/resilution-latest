@@ -1,0 +1,19 @@
+
+.hero_img{
+    background: black;
+    animation: scaler 15s ease-in-out infinite;
+}
+@keyframes scaler {
+    0%{
+        scale: 1;
+    }
+    40%{
+        scale: 1.1;
+    }
+    60%{
+        scale:1.1;
+    }
+    100%{
+        scale: 1;
+    }
+}
