@@ -87,13 +87,13 @@ const NewHome = () => {
 
                         {/* Left black fade - extends into mid */}
                         <div className="absolute top-0 bottom-0 left-0 z-10" style={{
-                            width: '350px',
+                            width: '45%',
                             background: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)'
                         }}></div>
 
                         {/* Right black fade - extends into mid */}
                         <div className="absolute top-0 bottom-0 right-0 z-10" style={{
-                            width: '350px',
+                            width: '45%',
                             background: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)'
                         }}></div>
 
