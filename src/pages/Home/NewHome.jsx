@@ -109,7 +109,7 @@ const NewHome = () => {
                         }}></div>
                     </div>
 
-                <div className="relative w-full max-w-[1440px] h-full">
+                <div className="relative w-full h-full">
 
                     {/* Content Container */}
                     <div className="relative z-10 w-full h-full flex flex-col items-center pt-10">
