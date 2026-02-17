@@ -259,7 +259,7 @@ const NewHome = () => {
                             </div>
                         ))}
                     </div>
-                    <button className="font-['GACCO'] inline-flex items-center justify-center font-normal tracking-wide transition-all duration-300 transform active:scale-95 bg-[#C8FF80] text-black hover:bg-black hover:text-[#C8FF80] hover:border-[#C8FF80] border border-[#C8FF80] rounded-sm" style={{ width: '207px', height: '54px', fontSize: '16px' }}>
+                    <button className="font-['GACCO'] inline-flex items-center justify-center font-normal transition-all duration-300 transform active:scale-95 bg-[#C8FF80] text-black hover:bg-black hover:text-[#C8FF80] hover:border-[#C8FF80] border border-[#C8FF80] rounded-sm whitespace-nowrap" style={{ minWidth: '260px', height: '54px', fontSize: '16px' }}>
                         View the Solution
                     </button>
                 </div>
@@ -288,8 +288,8 @@ const NewHome = () => {
                     ))}
                 </div>
 
-                <button className="font-['GACCO'] bg-[#C8FF80] text-black font-medium text-sm px-6 py-4 rounded-sm hover:bg-[#b5e660] transition-colors w-full uppercase tracking-wider">
-                    View The Solution
+                <button className="font-['GACCO'] bg-[#C8FF80] text-black font-medium text-sm px-6 py-4 rounded-sm hover:bg-[#b5e660] transition-colors mx-auto whitespace-nowrap" style={{ display: 'inline-block' }}>
+                    View the Solution
                 </button>
             </section>
 
