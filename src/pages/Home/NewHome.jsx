@@ -54,19 +54,20 @@ const NewHome = () => {
 
             {/* ═══════════════════ HERO SECTION (DESKTOP) ═══════════════════ */}
             <section id="hero" className="hidden md:flex relative w-full bg-black text-white overflow-hidden justify-center" style={{ height: '700px' }}>
-                <div className="relative w-full max-w-[1440px] h-full">
 
-                    {/* Background Waves (Absolute - Figma layout) */}
+                    {/* Background Waves (Absolute - Full screen width) */}
                     <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                         <img
                             src="/homepage_assets/hero_bg_waves.svg"
                             alt="Background Waves"
+                            className="w-full h-full object-cover"
                             style={{
                                 position: 'absolute',
-                                width: '1821px',
-                                height: '932px',
-                                top: '-181px',
-                                left: '-141px',
+                                minWidth: '100%',
+                                minHeight: '100%',
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
                                 opacity: 1,
                                 mixBlendMode: 'overlay'
                             }}
@@ -107,6 +108,8 @@ const NewHome = () => {
                             background: 'radial-gradient(ellipse 55% 50% at 50% 25%, transparent 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%)'
                         }}></div>
                     </div>
+
+                <div className="relative w-full max-w-[1440px] h-full">
 
                     {/* Content Container */}
                     <div className="relative z-10 w-full h-full flex flex-col items-center pt-10">
