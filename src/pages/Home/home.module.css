@@ -177,30 +177,3 @@
 .animate-subtle-bounce-delayed {
     animation: subtle-bounce 5s ease-in-out infinite 1s;
 }
-
-@keyframes subtle-shake {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(1deg);
-    }
-
-    /* Very subtle 1deg */
-    50% {
-        transform: rotate(0deg);
-    }
-
-    75% {
-        transform: rotate(-1deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-.animate-shake-hover:hover {
-    animation: subtle-shake 0.5s ease-in-out infinite;
-}

@@ -32,6 +32,7 @@ export const NewNavbar = () => {
                             key={link.name}
                             href={link.href}
                             className="text-white hover:text-[#C8FF80] transition-colors text-[13px] font-medium uppercase tracking-[0.05em]"
+                            style={{ fontFamily: 'Inter, sans-serif' }}
                         >
                             {link.name}
                         </a>

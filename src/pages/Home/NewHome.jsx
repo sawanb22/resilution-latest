@@ -80,7 +80,7 @@ const NewHome = () => {
     });
 
     return (
-        <div className="bg-black min-h-screen text-white font-['Arial'] break-words overflow-x-hidden">
+        <div className="bg-black min-h-screen text-white font-['GACCO'] break-words overflow-x-hidden">
 
             {/* ═══════════════════ HEADER / NAVBAR ═══════════════════ */}
             <NewNavbar />
@@ -146,10 +146,10 @@ const NewHome = () => {
 
                         {/* HEADLINE */}
                         <div className="text-center mb-6 z-20 flex flex-col items-center w-full px-4">
-                            <h1 className="font-['GACCO'] font-thin uppercase tracking-widest leading-none mb-3 text-[#C8FF80] w-full max-w-[684px]" style={{ fontSize: '48px', letterSpacing: '0.1em' }}>
+                            <h1 className="font-thin uppercase tracking-widest leading-none mb-3 text-[#C8FF80] w-full max-w-[684px]" style={{ fontSize: '48px', letterSpacing: '0.1em' }}>
                                 FINANCIAL <span className="text-[#C8FF80]">FREEDOM</span>
                             </h1>
-                            <h2 className="font-['GACCO'] font-thin uppercase tracking-[0.15em] text-white flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[1141px]" style={{ fontSize: '32px' }}>
+                            <h2 className="font-thin uppercase tracking-[0.15em] text-white flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[1141px]" style={{ fontSize: '32px' }}>
                                 THROUGH TRANSPARENT BLOCKCHAIN INVESTMENT
                             </h2>
                         </div>
@@ -193,7 +193,7 @@ const NewHome = () => {
                                         <img src="/homepage_assets/hero_cube_3d.svg" alt="Crystal Cube" className="w-full h-full object-contain drop-shadow-[0_0_20px_rgba(200,255,128,0.2)]" />
                                     </div>
                                     <div className="mt-12 text-center">
-                                        <h3 className="font-['GACCO'] text-white font-bold text-lg mb-2">Blockchain Transparency</h3>
+                                        <h3 className="text-white font-bold text-lg mb-2">Blockchain Transparency</h3>
                                         <div className="w-10 h-1 bg-[#C8FF80] mx-auto mb-4 rounded-full"></div>
                                         <p className="text-gray-400 text-xs leading-relaxed font-light">
                                             All transactions and performance data are recorded in real time on the blockchain for complete trust.
@@ -221,7 +221,7 @@ const NewHome = () => {
 
                 <div className="relative z-10 flex flex-col items-center">
                     {/* Top Headline */}
-                    <h1 className="font-['GACCO'] font-thin uppercase tracking-widest leading-tight text-[#C8FF80] text-3xl mb-2">
+                    <h1 className="font-thin uppercase tracking-widest leading-tight text-[#C8FF80] text-3xl mb-2">
                         FINANCIAL FREEDOM
                     </h1>
                     <p className="font-thin uppercase tracking-widest text-white text-xs mb-8">
@@ -260,7 +260,7 @@ const NewHome = () => {
                         <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32">
                             <img src="/homepage_assets/hero_cube_3d.svg" alt="Crystal Cube" className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(200,255,128,0.3)]" />
                         </div>
-                        <h3 className="font-['GACCO'] text-white font-bold text-lg mb-2">Blockchain Transparency</h3>
+                        <h3 className="text-white font-bold text-lg mb-2">Blockchain Transparency</h3>
                         <div className="w-8 h-1 bg-[#C8FF80] mx-auto mb-4 rounded-full"></div>
                         <p className="text-gray-400 text-xs leading-relaxed font-light">
                             All transactions and performance data are recorded in real time on the blockchain for complete trust.
@@ -272,7 +272,7 @@ const NewHome = () => {
             {/* ═══════════════════ TRADITIONAL SHORTFALLS (DESKTOP) ═══════════════════ */}
             <section id="why" className="hidden md:block relative w-full py-20 md:py-32 overflow-hidden bg-black text-white text-center">
                 <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center px-4">
-                    <h2 className="font-['GACCO'] font-normal uppercase text-[#C8FF80] mb-8 tracking-wide drop-shadow-[0_0_5px_rgba(200,255,128,0.5)] flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[1023px]" style={{ fontSize: '32px', minHeight: '32px' }}>
+                    <h2 className="font-normal uppercase text-[#C8FF80] mb-8 tracking-wide drop-shadow-[0_0_5px_rgba(200,255,128,0.5)] flex items-center justify-center text-center whitespace-normal md:whitespace-nowrap w-full max-w-[1023px]" style={{ fontSize: '32px', minHeight: '32px' }}>
                         Why Traditional Investment Systems Fail
                     </h2>
                     <p className="text-white mb-20 font-light tracking-wide text-center flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[960px]" style={{ fontSize: '18px', minHeight: '18px' }}>
@@ -286,7 +286,7 @@ const NewHome = () => {
                                         <img src="/homepage_assets/icon_cross.svg" alt="Error" className="w-5 h-5 object-contain opacity-80" />
                                     </div>
                                 </div>
-                                <h3 className="font-['GACCO'] text-xl font-normal uppercase mb-3 tracking-wide leading-tight text-black transition-colors">{item.title}</h3>
+                                <h3 className="text-xl font-normal uppercase mb-3 tracking-wide leading-tight text-black transition-colors">{item.title}</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed font-light transition-colors">{item.description}</p>
                             </div>
                         ))}
@@ -299,7 +299,7 @@ const NewHome = () => {
 
             {/* ═══════════════════ TRADITIONAL SHORTFALLS (MOBILE) ═══════════════════ */}
             <section id="why-mobile" className="block md:hidden relative w-full py-12 px-4 bg-black text-center">
-                <h2 className="font-['GACCO'] text-2xl font-normal uppercase text-[#C8FF80] mb-3 tracking-wide text-center leading-tight">
+                <h2 className="text-2xl font-normal uppercase text-[#C8FF80] mb-3 tracking-wide text-center leading-tight">
                     WHY TRADITIONAL <br /> INVESTMENT SYSTEMS FAIL
                 </h2>
                 <div className="w-16 h-1 bg-[#C8FF80] mx-auto mb-8 rounded-full"></div>
@@ -310,7 +310,7 @@ const NewHome = () => {
                             <div className="w-10 h-10 flex items-center justify-center bg-[#C4A4A4] rounded-sm mb-4">
                                 <img src="/homepage_assets/icon_cross.svg" alt="Cross Icon" className="w-5 h-5 opacity-80" />
                             </div>
-                            <h3 className="font-['GACCO'] text-lg font-bold uppercase mb-2 text-black tracking-wide leading-tight">
+                            <h3 className="text-lg font-bold uppercase mb-2 text-black tracking-wide leading-tight">
                                 {item.title}
                             </h3>
                             <p className="text-gray-600 text-sm leading-relaxed font-light">
@@ -331,7 +331,7 @@ const NewHome = () => {
             <section id="engine" className="hidden md:block bg-black pt-20 pb-0 px-8 md:px-16 text-white relative overflow-hidden">
                 <div className="max-w-[1300px] mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-10">
-                        <h2 className="font-['GACCO'] text-4xl md:text-6xl font-light uppercase tracking-wide leading-tight">
+                        <h2 className="text-4xl md:text-6xl font-light uppercase tracking-wide leading-tight">
                             THE <span className="bg-[#C8FF80] text-black px-2 font-medium">RESILUTION</span><br />ENGINE
                         </h2>
                         <p className="text-gray-300 max-w-lg text-lg font-light text-left md:text-right">
@@ -344,7 +344,7 @@ const NewHome = () => {
                         <div className="relative z-10 w-full p-4 md:p-10 lg:p-14">
                             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row gap-12 lg:gap-20">
                                 <div className="flex-1 flex flex-col justify-center items-start">
-                                    <h3 className="font-['GACCO'] text-3xl md:text-5xl font-normal uppercase mb-8 leading-tight tracking-wide">A SMARTER WAY TO <br /> INVEST AND GROW</h3>
+                                    <h3 className="text-3xl md:text-5xl font-normal uppercase mb-8 leading-tight tracking-wide">A SMARTER WAY TO <br /> INVEST AND GROW</h3>
                                     <p className="text-gray-200 text-lg mb-10 font-light leading-relaxed max-w-xl">Resilution connects businesses and investors through verified proposals, real-time performance tracking, and automated revenue sharing - all powered by blockchain technology.</p>
                                     <button className="bg-[#C8FF80] text-black px-8 py-4 font-bold rounded-sm hover:bg-[#b0e660] transition-colors uppercase tracking-wide">Explore the Platform</button>
                                 </div>
@@ -355,7 +355,7 @@ const NewHome = () => {
                                                 <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                                             </div>
                                             <div>
-                                                <h4 className="font-['GACCO'] text-[#e0dacc] text-xl font-normal mb-2 tracking-wide">{feature.title}</h4>
+                                                <h4 className="text-[#e0dacc] text-xl font-normal mb-2 tracking-wide">{feature.title}</h4>
                                                 <p className="text-gray-300 text-sm font-light leading-relaxed">{feature.description}</p>
                                             </div>
                                         </div>
@@ -369,14 +369,14 @@ const NewHome = () => {
 
             {/* ═══════════════════ RESILUTION ENGINE (MOBILE) ═══════════════════ */}
             <section id="engine-mobile" className="block md:hidden bg-black pt-12 pb-12 px-4 text-white">
-                <h2 className="font-['GACCO'] text-2xl font-light uppercase tracking-wide leading-tight mb-4">
+                <h2 className="text-2xl font-light uppercase tracking-wide leading-tight mb-4">
                     THE <span className="bg-[#C8FF80] text-black px-1 font-medium">RESILUTION</span><br />ENGINE
                 </h2>
                 <p className="text-gray-300 text-sm font-light text-left mb-8">
                     Resilution replaces traditional investment barriers with blockchain-powered transparency, automation, and trust.
                 </p>
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6">
-                    <h3 className="font-['GACCO'] text-2xl font-normal uppercase mb-4 leading-tight tracking-wide">A SMARTER WAY TO INVEST AND GROW</h3>
+                    <h3 className="text-2xl font-normal uppercase mb-4 leading-tight tracking-wide">A SMARTER WAY TO INVEST AND GROW</h3>
                     <p className="text-gray-300 text-sm mb-6 font-light leading-relaxed">Resilution connects businesses and investors through verified proposals, real-time performance tracking, and automated revenue sharing.</p>
                     <button className="bg-[#C8FF80] text-black w-full py-4 font-bold rounded-sm uppercase tracking-wide mb-8">Explore the Platform</button>
 
@@ -387,7 +387,7 @@ const NewHome = () => {
                                     <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 className="font-['GACCO'] text-[#e0dacc] text-base font-normal mb-1 tracking-wide">{feature.title}</h4>
+                                    <h4 className="text-[#e0dacc] text-base font-normal mb-1 tracking-wide">{feature.title}</h4>
                                     <p className="text-gray-400 text-xs font-light leading-relaxed">{feature.description}</p>
                                 </div>
                             </div>
@@ -401,7 +401,7 @@ const NewHome = () => {
             {/* ═══════════════════ BENEFITS (DESKTOP) ═══════════════════ */}
             <section id="benefits" className="hidden md:flex bg-white py-24 px-8 md:px-16 text-black justify-center -mt-20 relative z-10">
                 <div className="w-full max-w-[1440px] flex flex-col items-center">
-                    <h2 className="font-['GACCO'] font-light uppercase tracking-wide mb-6 text-center flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[1033px]" style={{ fontSize: '36px', minHeight: '36px' }}>
+                    <h2 className="font-light uppercase tracking-wide mb-6 text-center flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[1033px]" style={{ fontSize: '36px', minHeight: '36px' }}>
                         BENEFITS FOR <span className="bg-[#C8FF80] px-2 font-medium">BUSINESSES & INVESTORS</span>
                     </h2>
                     <p className="text-gray-600 text-center mb-20 font-light flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[795px]" style={{ fontSize: '18px', minHeight: '18px' }}>
@@ -410,7 +410,7 @@ const NewHome = () => {
                     <div className="flex flex-col lg:flex-row gap-10 justify-center w-full items-center lg:items-stretch">
                         <div className="bg-[#EDE2E2] flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ height: '650px', padding: '64px' }}>
                             <div className="mb-8 w-16 h-16"><img src="/homepage_assets/icon_user.svg" alt="icon_user.svg" className="w-full h-full object-contain" /></div>
-                            <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest">FOR INVESTORS</h3>
+                            <h3 className="text-3xl font-normal uppercase mb-8 tracking-widest">FOR INVESTORS</h3>
                             <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-5">
                                 <li>Invest in verified businesses with full transparency.</li>
                                 <li>Track real-time performance and product data on-chain.</li>
@@ -421,7 +421,7 @@ const NewHome = () => {
                         </div>
                         <div className="bg-[#EDE2E2] flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ height: '650px', padding: '64px' }}>
                             <div className="mb-8 w-16 h-16"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
-                            <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest">FOR BUSINESSES</h3>
+                            <h3 className="text-3xl font-normal uppercase mb-8 tracking-widest">FOR BUSINESSES</h3>
                             <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-5">
                                 <li>Raise capital directly from a global investor community without banks or intermediaries.</li>
                                 <li>Gain trust through transparent performance data recorded on blockchain.</li>
@@ -436,7 +436,7 @@ const NewHome = () => {
 
             {/* ═══════════════════ BENEFITS (MOBILE) ═══════════════════ */}
             <section id="benefits-mobile" className="block md:hidden bg-white py-12 px-4 text-black relative z-10 w-full">
-                <h2 className="font-['GACCO'] text-2xl font-light uppercase tracking-wide mb-4 text-center">
+                <h2 className="text-2xl font-light uppercase tracking-wide mb-4 text-center">
                     BENEFITS FOR <span className="bg-[#C8FF80] px-1 font-medium block mt-1">BUSINESSES & INVESTORS</span>
                 </h2>
                 <p className="text-gray-600 text-center mb-10 text-sm font-light">
@@ -445,7 +445,7 @@ const NewHome = () => {
                 <div className="flex flex-col gap-6">
                     <div className="bg-[#EDE2E2] p-8 rounded-sm text-center">
                         <div className="mb-6 w-12 h-12 mx-auto"><img src="/homepage_assets/icon_user.svg" alt="icon_user.svg" className="w-full h-full object-contain" /></div>
-                        <h3 className="font-['GACCO'] text-xl font-normal uppercase mb-6 tracking-widest">FOR INVESTORS</h3>
+                        <h3 className="text-xl font-normal uppercase mb-6 tracking-widest">FOR INVESTORS</h3>
                         <ul className="text-left text-gray-800 space-y-3 mb-8 font-light text-sm leading-relaxed list-disc pl-5">
                             <li>Invest in verified businesses with full transparency.</li>
                             <li>Track real-time performance and product data on-chain.</li>
@@ -456,7 +456,7 @@ const NewHome = () => {
                     </div>
                     <div className="bg-[#EDE2E2] p-8 rounded-sm text-center">
                         <div className="mb-6 w-12 h-12 mx-auto"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
-                        <h3 className="font-['GACCO'] text-xl font-normal uppercase mb-6 tracking-widest">FOR BUSINESSES</h3>
+                        <h3 className="text-xl font-normal uppercase mb-6 tracking-widest">FOR BUSINESSES</h3>
                         <ul className="text-left text-gray-800 space-y-3 mb-8 font-light text-sm leading-relaxed list-disc pl-5">
                             <li>Raise capital directly from a global investor community.</li>
                             <li>Gain trust through transparent performance data.</li>
@@ -473,7 +473,7 @@ const NewHome = () => {
             {/* ═══════════════════ HOW IT WORKS (DESKTOP) ═══════════════════ */}
             <section id="how-it-works" className="hidden md:block bg-white py-24 px-8 md:px-16 text-black">
                 <div className="max-w-[1300px] mx-auto flex flex-col items-center">
-                    <h2 className="font-['GACCO'] text-3xl md:text-5xl font-light uppercase tracking-wide mb-6 text-center">
+                    <h2 className="text-3xl md:text-5xl font-light uppercase tracking-wide mb-6 text-center">
                         HOW <span className="bg-[#C8FF80] px-2 font-medium">RESILUTION WORKS</span>
                     </h2>
                     <p className="text-gray-600 text-center max-w-3xl mb-24 text-sm md:text-base font-light">A simple and transparent process that connects businesses and investors through blockchain technology.</p>
@@ -488,7 +488,7 @@ const NewHome = () => {
                                         <img src={item.icon} alt={`${item.step} icon`} className="w-8 h-8 text-black object-contain" />
                                     </div>
                                 </div>
-                                <h3 className="font-['GACCO'] text-lg font-normal uppercase mb-4 tracking-wide">{item.title}</h3>
+                                <h3 className="text-lg font-normal uppercase mb-4 tracking-wide">{item.title}</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed font-light">{item.description}</p>
                             </div>
                         ))}
@@ -498,7 +498,7 @@ const NewHome = () => {
 
             {/* ═══════════════════ HOW IT WORKS (MOBILE) ═══════════════════ */}
             <section id="how-it-works-mobile" className="block md:hidden bg-white py-12 px-4 text-black">
-                <h2 className="font-['GACCO'] text-2xl font-light uppercase tracking-wide mb-4 text-center">
+                <h2 className="text-2xl font-light uppercase tracking-wide mb-4 text-center">
                     HOW <span className="bg-[#C8FF80] px-1 font-medium">RESILUTION WORKS</span>
                 </h2>
                 <p className="text-gray-600 text-center mb-10 text-sm font-light">A simple and transparent process that connects businesses and investors through blockchain technology.</p>
@@ -509,7 +509,7 @@ const NewHome = () => {
                             <div className="w-16 h-16 rounded-full bg-[#C8FF80] flex justify-center items-center mb-6 mt-8">
                                 <img src={item.icon} alt={`${item.step} icon`} className="w-8 h-8 text-black object-contain" />
                             </div>
-                            <h3 className="font-['GACCO'] text-lg font-normal uppercase mb-2 tracking-wide">{item.title}</h3>
+                            <h3 className="text-lg font-normal uppercase mb-2 tracking-wide">{item.title}</h3>
                             <p className="text-gray-600 text-sm leading-relaxed font-light">{item.description}</p>
                         </div>
                     ))}
@@ -523,7 +523,7 @@ const NewHome = () => {
                 <div className="w-full relative h-full mx-auto max-w-[1451px]">
                     {/* Left Content */}
                     <div className="relative z-20 text-left pl-8 md:pl-16 pt-[100px] lg:pt-[200px]" style={{ width: '100%', maxWidth: '650px' }}> {/* Adjusted Layout Top & Padding */}
-                        <h2 className="font-['GACCO'] text-4xl md:text-[64px] font-normal uppercase leading-[1.1] mb-8 text-[#C8FF80] drop-shadow-[0_0_15px_rgba(200,255,128,0.4)]">
+                        <h2 className="text-4xl md:text-[64px] font-normal uppercase leading-[1.1] mb-8 text-[#C8FF80] drop-shadow-[0_0_15px_rgba(200,255,128,0.4)]">
                             Transparency <br /> Through Product <br /> Data Chains
                         </h2>
 
@@ -570,7 +570,7 @@ const NewHome = () => {
             {/* ═══════════════════ PRODUCT DATA CHAINS (MOBILE) ═══════════════════ */}
             <section id="product-chains-mobile" className="block md:hidden bg-black w-full py-12 px-4 relative overflow-hidden">
                 <div className="relative z-20 text-left">
-                    <h2 className="font-['GACCO'] text-2xl font-normal uppercase leading-tight mb-4 text-[#C8FF80]">
+                    <h2 className="text-2xl font-normal uppercase leading-tight mb-4 text-[#C8FF80]">
                         Transparency <br /> Through Product <br /> Data Chains
                     </h2>
 
@@ -612,7 +612,7 @@ const NewHome = () => {
 
                 {/* Subtext */}
                 <div className="absolute text-center z-20 left-1/2 -translate-x-1/2 px-4" style={{ width: '100%', maxWidth: '1000px', height: '38px', top: '171px' }}>
-                    <p className="text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%' }}>
+                    <p className="text-white" style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '16px', lineHeight: '100%' }}>
                         Resilution is more than an investment platform; it's a growing ecosystem of blockchain-powered tools designed to support businesses, investors, and communities.
                     </p>
                 </div>
@@ -624,7 +624,7 @@ const NewHome = () => {
                         <img src="/homepage_assets/icon_eden.svg" alt="Eden AI" className="w-full h-full object-contain" />
                     </div>
                     <div>
-                        <h3 className="font-['GACCO'] text-white text-lg font-medium mb-1">Eden AI Assistant</h3>
+                        <h3 className="text-white text-lg font-medium mb-1">Eden AI Assistant</h3>
                         <p className="text-gray-400 text-xs leading-relaxed font-light">
                             An intelligent assistant that helps users navigate the platform, understand proposals, and access real-time insights.
                         </p>
@@ -643,7 +643,7 @@ const NewHome = () => {
                         <img src="/homepage_assets/icon_pay.svg" alt="ResilPay" className="w-full h-full object-contain" />
                     </div>
                     <div>
-                        <h3 className="font-['GACCO'] text-white text-lg font-medium mb-1">ResilPay</h3>
+                        <h3 className="text-white text-lg font-medium mb-1">ResilPay</h3>
                         <p className="text-gray-400 text-xs leading-relaxed font-light">
                             A secure payment and transfer system for seamless transactions within the ecosystem.
                         </p>
@@ -657,7 +657,7 @@ const NewHome = () => {
                         <img src="/homepage_assets/icon_mall.svg" alt="ResilMall" className="w-full h-full object-contain" />
                     </div>
                     <div>
-                        <h3 className="font-['GACCO'] text-white text-lg font-medium mb-1">ResilMall</h3>
+                        <h3 className="text-white text-lg font-medium mb-1">ResilMall</h3>
                         <p className="text-gray-400 text-xs leading-relaxed font-light">
                             A decentralized marketplace connecting businesses directly with consumers.
                         </p>
@@ -668,7 +668,7 @@ const NewHome = () => {
             {/* ═══════════════════ ECOSYSTEM (MOBILE) ═══════════════════ */}
             <section id="ecosystem-mobile" className="block md:hidden bg-black py-12 px-4 relative overflow-hidden">
                 <div className="relative z-20 flex flex-col items-center text-center">
-                    <h2 className="font-['GACCO'] text-2xl font-medium uppercase text-[#C8FF80] tracking-wide mb-4">
+                    <h2 className="text-2xl font-medium uppercase text-[#C8FF80] tracking-wide mb-4">
                         The Resilution Ecosystem
                     </h2>
                     <p className="text-white text-sm font-light leading-relaxed mb-10 text-gray-300">
@@ -682,7 +682,7 @@ const NewHome = () => {
                                 <img src="/homepage_assets/icon_eden.svg" alt="Eden AI" className="w-full h-full object-contain" />
                             </div>
                             <div>
-                                <h3 className="font-['GACCO'] text-white text-lg font-medium mb-2">Eden AI Assistant</h3>
+                                <h3 className="text-white text-lg font-medium mb-2">Eden AI Assistant</h3>
                                 <p className="text-gray-400 text-xs leading-relaxed font-light">
                                     An intelligent assistant that helps users navigate the platform, understand proposals, and access real-time insights.
                                 </p>
@@ -695,7 +695,7 @@ const NewHome = () => {
                                 <img src="/homepage_assets/icon_pay.svg" alt="ResilPay" className="w-full h-full object-contain" />
                             </div>
                             <div>
-                                <h3 className="font-['GACCO'] text-white text-lg font-medium mb-2">ResilPay</h3>
+                                <h3 className="text-white text-lg font-medium mb-2">ResilPay</h3>
                                 <p className="text-gray-400 text-xs leading-relaxed font-light">
                                     A secure payment and transfer system for seamless transactions within the ecosystem.
                                 </p>
@@ -708,7 +708,7 @@ const NewHome = () => {
                                 <img src="/homepage_assets/icon_mall.svg" alt="ResilMall" className="w-full h-full object-contain" />
                             </div>
                             <div>
-                                <h3 className="font-['GACCO'] text-white text-lg font-medium mb-2">ResilMall</h3>
+                                <h3 className="text-white text-lg font-medium mb-2">ResilMall</h3>
                                 <p className="text-gray-400 text-xs leading-relaxed font-light">
                                     A decentralized marketplace connecting businesses directly with consumers.
                                 </p>
@@ -725,9 +725,8 @@ const NewHome = () => {
                 id="credits-token"
                 className="hidden md:block text-white relative mx-auto overflow-hidden"
                 style={{
-                    width: '100%',
-                    maxWidth: '1440px',
-                    minHeight: '1062px',
+                    width: '1440px',
+                    height: '1062px',
                     background: '#000000',
                 }}
             >
@@ -747,13 +746,10 @@ const NewHome = () => {
                 <div
                     className="absolute pointer-events-none"
                     style={{
-                        width: '100%',
-                        maxWidth: '706px',
-                        height: 'auto',
-                        aspectRatio: '706/1059',
+                        width: '706px',
+                        height: '1059px',
                         top: '-15px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
+                        left: '247px',
                         zIndex: 1,
                     }}
                 >
@@ -776,7 +772,7 @@ const NewHome = () => {
                 </div>
 
                 {/* Header - GACCO font, positioned per Figma */}
-                <div className="absolute z-10 w-full text-center" style={{ top: '171px', left: '0' }}>
+                <div className="absolute z-10" style={{ width: '660px', height: '36px', top: '171px', left: '390.5px' }}>
                     <h2
                         className="text-center uppercase text-[#C8FF80]"
                         style={{
@@ -792,9 +788,9 @@ const NewHome = () => {
                 </div>
 
                 {/* Subtext - Arial, positioned per Figma */}
-                <div className="absolute z-10 w-full flex justify-center" style={{ top: '239px' }}>
+                <div className="absolute z-10" style={{ width: '607px', height: '18px', top: '239px', left: '416.5px' }}>
                     <p
-                        className="text-center w-full max-w-[607px] px-4"
+                        className="text-center"
                         style={{
                             fontFamily: 'Arial',
                             fontWeight: 400,
@@ -813,9 +809,8 @@ const NewHome = () => {
                     className="absolute z-10"
                     style={{
                         top: '380px',
-                        left: '5%', // Fluid left position
+                        left: '73px',
                         width: '380px',
-                        maxWidth: '40%', // Ensure it doesn't overflow
                     }}
                 >
                     {/* Gradient border wrapper */}
@@ -859,7 +854,7 @@ const NewHome = () => {
                             />
                         </div>
                         <h3
-                            className="font-['GACCO'] text-white uppercase"
+                            className="text-white uppercase"
                             style={{
                                 fontSize: '22px',
                                 lineHeight: '26px',
@@ -905,9 +900,8 @@ const NewHome = () => {
                     className="absolute z-10"
                     style={{
                         top: '380px',
-                        right: '5%', // Fluid right position
+                        left: '987px',
                         width: '380px',
-                        maxWidth: '40%', // Ensure it doesn't overflow
                     }}
                 >
                     {/* Gradient border wrapper */}
@@ -951,7 +945,7 @@ const NewHome = () => {
                             />
                         </div>
                         <h3
-                            className="font-['GACCO'] text-white uppercase"
+                            className="text-white uppercase"
                             style={{
                                 fontSize: '22px',
                                 lineHeight: '26px',
@@ -996,7 +990,7 @@ const NewHome = () => {
 
             {/* ═══════════════════ CREDITS & TOKEN SYSTEM (MOBILE) ═══════════════════ */}
             <section id="credits-token-mobile" className="block md:hidden text-white w-full py-12 px-4 bg-black">
-                <h2 className="font-['GACCO'] text-2xl font-medium uppercase text-[#C8FF80] text-center mb-4">
+                <h2 className="text-2xl font-medium uppercase text-[#C8FF80] text-center mb-4">
                     Credits & Token System
                 </h2>
                 <p className="text-gray-400 text-center text-sm mb-10 font-light">
@@ -1010,7 +1004,7 @@ const NewHome = () => {
                             <div className="w-10 h-10 rounded-full bg-[#C8FF80]/10 flex justify-center items-center border border-[#C8FF80]/30">
                                 <img src="/homepage_assets/icon_credits.svg" alt="Credits" className="w-5 h-5 object-contain brightness-0 invert" />
                             </div>
-                            <h3 className="font-['GACCO'] text-white text-xl font-bold uppercase">CREDITS</h3>
+                            <h3 className="text-white text-xl font-bold uppercase">CREDITS</h3>
                         </div>
                         <ul className="list-disc pl-5 space-y-2 text-gray-300 text-sm font-light mb-6">
                             <li>Credits are stable, USD-pegged units designed to make participation simple and secure.</li>
@@ -1027,7 +1021,7 @@ const NewHome = () => {
                             <div className="w-10 h-10 rounded-full bg-[#C8FF80]/10 flex justify-center items-center border border-[#C8FF80]/30">
                                 <img src="/homepage_assets/icon_token.svg" alt="Token" className="w-5 h-5 object-contain brightness-0 invert" />
                             </div>
-                            <h3 className="font-['GACCO'] text-white text-xl font-bold uppercase">$RESIL TOKEN</h3>
+                            <h3 className="text-white text-xl font-bold uppercase">$RESIL TOKEN</h3>
                         </div>
                         <ul className="list-disc pl-5 space-y-2 text-gray-300 text-sm font-light mb-6">
                             <li>The $RESIL token powers the Resilution ecosystem through rewards, governance, and tier upgrades.</li>
@@ -1043,7 +1037,7 @@ const NewHome = () => {
             {/* ═══════════════════ TOKENOMICS & UTILITY ═══════════════════ */}
             {/* ═══════════════════ TOKENOMICS & UTILITY ═══════════════════ */}
             {/* ═══════════════════ TOKENOMICS & UTILITY (DESKTOP) ═══════════════════ */}
-            <section id="tokenomics" className="hidden md:block bg-black relative mx-auto overflow-hidden" style={{ width: '100%', maxWidth: '1441px', minHeight: '1283px' }}>
+            <section id="tokenomics" className="hidden md:block bg-black relative mx-auto overflow-hidden" style={{ width: '1441px', height: '1283px' }}>
 
                 {/* Headline */}
                 <div className="absolute z-20" style={{ top: '103px', left: '76px' }}>
@@ -1066,7 +1060,7 @@ const NewHome = () => {
                 </button>
 
                 {/* Central Coin Image */}
-                <div className="absolute z-30 pointer-events-none left-1/2 -translate-x-1/2" style={{ top: '474px', width: '555px', height: '510px' }}>
+                <div className="absolute z-30" style={{ top: '474px', left: '489px', width: '555px', height: '510px' }}>
                     <img src="/homepage_assets/tokenomics_coin.svg" alt="Tokenomics Coin" className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(200,255,128,0.2)]" />
                 </div>
 
@@ -1157,7 +1151,7 @@ const NewHome = () => {
             {/* ═══════════════════ TOKENOMICS & UTILITY (MOBILE) ═══════════════════ */}
             <section id="tokenomics-mobile" className="block md:hidden bg-black py-12 px-4">
                 <div className="text-center mb-8">
-                    <h2 className="font-['GACCO'] uppercase text-[#C8FF80] tracking-wide text-2xl font-medium mb-4">
+                    <h2 className="uppercase text-[#C8FF80] tracking-wide text-2xl font-medium mb-4">
                         TOKENOMICS & UTILITY
                     </h2>
                     <p className="text-white text-sm font-light text-gray-300">
@@ -1170,7 +1164,7 @@ const NewHome = () => {
 
                     {/* Access & Tiers Card */}
                     <div className="snap-center shrink-0 w-[85vw] max-w-[320px] p-6 rounded-2xl bg-gradient-to-br from-[#1a240e] to-black border border-[#C8FF80]/30 shadow-lg flex flex-col">
-                        <h3 className="font-['GACCO'] text-white uppercase mb-4 text-xl font-bold">Access & Tiers</h3>
+                        <h3 className="text-white uppercase mb-4 text-xl font-bold">Access & Tiers</h3>
                         <p className="text-gray-300 text-sm leading-relaxed">
                             $RESIL tokens unlock premium features, higher investment limits, and advanced platform tools through tier-based access.
                         </p>
@@ -1178,7 +1172,7 @@ const NewHome = () => {
 
                     {/* Rewards System Card */}
                     <div className="snap-center shrink-0 w-[85vw] max-w-[320px] p-6 rounded-2xl bg-gradient-to-br from-[#1a240e] to-black border border-[#C8FF80]/30 shadow-lg flex flex-col">
-                        <h3 className="font-['GACCO'] text-white uppercase mb-4 text-xl font-bold">Rewards System</h3>
+                        <h3 className="text-white uppercase mb-4 text-xl font-bold">Rewards System</h3>
                         <ul className="text-gray-300 text-sm leading-relaxed list-disc pl-5 space-y-2">
                             <li>Users earn $RESIL through investments, platform participation, and ecosystem contributions.</li>
                             <li>Automated smart contracts distribute rewards transparently.</li>
@@ -1187,7 +1181,7 @@ const NewHome = () => {
 
                     {/* Staking Card */}
                     <div className="snap-center shrink-0 w-[85vw] max-w-[320px] p-6 rounded-2xl bg-gradient-to-br from-[#1a240e] to-black border border-[#C8FF80]/30 shadow-lg flex flex-col">
-                        <h3 className="font-['GACCO'] text-white uppercase mb-4 text-xl font-bold">Staking</h3>
+                        <h3 className="text-white uppercase mb-4 text-xl font-bold">Staking</h3>
                         <p className="text-gray-300 text-sm mb-2">Stake $RESIL tokens to receive:</p>
                         <ul className="text-gray-300 text-sm leading-relaxed list-disc pl-5 space-y-1">
                             <li>Reduced platform fees</li>
@@ -1198,7 +1192,7 @@ const NewHome = () => {
 
                     {/* Governance Card */}
                     <div className="snap-center shrink-0 w-[85vw] max-w-[320px] p-6 rounded-2xl bg-gradient-to-br from-[#1a240e] to-black border border-[#C8FF80]/30 shadow-lg flex flex-col">
-                        <h3 className="font-['GACCO'] text-white uppercase mb-4 text-xl font-bold">Governance</h3>
+                        <h3 className="text-white uppercase mb-4 text-xl font-bold">Governance</h3>
                         <p className="text-gray-300 text-sm leading-relaxed">
                             Token holders can vote on platform upgrades, ecosystem decisions, and future developments.
                         </p>
@@ -1213,7 +1207,7 @@ const NewHome = () => {
             {/* ═══════════════════ TOKEN DISTRIBUTION ═══════════════════ */}
             {/* ═══════════════════ TOKEN DISTRIBUTION ═══════════════════ */}
             {/* ═══════════════════ TOKEN DISTRIBUTION (DESKTOP) ═══════════════════ */}
-            <section id="distribution" className="hidden md:block bg-black relative mx-auto overflow-hidden" style={{ width: '100%', maxWidth: '1447px', minHeight: '1009px' }}>
+            <section id="distribution" className="hidden md:block bg-black relative mx-auto overflow-hidden" style={{ width: '1447px', height: '1009px' }}>
 
                 {/* Header */}
                 <div className="absolute" style={{ top: '133px', left: '79px', width: '520px', height: '36px' }}>
@@ -1230,7 +1224,7 @@ const NewHome = () => {
                 </div>
 
                 {/* Pie Chart Container */}
-                <div className="absolute z-10 left-1/2 -translate-x-1/2" style={{ top: '286px', width: '366.5px', height: '366.5px' }}>
+                <div className="absolute z-10" style={{ top: '286px', left: '478px', width: '366.5px', height: '366.5px' }}>
                     <svg viewBox="0 0 366.5 366.5" className="w-full h-full overflow-visible">
                         {/* 
                             Pie Chart Segments 
@@ -1363,7 +1357,7 @@ const NewHome = () => {
             {/* ═══════════════════ TOKEN DISTRIBUTION (MOBILE) ═══════════════════ */}
             <section id="distribution-mobile" className="block md:hidden bg-black py-12 px-4">
                 <div className="text-center mb-8">
-                    <h2 className="font-['GACCO'] uppercase text-[#C8FF80] tracking-wide text-2xl font-medium mb-4">
+                    <h2 className="uppercase text-[#C8FF80] tracking-wide text-2xl font-medium mb-4">
                         TOKEN DISTRIBUTION
                     </h2>
                     <p className="text-white text-sm font-light text-gray-300">
@@ -1374,7 +1368,7 @@ const NewHome = () => {
                 <div className="flex flex-col gap-6">
                     <div className="bg-[#1a240e] p-6 rounded-lg border border-[#C8FF80]/20">
                         <div className="flex justify-between items-center mb-2">
-                            <h3 className="font-['GACCO'] text-[#C8FF80] font-bold">COMMUNITY</h3>
+                            <h3 className="text-[#C8FF80] font-bold">COMMUNITY</h3>
                             <span className="text-white font-bold">48%</span>
                         </div>
                         <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
@@ -1385,7 +1379,7 @@ const NewHome = () => {
 
                     <div className="bg-[#1a240e] p-6 rounded-lg border border-[#D6E5A8]/20">
                         <div className="flex justify-between items-center mb-2">
-                            <h3 className="font-['GACCO'] text-[#D6E5A8] font-bold">INVESTORS</h3>
+                            <h3 className="text-[#D6E5A8] font-bold">INVESTORS</h3>
                             <span className="text-white font-bold">25%</span>
                         </div>
                         <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
@@ -1396,7 +1390,7 @@ const NewHome = () => {
 
                     <div className="bg-[#1a240e] p-6 rounded-lg border border-[#9ACD32]/20">
                         <div className="flex justify-between items-center mb-2">
-                            <h3 className="font-['GACCO'] text-[#9ACD32] font-bold">OPERATIONS</h3>
+                            <h3 className="text-[#9ACD32] font-bold">OPERATIONS</h3>
                             <span className="text-white font-bold">15%</span>
                         </div>
                         <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
@@ -1407,7 +1401,7 @@ const NewHome = () => {
 
                     <div className="bg-[#1a240e] p-6 rounded-lg border border-[#78994D]/20">
                         <div className="flex justify-between items-center mb-2">
-                            <h3 className="font-['GACCO'] text-[#78994D] font-bold">TEAM</h3>
+                            <h3 className="text-[#78994D] font-bold">TEAM</h3>
                             <span className="text-white font-bold">12%</span>
                         </div>
                         <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
@@ -1427,7 +1421,7 @@ const NewHome = () => {
             {/* ═══════════════════ ROADMAP ═══════════════════ */}
             {/* ═══════════════════ ROADMAP ═══════════════════ */}
             {/* ═══════════════════ ROADMAP (DESKTOP) ═══════════════════ */}
-            <section id="roadmap" className="hidden md:block relative mx-auto overflow-hidden bg-[#F5F5F0]" style={{ width: '100%', maxWidth: '1441px', minHeight: '800px' }}>
+            <section id="roadmap" className="hidden md:block relative mx-auto overflow-hidden bg-[#F5F5F0]" style={{ width: '1441px', height: '800px' }}>
 
                 {/* Header: PRODUCT ROADMAP */}
                 <div className="absolute" style={{ top: '120px', left: '80px', width: '481px', height: '36px' }}>
@@ -1467,7 +1461,7 @@ const NewHome = () => {
                                     <div className="w-4 h-4 rounded-full bg-[#C8FF80] border-2 border-white shadow-sm mb-6 relative z-10"></div>
 
                                     {/* Header */}
-                                    <h3 className="font-['GACCO'] text-black uppercase mb-4" style={{ fontWeight: 400, fontSize: '20px', lineHeight: '100%' }}>
+                                    <h3 className="text-black uppercase mb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '20px', lineHeight: '100%' }}>
                                         {phase.title}
                                     </h3>
 
@@ -1490,7 +1484,7 @@ const NewHome = () => {
             {/* ═══════════════════ ROADMAP (MOBILE) ═══════════════════ */}
             <section id="roadmap-mobile" className="block md:hidden bg-[#F5F5F0] py-12 px-4">
                 <div className="text-center mb-10">
-                    <h2 className="font-['GACCO'] text-2xl font-medium uppercase text-black mb-4">
+                    <h2 className="text-2xl font-medium uppercase text-black mb-4">
                         PRODUCT <span className="bg-[#C8FF80] px-1">ROADMAP</span>
                     </h2>
                     <p className="text-gray-600 text-sm font-light text-center">
@@ -1507,7 +1501,7 @@ const NewHome = () => {
                             <span className="uppercase text-gray-400 mb-2 tracking-widest block text-xs font-bold">
                                 {phase.phase}
                             </span>
-                            <h3 className="font-['GACCO'] text-black uppercase mb-3 text-lg font-bold">
+                            <h3 className="text-black uppercase mb-3 text-lg font-bold">
                                 {phase.title}
                             </h3>
                             <ul className="space-y-2">
@@ -1526,7 +1520,7 @@ const NewHome = () => {
             {/* ═══════════════════ COMMUNITY ═══════════════════ */}
             {/* ═══════════════════ COMMUNITY ═══════════════════ */}
             {/* ═══════════════════ COMMUNITY (DESKTOP) ═══════════════════ */}
-            <section id="community" className="hidden md:block bg-black relative mx-auto overflow-hidden" style={{ width: '100%', maxWidth: '1441px', minHeight: '775px' }}>
+            <section id="community" className="hidden md:block bg-black relative mx-auto overflow-hidden" style={{ width: '1441px', height: '775px' }}>
 
                 {/* Header */}
                 <div className="absolute" style={{ top: '56px', left: '73.5px', width: '549px', height: '84px' }}>
@@ -1572,8 +1566,8 @@ const NewHome = () => {
                             <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.01 6.11683 19.01 7.005C19.01 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </div>
-                    <h3 className="text-black text-lg font-medium mb-4" style={{ fontFamily: 'GACCO' }}>Community Channels</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'GACCO' }}>
+                    <h3 className="text-black text-lg font-medium mb-4" style={{ fontFamily: 'Arial' }}>Community Channels</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'Arial' }}>
                         Connect with other users, businesses, and investors through our official community platforms.
                     </p>
                 </div>
@@ -1593,8 +1587,8 @@ const NewHome = () => {
                     <div className="mb-6">
                         <img src="/homepage_assets/Page-1.svg" alt="Platform Updates Icon" className="w-[40px] h-[40px]" />
                     </div>
-                    <h3 className="text-black text-lg font-medium mb-4" style={{ fontFamily: 'GACCO' }}>Platform Updates</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'GACCO' }}>
+                    <h3 className="text-black text-lg font-medium mb-4" style={{ fontFamily: 'Arial' }}>Platform Updates</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'Arial' }}>
                         Get the latest news, feature launches, and ecosystem progress directly from Resilution.
                     </p>
                 </div>
@@ -1604,7 +1598,7 @@ const NewHome = () => {
             {/* ═══════════════════ COMMUNITY (MOBILE) ═══════════════════ */}
             <section id="community-mobile" className="block md:hidden bg-black py-16 px-4">
                 <div className="text-center mb-10">
-                    <h2 className="font-['GACCO'] text-2xl font-medium uppercase text-[#C8FF80] mb-4">
+                    <h2 className="text-2xl font-medium uppercase text-[#C8FF80] mb-4">
                         JOIN THE <br /> RESILUTION COMMUNITY
                     </h2>
                     <p className="text-white text-sm font-light text-center leading-relaxed mb-8">
@@ -1626,7 +1620,7 @@ const NewHome = () => {
                                 <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.01 6.11683 19.01 7.005C19.01 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </div>
-                        <h3 className="font-['GACCO'] text-black text-lg font-bold mb-2">Community Channels</h3>
+                        <h3 className="text-black text-lg font-bold mb-2">Community Channels</h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
                             Connect with other users, businesses, and investors through our official community platforms.
                         </p>
@@ -1637,7 +1631,7 @@ const NewHome = () => {
                         <div className="mb-4">
                             <img src="/homepage_assets/Page-1.svg" alt="Platform Updates Icon" className="w-[32px] h-[32px]" />
                         </div>
-                        <h3 className="font-['GACCO'] text-black text-lg font-bold mb-2">Platform Updates</h3>
+                        <h3 className="text-black text-lg font-bold mb-2">Platform Updates</h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
                             Get the latest news, feature launches, and ecosystem progress directly from Resilution.
                         </p>
@@ -1648,12 +1642,12 @@ const NewHome = () => {
             {/* ═══════════════════ FAQ ═══════════════════ */}
             <section className="bg-white text-black py-24" id="faq">
                 <div className="max-w-[1000px] mx-auto px-4 md:px-16">
-                    <h2 className="font-['GACCO'] text-center uppercase mb-20" style={{ fontSize: '36px', lineHeight: '42px', fontWeight: 500 }}>Frequently Asked Questions</h2>
+                    <h2 className="text-center uppercase mb-20" style={{ fontSize: '36px', lineHeight: '42px', fontWeight: 500 }}>Frequently Asked Questions</h2>
                     <div className="space-y-0">
                         {faqs.map((faq, index) => (
                             <div key={index} className="border-b border-gray-200">
                                 <button className="w-full flex justify-between items-center py-8 text-left focus:outline-none group" onClick={() => toggleFaq(index)}>
-                                    <h3 className="font-['GACCO'] font-medium pr-8" style={{ fontSize: '20px', lineHeight: '28px' }}>{faq.question}</h3>
+                                    <h3 className="font-medium pr-8" style={{ fontSize: '20px', lineHeight: '28px' }}>{faq.question}</h3>
                                     <div className={`transform transition-transform duration-300 ${openIndex === index ? 'rotate-180' : 'rotate-0'}`}>
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                                     </div>
