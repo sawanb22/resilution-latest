@@ -259,7 +259,7 @@ const NewHome = () => {
                             </div>
                         ))}
                     </div>
-                    <button className="font-['GACCO'] inline-flex items-center justify-center font-normal uppercase tracking-wide transition-all duration-300 transform active:scale-95 bg-[#C8FF80] text-black hover:bg-black hover:text-[#C8FF80] hover:border-[#C8FF80] border border-transparent rounded-sm shadow-[0_0_20px_rgba(200,255,128,0.4)]" style={{ width: '207px', height: '54px', fontSize: '16px' }}>
+                    <button className="font-['GACCO'] inline-flex items-center justify-center font-normal tracking-wide transition-all duration-300 transform active:scale-95 bg-[#C8FF80] text-black hover:bg-black hover:text-[#C8FF80] hover:border-[#C8FF80] border border-[#C8FF80] rounded-sm" style={{ width: '207px', height: '54px', fontSize: '16px' }}>
                         View the Solution
                     </button>
                 </div>
