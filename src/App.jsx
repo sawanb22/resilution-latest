@@ -38,6 +38,9 @@ function MainLayout() {
   const location = useLocation()
   const [showPopup, setShowPopup] = useState(false)
 
+  // Check if we're on the new-home page
+  const isNewHomePage = location.pathname === '/new-home'
+
   useEffect(() => {
     // Check if popup was already shown in this session
     const popupShown = sessionStorage.getItem('newsletterPopupShown')
@@ -67,7 +70,7 @@ function MainLayout() {
       <MetaRouteTracker />
 
       {/* Conditionally render Navbar - hide on /new-home */}
-      {location.pathname !== '/new-home' && <Navbar />}
+      {!isNewHomePage && <Navbar />}
 
       <Routes>
         <Route path='/' element={<Home />} />
@@ -77,7 +80,8 @@ function MainLayout() {
         <Route path="/new-home" element={<NewHome />} />
       </Routes>
 
-      <Footer />
+      {/* Conditionally render Footer - hide on /new-home */}
+      {!isNewHomePage && <Footer />}
 
       {/* Eden Chat Widget - Fresh implementation with Socket.IO */}
       <EdenChatWidget

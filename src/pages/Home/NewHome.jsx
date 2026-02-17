@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NewNavbar } from './NewNavbar';
-import Marquee from "react-fast-marquee";
 import style from "./home.module.css";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -45,39 +44,6 @@ const NewHome = () => {
         { question: 'What are Credits and how do they work?', answer: 'Credits are USD-pegged units used on the platform to make investing simple and stable while avoiding crypto volatility.' },
         { question: 'How are profits distributed to investors?', answer: 'Smart contracts automatically distribute profits based on agreed investment terms and real-time performance data.' },
     ];
-
-    // Token distribution pie chart
-    const segments = [
-        { label: 'Community & Ecosystem', percentage: 48, color: '#C8FF80' },
-        { label: 'Investors', percentage: 25, color: '#8FBF5A' },
-        { label: 'Operations & Network', percentage: 15, color: '#6A9940' },
-        { label: 'Team & Advisors', percentage: 12, color: '#4A7328' },
-    ];
-    const createPieSlice = (startAngle, endAngle, radius, cx, cy) => {
-        const startRad = (startAngle - 90) * Math.PI / 180;
-        const endRad = (endAngle - 90) * Math.PI / 180;
-        const x1 = cx + radius * Math.cos(startRad);
-        const y1 = cy + radius * Math.sin(startRad);
-        const x2 = cx + radius * Math.cos(endRad);
-        const y2 = cy + radius * Math.sin(endRad);
-        const largeArc = endAngle - startAngle > 180 ? 1 : 0;
-        return `M ${cx} ${cy} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`;
-    };
-    const radius = 180, cx = 200, cy = 200;
-    let currentAngle = 0;
-    const slices = segments.map((seg) => {
-        const startAngle = currentAngle;
-        const sweepAngle = (seg.percentage / 100) * 360;
-        const endAngle = startAngle + sweepAngle;
-        const midAngle = startAngle + sweepAngle / 2;
-        const midRad = (midAngle - 90) * Math.PI / 180;
-        const labelRadius = radius * 0.6;
-        const labelX = cx + labelRadius * Math.cos(midRad);
-        const labelY = cy + labelRadius * Math.sin(midRad);
-        const path = createPieSlice(startAngle, endAngle, radius, cx, cy);
-        currentAngle = endAngle;
-        return { ...seg, path, labelX, labelY, midAngle };
-    });
 
     return (
         <div className="bg-black min-h-screen text-white font-['GACCO'] break-words overflow-x-hidden">
@@ -613,7 +579,7 @@ const NewHome = () => {
                 {/* Subtext */}
                 <div className="absolute text-center z-20 left-1/2 -translate-x-1/2 px-4" style={{ width: '100%', maxWidth: '1000px', height: '38px', top: '171px' }}>
                     <p className="text-white" style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '16px', lineHeight: '100%' }}>
-                        Resilution is more than an investment platform; it's a growing ecosystem of blockchain-powered tools designed to support businesses, investors, and communities.
+                        Resilution is more than an investment platform; it&apos;s a growing ecosystem of blockchain-powered tools designed to support businesses, investors, and communities.
                     </p>
                 </div>
 
@@ -672,7 +638,7 @@ const NewHome = () => {
                         The Resilution Ecosystem
                     </h2>
                     <p className="text-white text-sm font-light leading-relaxed mb-10 text-gray-300">
-                        Resilution is more than an investment platform; it's a growing ecosystem of blockchain-powered tools designed to support businesses, investors, and communities.
+                        Resilution is more than an investment platform; it&apos;s a growing ecosystem of blockchain-powered tools designed to support businesses, investors, and communities.
                     </p>
 
                     <div className="flex flex-col gap-6 w-full">
@@ -1662,7 +1628,49 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ FOOTER ═══════════════════ */}
-            {/* ═══════════════════ FOOTER IS GLOBAL IN APP.JSX ═══════════════════ */}
+            {/* ═══════════════════ CUSTOM FOOTER FOR NEW HOME ═══════════════════ */}
+            <footer className="bg-black text-white border-t border-white/10">
+                <div className="max-w-[1440px] mx-auto px-6 md:px-16 py-12">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                        {/* Logo and Copyright */}
+                        <div className="flex flex-col gap-4">
+                            <img
+                                src="/homepage_assets/resilution heading.svg"
+                                alt="RESILUTION"
+                                className="h-6 md:h-8 object-contain"
+                            />
+                            <p className="text-gray-400 text-sm">
+                                All rights are reserved @2025
+                            </p>
+                        </div>
+
+                        {/* Social Links */}
+                        <div className="flex gap-4 items-center">
+                            <a href="https://www.instagram.com/mattresil" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                                <img src="/icons/instagram.svg" width="22" height="22" alt="Instagram" />
+                            </a>
+                            <a href="https://www.facebook.com/Resilutionforthefuture" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                                <img src="/icons/facebook.svg" width="22" height="22" alt="Facebook" />
+                            </a>
+                            <a href="https://www.youtube.com/@Resilblockchain" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                                <img src="/icons/youtube.svg" width="22" height="22" alt="YouTube" />
+                            </a>
+                            <a href="https://t.me/Resilution" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                                <img src="/icons/telegram.svg" width="22" height="22" alt="Telegram" />
+                            </a>
+                            <a href="https://discord.com/invite/KG5WKCnkWW" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                                <img src="/icons/discode.svg" width="22" height="22" alt="Discord" />
+                            </a>
+                            <a href="https://www.reddit.com/r/ResilutionCommunity" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                                <img src="/icons/reddit.svg" width="26" height="26" alt="Reddit" />
+                            </a>
+                            <a href="https://x.com/Resilblockchain" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                                <img src="/icons/twiter.svg" width="22" height="22" alt="Twitter/X" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
         </div >
     );
