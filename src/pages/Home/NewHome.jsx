@@ -571,6 +571,7 @@ const NewHome = () => {
                     <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full object-cover opacity-60" />
                 </div>
 
+                <div className="relative max-w-[1440px] mx-auto h-full">
                 {/* Headline */}
                 <div data-aos="fade-up" className="absolute text-center z-20 left-1/2 -translate-x-1/2" style={{ width: 'auto', height: 'auto', top: '97px', whiteSpace: 'nowrap' }}>
                     <h2 className="uppercase text-[#C8FF80] tracking-wide" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '130%' }}>
@@ -630,6 +631,7 @@ const NewHome = () => {
                             A decentralized marketplace connecting businesses directly with consumers.
                         </p>
                     </div>
+                </div>
                 </div>
             </section>
 
@@ -709,6 +711,7 @@ const NewHome = () => {
                     }}
                 ></div>
 
+                <div className="relative max-w-[1440px] mx-auto h-full">
                 {/* 3D Token Image - BEHIND everything (z-index 1) */}
                 <div
                     className="absolute pointer-events-none"
@@ -961,6 +964,7 @@ const NewHome = () => {
                     </div>
                 </div>
 
+                </div>
             </section>
 
             {/* ═══════════════════ CREDITS & TOKEN SYSTEM (MOBILE) ═══════════════════ */}
@@ -1014,6 +1018,7 @@ const NewHome = () => {
             {/* ═══════════════════ TOKENOMICS & UTILITY (DESKTOP) ═══════════════════ */}
             <section id="tokenomics" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '1283px' }}>
 
+                <div className="relative max-w-[1440px] mx-auto h-full">
                 {/* Headline */}
                 <div className="absolute z-20" style={{ top: '103px', left: '76px' }}>
                     <h2 className="uppercase text-[#C8FF80] tracking-wide" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '130%' }}>
@@ -1117,6 +1122,7 @@ const NewHome = () => {
                     </p>
                 </div>
 
+                </div>
                 {/* Background Decoration (Lower Waves - Layer 2) */}
                 <div className="absolute bottom-0 left-0 w-full z-10 pointer-events-none">
                     <img src="/homepage_assets/Layer 2.svg" alt="Background Waves" className="w-full h-auto object-cover object-bottom opacity-100" />
@@ -1184,6 +1190,7 @@ const NewHome = () => {
             {/* ═══════════════════ TOKEN DISTRIBUTION (DESKTOP) ═══════════════════ */}
             <section id="distribution" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '1009px' }}>
 
+                <div className="relative max-w-[1440px] mx-auto h-full">
                 {/* Header */}
                 <div className="absolute" style={{ top: '133px', left: '79px', width: '520px', height: 'auto' }}>
                     <h2 className="uppercase text-[#C8FF80]" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '130%', letterSpacing: '0%' }}>
@@ -1327,6 +1334,7 @@ const NewHome = () => {
                         <span className="text-lg">📄</span> Resilution Litepaper
                     </button>
                 </div>
+                </div>
             </section>
 
             {/* ═══════════════════ TOKEN DISTRIBUTION (MOBILE) ═══════════════════ */}
@@ -1398,6 +1406,7 @@ const NewHome = () => {
             {/* ═══════════════════ ROADMAP (DESKTOP) ═══════════════════ */}
             <section id="roadmap" className="hidden md:block relative overflow-hidden bg-[#F5F5F0] w-full" style={{ height: '800px' }}>
 
+                <div className="relative max-w-[1440px] mx-auto h-full">
                 {/* Header: PRODUCT ROADMAP */}
                 <div className="absolute" style={{ top: '120px', left: '80px', width: '520px', height: 'auto' }}>
                     <h2 className="text-black uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '130%', letterSpacing: '0%' }}>
@@ -1454,6 +1463,7 @@ const NewHome = () => {
                         })}
                     </div>
                 </div>
+                </div>
             </section>
 
             {/* ═══════════════════ ROADMAP (MOBILE) ═══════════════════ */}
@@ -1497,6 +1507,7 @@ const NewHome = () => {
             {/* ═══════════════════ COMMUNITY (DESKTOP) ═══════════════════ */}
             <section id="community" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '775px' }}>
 
+                <div className="relative max-w-[1440px] mx-auto h-full">
                 {/* Header */}
                 <div className="absolute" style={{ top: '56px', left: '73.5px', width: '549px', height: '84px' }}>
                     <h2 className="font-['GACCO'] uppercase text-[#C8FF80]" style={{ fontWeight: 500, fontSize: '36px', lineHeight: '42px', letterSpacing: '0%' }}>
@@ -1568,6 +1579,7 @@ const NewHome = () => {
                     </p>
                 </div>
 
+                </div>
             </section>
 
             {/* ═══════════════════ COMMUNITY (MOBILE) ═══════════════════ */}
