@@ -259,7 +259,7 @@ const NewHome = () => {
                             </div>
                         ))}
                     </div>
-                    <button className="font-['GACCO'] inline-flex items-center justify-center font-normal uppercase tracking-wide transition-all duration-300 transform active:scale-95 bg-[#C8FF80] border border-[#C8FF80] text-black hover:bg-black hover:text-[#C8FF80] rounded-sm shadow-[0_0_20px_rgba(200,255,128,0.4)]" style={{ width: '207px', height: '54px', fontSize: '16px' }}>
+                    <button className="font-['GACCO'] inline-flex items-center justify-center font-normal uppercase tracking-wide transition-all duration-300 transform active:scale-95 bg-[#C8FF80] text-black hover:bg-black hover:text-[#C8FF80] hover:border-[#C8FF80] border border-transparent rounded-sm shadow-[0_0_20px_rgba(200,255,128,0.4)]" style={{ width: '207px', height: '54px', fontSize: '16px' }}>
                         View the Solution
                     </button>
                 </div>
@@ -565,7 +565,7 @@ const NewHome = () => {
             {/* ═══════════════════ ECOSYSTEM ═══════════════════ */}
             {/* ═══════════════════ ECOSYSTEM ═══════════════════ */}
             {/* ═══════════════════ ECOSYSTEM (DESKTOP) ═══════════════════ */}
-            <section id="ecosystem" className="hidden md:block bg-black relative mx-auto overflow-hidden w-full max-w-[1440px]" style={{ height: '864px' }}>
+            <section id="ecosystem" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '864px' }}>
                 {/* Background Glow (Optional - kept for ambience) */}
                 <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
                     <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full object-cover opacity-60" />
@@ -691,9 +691,8 @@ const NewHome = () => {
             {/* ═══════════════════ CREDITS & TOKEN SYSTEM (DESKTOP) ═══════════════════ */}
             <section
                 id="credits-token"
-                className="hidden md:block text-white relative mx-auto overflow-hidden"
+                className="hidden md:block text-white relative overflow-hidden w-full"
                 style={{
-                    width: '1440px',
                     height: '1062px',
                     background: '#000000',
                 }}
@@ -1013,7 +1012,7 @@ const NewHome = () => {
             {/* ═══════════════════ TOKENOMICS & UTILITY ═══════════════════ */}
             {/* ═══════════════════ TOKENOMICS & UTILITY ═══════════════════ */}
             {/* ═══════════════════ TOKENOMICS & UTILITY (DESKTOP) ═══════════════════ */}
-            <section id="tokenomics" className="hidden md:block bg-black relative mx-auto overflow-hidden" style={{ width: '1441px', height: '1283px' }}>
+            <section id="tokenomics" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '1283px' }}>
 
                 {/* Headline */}
                 <div className="absolute z-20" style={{ top: '103px', left: '76px' }}>
@@ -1183,7 +1182,7 @@ const NewHome = () => {
             {/* ═══════════════════ TOKEN DISTRIBUTION ═══════════════════ */}
             {/* ═══════════════════ TOKEN DISTRIBUTION ═══════════════════ */}
             {/* ═══════════════════ TOKEN DISTRIBUTION (DESKTOP) ═══════════════════ */}
-            <section id="distribution" className="hidden md:block bg-black relative mx-auto overflow-hidden" style={{ width: '1447px', height: '1009px' }}>
+            <section id="distribution" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '1009px' }}>
 
                 {/* Header */}
                 <div className="absolute" style={{ top: '133px', left: '79px', width: '520px', height: 'auto' }}>
@@ -1397,7 +1396,7 @@ const NewHome = () => {
             {/* ═══════════════════ ROADMAP ═══════════════════ */}
             {/* ═══════════════════ ROADMAP ═══════════════════ */}
             {/* ═══════════════════ ROADMAP (DESKTOP) ═══════════════════ */}
-            <section id="roadmap" className="hidden md:block relative mx-auto overflow-hidden bg-[#F5F5F0]" style={{ width: '1441px', height: '800px' }}>
+            <section id="roadmap" className="hidden md:block relative overflow-hidden bg-[#F5F5F0] w-full" style={{ height: '800px' }}>
 
                 {/* Header: PRODUCT ROADMAP */}
                 <div className="absolute" style={{ top: '120px', left: '80px', width: '520px', height: 'auto' }}>
@@ -1496,7 +1495,7 @@ const NewHome = () => {
             {/* ═══════════════════ COMMUNITY ═══════════════════ */}
             {/* ═══════════════════ COMMUNITY ═══════════════════ */}
             {/* ═══════════════════ COMMUNITY (DESKTOP) ═══════════════════ */}
-            <section id="community" className="hidden md:block bg-black relative mx-auto overflow-hidden" style={{ width: '1441px', height: '775px' }}>
+            <section id="community" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '775px' }}>
 
                 {/* Header */}
                 <div className="absolute" style={{ top: '56px', left: '73.5px', width: '549px', height: '84px' }}>
