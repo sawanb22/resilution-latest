@@ -120,19 +120,36 @@ input::-webkit-inner-spin-button{
 
 /* ══════ Premium Card Hover Effects ══════ */
 
-/* Light cards: subtle green tint + lift + green glow shadow */
+/* Light cards: dark gradient hover matching Credits card style */
 .card-hover-light {
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
 }
 .card-hover-light:hover {
   transform: translateY(-6px);
-  background: linear-gradient(135deg, #f5fff0 0%, #edfce3 50%, #f8fff4 100%);
-  box-shadow:
-    0 20px 50px rgba(200, 255, 128, 0.12),
-    0 8px 20px rgba(0, 0, 0, 0.06),
-    0 0 0 1px rgba(200, 255, 128, 0.15);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(160deg, rgba(20, 31, 10, 0.95) 0%, rgba(12, 20, 7, 0.95) 30%, rgba(10, 18, 5, 0.95) 60%, rgba(13, 22, 8, 0.95) 100%) !important;
+  border-color: rgba(200, 255, 128, 0.25) !important;
+  box-shadow: 0 0 30px rgba(200, 255, 128, 0.08);
+  color: rgba(255, 255, 255, 0.85) !important;
+  border-radius: 16px;
+}
+.card-hover-light:hover h3,
+.card-hover-light:hover h4,
+.card-hover-light:hover .font-bold {
+  color: #fff !important;
+}
+.card-hover-light:hover p,
+.card-hover-light:hover li,
+.card-hover-light:hover ul,
+.card-hover-light:hover span {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.card-hover-light:hover img {
+  filter: brightness(0) invert(1);
+}
+.card-hover-light:hover button {
+  background: #C8FF80 !important;
+  color: #000 !important;
 }
 
 /* Dark cards: green border glow + subtle lift */

@@ -177,3 +177,13 @@
 .animate-subtle-bounce-delayed {
     animation: subtle-bounce 5s ease-in-out infinite 1s;
 }
+
+.card-dark-hover {
+    transition: all 0.5s ease;
+}
+
+.card-dark-hover:hover {
+    background: linear-gradient(160deg, rgba(20, 31, 10, 0.95) 0%, rgba(12, 20, 7, 0.95) 30%, rgba(10, 18, 5, 0.95) 60%, rgba(13, 22, 8, 0.95) 100%) !important;
+    border-color: rgba(200, 255, 128, 0.25) !important;
+    box-shadow: 0 0 30px rgba(200, 255, 128, 0.08);
+}

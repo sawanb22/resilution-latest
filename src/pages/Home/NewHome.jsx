@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Spline from '@splinetool/react-spline';
 import { NewNavbar } from './NewNavbar';
 import { Footer } from '../../Component/Common/Footer';
 import style from "./home.module.css";
@@ -12,6 +13,25 @@ const NewHome = () => {
     const [openIndex, setOpenIndex] = useState(0);
     const toggleFaq = (index) => setOpenIndex(openIndex === index ? null : index);
     const [hoveredSlice, setHoveredSlice] = useState(null);
+    const splineDesktopRef = useRef(null);
+    const splineMobileRef = useRef(null);
+
+    // Allow scroll wheel to pass through Spline canvas
+    useEffect(() => {
+        const blockWheel = (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            window.scrollBy({ top: e.deltaY, behavior: 'auto' });
+        };
+        const dRef = splineDesktopRef.current;
+        const mRef = splineMobileRef.current;
+        if (dRef) dRef.addEventListener('wheel', blockWheel, { capture: true, passive: false });
+        if (mRef) mRef.addEventListener('wheel', blockWheel, { capture: true, passive: false });
+        return () => {
+            if (dRef) dRef.removeEventListener('wheel', blockWheel, { capture: true });
+            if (mRef) mRef.removeEventListener('wheel', blockWheel, { capture: true });
+        };
+    }, []);
 
     // ── Data ──────────────────────────────────────────────────
     const shortfalls = [
@@ -151,8 +171,8 @@ const NewHome = () => {
                             </div>
 
                             {/* CENTER: Giant R Logo (Absolute Center Bottom) */}
-                            <div className={`absolute left-1/2 bottom-0 -translate-x-1/2 z-10 flex items-end justify-center pointer-events-none ${style['animate-subtle-bounce']}`} style={{ width: '418px', height: '448px' }}>
-                                <img src="/homepage_assets/hero_r_3d.svg" alt="Resilution R" className="w-full h-full object-contain" />
+                            <div className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center justify-center overflow-hidden" style={{ width: '800px', height: '800px', bottom: '-180px' }}>
+                                <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                             </div>
 
                             {/* RIGHT: Transparency Card */}
@@ -205,8 +225,8 @@ const NewHome = () => {
                     </button>
 
                     {/* Giant R Logo */}
-                    <div className="w-64 h-64 mb-12 relative">
-                        <img src="/homepage_assets/hero_r_3d.svg" alt="Resilution R" className={`w-full h-full object-contain drop-shadow-[0_0_30px_rgba(200,255,128,0.2)] ${style['animate-subtle-bounce']}`} />
+                    <div className="w-64 h-64 mb-12 relative overflow-hidden">
+                        <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                     </div>
 
                     {/* Progress Dots */}
@@ -250,15 +270,15 @@ const NewHome = () => {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 justify-center w-full max-w-6xl px-4">
                         {shortfalls.map((item, index) => (
-                            <div key={index} data-aos={index === 0 ? 'fade-right' : index === 1 ? 'fade-up' : 'fade-left'} data-aos-delay={index * 100} className={`bg-[#EAEAEA] border border-transparent flex flex-col items-start text-left shadow-lg group p-8 card-hover-light rounded-sm w-full min-h-[250px] relative overflow-hidden`} >
+                            <div key={index} data-aos={index === 0 ? 'fade-right' : index === 1 ? 'fade-up' : 'fade-left'} data-aos-delay={index * 100} className={`bg-[#EAEAEA] border border-transparent flex flex-col items-start text-left shadow-lg group p-8 rounded-[16px] w-full min-h-[250px] relative overflow-hidden ${style['card-dark-hover']}`} >
                                 <div className="absolute top-0 left-0 w-1 h-0 bg-[#C8FF80] transition-all duration-300 group-hover:h-full"></div>
                                 <div className="w-full flex justify-between items-start mb-6">
-                                    <div className="w-12 h-12 flex items-center justify-center bg-[#C4A4A4] rounded-sm transition-colors group-hover:bg-[#C8FF80]">
-                                        <img src="/homepage_assets/icon_cross.svg" alt="Error" className="w-6 h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                                    <div className="w-12 h-12 flex items-center justify-center bg-[#C4A4A4] rounded-full transition-all duration-500 group-hover:bg-[rgba(200,255,128,0.12)] group-hover:border group-hover:border-[rgba(200,255,128,0.25)]">
+                                        <img src="/homepage_assets/icon_cross.svg" alt="Error" className="w-6 h-6 object-contain opacity-80 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all duration-500" />
                                     </div>
                                 </div>
-                                <h3 className="font-['GACCO'] text-xl font-normal uppercase mb-4 tracking-wide leading-tight text-black transition-colors group-hover:text-black">{item.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed font-light transition-colors group-hover:text-gray-800">{item.description}</p>
+                                <h3 className="font-['GACCO'] text-xl font-normal uppercase mb-4 tracking-wide leading-tight text-black transition-colors duration-500 group-hover:text-white">{item.title}</h3>
+                                <p className="text-gray-600 text-sm leading-relaxed font-light transition-colors duration-500 group-hover:text-[rgba(255,255,255,0.7)]">{item.description}</p>
                             </div>
                         ))}
                     </div>
