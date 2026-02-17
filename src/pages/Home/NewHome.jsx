@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NewNavbar } from './NewNavbar';
+import { Footer } from '../../Component/Common/Footer';
 import style from "./home.module.css";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -244,16 +245,17 @@ const NewHome = () => {
                     <p className="text-white mb-20 font-light tracking-wide text-center flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[960px]" style={{ fontSize: '18px', minHeight: '18px' }}>
                         Traditional financial markets rely on intermediaries and delayed reporting, making funding difficult for businesses and risky for investors.
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 justify-center w-full max-w-6xl">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 justify-center w-full max-w-6xl px-4">
                         {shortfalls.map((item, index) => (
-                            <div key={index} className={`bg-[#EAEAEA] border border-transparent flex flex-col items-start text-left shadow-lg transition-all duration-300 group p-6 ease-out ${style['animate-shake-hover']}`} style={{ width: '420px', height: '230px' }}>
-                                <div className="w-full flex justify-between items-start mb-4">
-                                    <div className="w-10 h-10 flex items-center justify-center bg-[#C4A4A4] rounded-sm transition-colors">
-                                        <img src="/homepage_assets/icon_cross.svg" alt="Error" className="w-5 h-5 object-contain opacity-80" />
+                            <div key={index} className={`bg-[#EAEAEA] border border-transparent flex flex-col items-start text-left shadow-lg transition-all duration-300 group p-8 ease-out hover:-translate-y-2 hover:shadow-2xl hover:bg-white cursor-pointer rounded-sm w-full min-h-[250px] relative overflow-hidden transform hover:scale-[1.02]`} >
+                                <div className="absolute top-0 left-0 w-1 h-0 bg-[#C8FF80] transition-all duration-300 group-hover:h-full"></div>
+                                <div className="w-full flex justify-between items-start mb-6">
+                                    <div className="w-12 h-12 flex items-center justify-center bg-[#C4A4A4] rounded-sm transition-colors group-hover:bg-[#C8FF80]">
+                                        <img src="/homepage_assets/icon_cross.svg" alt="Error" className="w-6 h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-normal uppercase mb-3 tracking-wide leading-tight text-black transition-colors">{item.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed font-light transition-colors">{item.description}</p>
+                                <h3 className="text-xl font-normal uppercase mb-4 tracking-wide leading-tight text-black transition-colors group-hover:text-black">{item.title}</h3>
+                                <p className="text-gray-600 text-sm leading-relaxed font-light transition-colors group-hover:text-gray-800">{item.description}</p>
                             </div>
                         ))}
                     </div>
@@ -1303,7 +1305,7 @@ const NewHome = () => {
                 {/* Community Label */}
                 <div
                     className="absolute text-left cursor-pointer group"
-                    style={{ top: '390px', left: '900px', width: '450px' }}
+                    style={{ top: '390px', left: '940px', width: '450px' }}
                     onMouseEnter={() => setHoveredSlice(1)}
                     onMouseLeave={() => setHoveredSlice(null)}
                 >
@@ -1628,49 +1630,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ FOOTER ═══════════════════ */}
-            {/* ═══════════════════ CUSTOM FOOTER FOR NEW HOME ═══════════════════ */}
-            <footer className="bg-black text-white border-t border-white/10">
-                <div className="max-w-[1440px] mx-auto px-6 md:px-16 py-12">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-                        {/* Logo and Copyright */}
-                        <div className="flex flex-col gap-4">
-                            <img
-                                src="/homepage_assets/resilution heading.svg"
-                                alt="RESILUTION"
-                                className="h-6 md:h-8 object-contain"
-                            />
-                            <p className="text-gray-400 text-sm">
-                                All rights are reserved @2025
-                            </p>
-                        </div>
-
-                        {/* Social Links */}
-                        <div className="flex gap-4 items-center">
-                            <a href="https://www.instagram.com/mattresil" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                                <img src="/icons/instagram.svg" width="22" height="22" alt="Instagram" />
-                            </a>
-                            <a href="https://www.facebook.com/Resilutionforthefuture" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                                <img src="/icons/facebook.svg" width="22" height="22" alt="Facebook" />
-                            </a>
-                            <a href="https://www.youtube.com/@Resilblockchain" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                                <img src="/icons/youtube.svg" width="22" height="22" alt="YouTube" />
-                            </a>
-                            <a href="https://t.me/Resilution" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                                <img src="/icons/telegram.svg" width="22" height="22" alt="Telegram" />
-                            </a>
-                            <a href="https://discord.com/invite/KG5WKCnkWW" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                                <img src="/icons/discode.svg" width="22" height="22" alt="Discord" />
-                            </a>
-                            <a href="https://www.reddit.com/r/ResilutionCommunity" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                                <img src="/icons/reddit.svg" width="26" height="26" alt="Reddit" />
-                            </a>
-                            <a href="https://x.com/Resilblockchain" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                                <img src="/icons/twiter.svg" width="22" height="22" alt="Twitter/X" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
 
         </div >
     );

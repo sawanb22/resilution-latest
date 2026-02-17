@@ -61,7 +61,7 @@ export const Footer = () => {
           <Link to="/">
             <img src="/logo.svg" alt="" />
           </Link>
-          <p className="max-sm:hidden text-(--light) opacity-60 my-5">
+          <p className="font-['arial'] max-sm:hidden text-(--light) opacity-60 my-5">
             All rights are reserved @2025
           </p>
 
@@ -138,19 +138,19 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col gap-7 max-sm:mt-7">
-          <p className="text-center text-(--light) text-[22px]">
+          <p className="font-['GACCO'] text-center text-(--light) text-[22px]">
             Subscribe to our newsletter
           </p>
           <form>
             <input
               type="email"
               id="email"
-              className="block bg-(--light) py-3 px-4 outline-none rounded text-(--dark) w-[100%] sm:min-w-[310px]"
+              className="font-['arial'] block bg-(--light) py-3 px-4 outline-none rounded text-(--dark) w-[100%] sm:min-w-[310px]"
               placeholder="Enter Email Address"
               required
             />
             <button
-              className="w-[100%] py-3 text-xl bg-(--savegreen) mt-3 rounded"
+              className="font-['GACCO'] w-[100%] py-3 text-xl bg-(--savegreen) mt-3 rounded"
               type="submit"
               onClick={handleSubmit}
             >
@@ -165,7 +165,7 @@ export const Footer = () => {
           </a> */}
         </div>
       </div>
-      <p className="text-(--light) opacity-60 text-center sm:hidden pb-2">
+      <p className="font-['arial'] text-(--light) opacity-60 text-center sm:hidden pb-2">
         All rights are reserved @2025
       </p>
     </footer>
