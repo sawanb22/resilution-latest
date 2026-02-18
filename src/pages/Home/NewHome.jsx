@@ -345,31 +345,35 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ TRADITIONAL SHORTFALLS (MOBILE) ═══════════════════ */}
-            <section id="why-mobile" className="block md:hidden relative w-full py-16 px-6 bg-black text-center">
-                <h2 className="font-['GACCO'] text-[15px] font-normal uppercase text-[#C8FF80] mb-6 tracking-wide text-center leading-[130%]">
-                    WHY TRADITIONAL INVESTMENT SYSTEMS FAIL
+            <section id="why-mobile" className="block md:hidden relative w-full py-20 px-6 bg-black text-center">
+                <h2 className="font-['GACCO'] text-[15px] font-medium uppercase text-[#C8FF80] mb-6 tracking-wide text-center leading-[1.2]">
+                    WHY TRADITIONAL <br /> INVESTMENT SYSTEMS FAIL
                 </h2>
                 <div className="w-16 h-1 bg-[#C8FF80] mb-12 rounded-full mx-auto"></div>
 
-                <div className="flex flex-col gap-6 mb-12">
+                <div className="flex flex-col gap-4 mb-12">
                     {shortfalls.map((item, index) => (
-                        <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-[#EAEAEA] shadow-lg p-8 rounded-sm text-left flex flex-col items-start">
-                            <div className="w-10 h-10 flex items-center justify-center bg-[#C4A4A4] rounded-sm mb-6">
-                                <img src="/homepage_assets/icon_cross.svg" alt="Cross Icon" className="w-5 h-5 opacity-80" />
+                        <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-[#EAEAEA] shadow-lg px-5 py-8 rounded-sm text-left flex gap-4 items-start">
+                            <div className="w-6 h-6 flex items-center justify-center bg-[#C4A4A4] rounded-sm shrink-0 mt-0.5">
+                                <img src="/homepage_assets/icon_cross.svg" alt="Cross Icon" className="w-3 h-3 opacity-80" />
                             </div>
-                            <h3 className="font-['GACCO'] text-[15px] font-bold uppercase mb-4 text-black tracking-wide leading-tight">
-                                {item.title}
-                            </h3>
-                            <p className="text-gray-600 text-[15px] leading-relaxed font-light">
-                                {item.description}
-                            </p>
+                            <div className="flex flex-col gap-2">
+                                <h3 className="font-['GACCO'] text-[10px] font-bold uppercase text-black tracking-wide leading-tight">
+                                    {item.title}
+                                </h3>
+                                <p className="font-['arial'] text-black text-[14px] leading-snug font-normal pr-2">
+                                    {item.description}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
 
-                <button className="font-['GACCO'] bg-[#C8FF80] text-black font-medium text-[13px] px-8 py-4 rounded-sm hover:bg-[#b5e660] transition-colors whitespace-nowrap">
-                    View the Solution
-                </button>
+                <div className="flex justify-center">
+                    <button className="font-['GACCO'] bg-[#C8FF80] text-black font-medium text-[12px] px-8 py-2.5 rounded-sm hover:bg-[#b5e660] transition-colors whitespace-nowrap uppercase tracking-wider">
+                        View The Solution
+                    </button>
+                </div>
             </section>
 
             {/* ═══════════════════ RESILUTION ENGINE ═══════════════════ */}
