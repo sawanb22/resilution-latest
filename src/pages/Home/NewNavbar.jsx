@@ -74,12 +74,12 @@ export const NewNavbar = () => {
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="text-white text-xl font-medium uppercase tracking-wide border-b border-white/10 pb-4"
+                                className="text-white text-[16px] font-medium uppercase tracking-wide border-b border-white/10 pb-4"
                             >
                                 {link.name}
                             </a>
                         ))}
-                        <button className="bg-[#C8FF80] text-black w-full py-4 mt-4 rounded-sm font-bold uppercase text-sm tracking-wider">
+                        <button className="bg-[#C8FF80] text-black w-full py-4 mt-4 rounded-sm font-bold uppercase text-[13px] tracking-wider">
                             Get Started
                         </button>
                     </div>
