@@ -20,6 +20,10 @@ const NewHome = () => {
     const [currentTokenCard, setCurrentTokenCard] = useState(0);
     const tokenomicsScrollRef = useRef(null);
 
+    // Carousel state for mobile how it works
+    const [currentHowStep, setCurrentHowStep] = useState(0);
+    const howWorksScrollRef = useRef(null);
+
     const handleTokenScroll = (e) => {
         const scrollLeft = e.target.scrollLeft;
         const width = e.target.offsetWidth;
@@ -36,22 +40,23 @@ const NewHome = () => {
         tokenomicsScrollRef.current.scrollTo({ left: targetScroll, behavior: 'smooth' });
     };
 
-    // Allow scroll wheel to pass through Spline canvas
-    useEffect(() => {
-        const blockWheel = (e) => {
-            e.stopPropagation();
-            e.preventDefault();
-            window.scrollBy({ top: e.deltaY, behavior: 'auto' });
-        };
-        const dRef = splineDesktopRef.current;
-        const mRef = splineMobileRef.current;
-        if (dRef) dRef.addEventListener('wheel', blockWheel, { capture: true, passive: false });
-        if (mRef) mRef.addEventListener('wheel', blockWheel, { capture: true, passive: false });
-        return () => {
-            if (dRef) dRef.removeEventListener('wheel', blockWheel, { capture: true });
-            if (mRef) mRef.removeEventListener('wheel', blockWheel, { capture: true });
-        };
-    }, []);
+    const handleHowScroll = (e) => {
+        const scrollLeft = e.target.scrollLeft;
+        const width = e.target.offsetWidth;
+        const newIndex = Math.round(scrollLeft / width);
+        if (newIndex !== currentHowStep) setCurrentHowStep(newIndex);
+    };
+
+    const scrollHowWorks = (direction) => {
+        if (!howWorksScrollRef.current) return;
+        const width = howWorksScrollRef.current.offsetWidth;
+        const targetScroll = direction === 'left'
+            ? howWorksScrollRef.current.scrollLeft - width
+            : howWorksScrollRef.current.scrollLeft + width;
+        howWorksScrollRef.current.scrollTo({ left: targetScroll, behavior: 'smooth' });
+    };
+
+
 
     // ── Data ──────────────────────────────────────────────────
     const shortfalls = [
@@ -166,9 +171,20 @@ const NewHome = () => {
 
                         {/* GET STARTED BUTTON */}
                         <div className="mb-4 z-20">
-                            <button className="flex items-center gap-3 px-8 py-2.5 border border-white/40 rounded-full text-white hover:border-[#C8FF80] hover:text-[#C8FF80] transition-all bg-black/50 backdrop-blur-sm group">
-                                <span className="font-['GACCO'] text-lg font-light tracking-wide">Get Started</span>
-                                <svg className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+                            <button
+                                className="flex items-center justify-center gap-4 text-white transition-all hover:text-[#C8FF80] group shadow-2xl"
+                                style={{
+                                    width: '341px',
+                                    height: '68px',
+                                    border: '1px solid rgba(217, 217, 217, 0.4)',
+                                    background: 'rgba(255, 255, 255, 0.04)',
+                                    backdropFilter: 'blur(20px)',
+                                    WebkitBackdropFilter: 'blur(20px)',
+                                    borderRadius: '12px'
+                                }}
+                            >
+                                <span className="font-['arial'] text-[20px] font-normal tracking-wide">Get Started</span>
+                                <svg className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" /></svg>
                             </button>
                         </div>
 
@@ -191,12 +207,12 @@ const NewHome = () => {
                             </div>
 
                             {/* CENTER: Giant R Logo (Absolute Center Bottom) */}
-                            <div className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center justify-center overflow-hidden" style={{ width: '800px', height: '800px', bottom: '-180px' }}>
+                            <div className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: '800px', height: '800px', bottom: '-180px' }}>
                                 <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                             </div>
 
                             {/* RIGHT: Transparency Card */}
-                            <div className="w-full max-w-[300px] mb-20 z-20 relative">
+                            <div className="w-full max-w-[300px] mb-10 z-20 relative">
                                 <div className="border border-[#C8FF80]/50 bg-black/80 backdrop-blur-md p-6 rounded-[24px] relative">
                                     {/* Floating Crystal Cube */}
                                     <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-40 h-40">
@@ -218,7 +234,7 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ HERO SECTION (MOBILE) ═══════════════════ */}
-            <section id="hero-mobile" className="block md:hidden relative w-full bg-black text-left pt-8 pb-16 px-4 overflow-hidden">
+            <section id="hero-mobile" className="block md:hidden relative w-full bg-black text-center pt-16 pb-8 px-4 overflow-hidden">
                 {/* Background Waves (Scaled for Mobile) */}
                 <div className="absolute inset-x-0 top-0 h-[500px] pointer-events-none">
                     <img
@@ -227,36 +243,49 @@ const NewHome = () => {
                         className="w-full h-full object-cover opacity-60 mix-blend-overlay"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black"></div>
+
+                    {/* Top Green Glow (Half Circle) */}
+                    <div className="absolute left-1/2 -translate-x-1/2" style={{
+                        top: '-300px',
+                        width: '150%',
+                        height: '850px',
+                        background: 'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(200, 255, 128, 0.18) 0%, rgba(200, 255, 128, 0.08) 40%, transparent 75%)',
+                        filter: 'blur(60px)',
+                    }}></div>
                 </div>
 
-                <div className="relative z-10 flex flex-col items-start px-2">
+                <div className="relative z-10 flex flex-col items-center px-2">
                     {/* Top Headline */}
-                    <h1 className="font-['GACCO'] font-medium uppercase tracking-widest leading-tight text-[#C8FF80] text-[24px] mb-2">
-                        FINANCIAL FREEDOM
-                    </h1>
-                    <p className="font-['arial'] text-white text-[13px] font-light mb-8">
-                        THROUGH TRANSPARENT BLOCKCHAIN INVESTMENT
-                    </p>
+                    <div className="w-full flex flex-col items-center">
+                        <h1 className="font-['GACCO'] font-medium uppercase tracking-widest leading-tight text-[#C8FF80] text-[20px] mb-2 text-center whitespace-nowrap">
+                            FINANCIAL FREEDOM
+                        </h1>
+                        <p className="font-['arial'] text-white text-[13px] font-light mb-8 text-center uppercase tracking-wider whitespace-nowrap">
+                            THROUGH TRANSPARENT BLOCKCHAIN INVESTMENT
+                        </p>
+                    </div>
 
                     {/* Get Started Button */}
-                    <button className="flex items-center gap-2 px-6 py-2 border border-white/40 rounded-full text-white hover:border-[#C8FF80] hover:text-[#C8FF80] transition-colors bg-black/30 backdrop-blur-sm mb-12">
-                        <span className="font-['GACCO'] text-sm font-light tracking-wide">Get Started</span>
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+                    <button className="flex items-center gap-3 px-8 py-3 border border-white/50 rounded-[8px] text-white hover:border-[#C8FF80] hover:text-[#C8FF80] transition-colors bg-black/30 backdrop-blur-sm mb-4">
+                        <span className="font-['arial'] text-[16px] font-normal tracking-wide">Get Started</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" /></svg>
                     </button>
 
                     {/* Giant R Logo */}
-                    <div className="w-64 h-64 mb-12 relative overflow-hidden">
+                    <div className="w-[450px] h-[450px] mb-0 relative overflow-hidden flex justify-center -mt-16 scale-110 pointer-events-none -translate-x-4">
                         <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                     </div>
+                </div>
 
+                <div className="relative z-10 flex flex-col items-start px-4">
                     {/* Progress Dots */}
-                    <div className="flex gap-2 mb-6 justify-center">
+                    <div className="flex gap-2 mb-6 justify-start">
                         <div className="w-12 h-1.5 bg-[#C8FF80] rounded-full"></div>
                         <div className="w-3 h-1.5 bg-[#C8FF80] rounded-full"></div>
                     </div>
 
                     {/* Intro Text */}
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6 font-light max-w-xs mx-auto">
+                    <p className="text-gray-300 text-[15px] leading-relaxed mb-6 font-light max-w-xs text-left">
                         Resilution is a blockchain-powered investment platform that connects businesses and investors through real-time transparency, verified funding proposals, and automated revenue sharing.
                     </p>
 
@@ -288,17 +317,24 @@ const NewHome = () => {
                     <p className="text-white mb-20 font-light tracking-wide text-center flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[960px]" style={{ fontSize: '18px', minHeight: '18px' }}>
                         Traditional financial markets rely on intermediaries and delayed reporting, making funding difficult for businesses and risky for investors.
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 justify-center w-full max-w-6xl px-4">
+                    <div className="flex flex-wrap gap-8 mb-20 justify-center w-full max-w-full px-4">
                         {shortfalls.map((item, index) => (
-                            <div key={index} data-aos={index === 0 ? 'fade-right' : index === 1 ? 'fade-up' : 'fade-left'} data-aos-delay={index * 100} className={`bg-[#EAEAEA] border border-transparent flex flex-col items-start text-left shadow-lg group p-8 rounded-[16px] w-full min-h-[250px] relative overflow-hidden ${style['card-dark-hover']}`} >
+                            <div key={index} data-aos={index === 0 ? 'fade-right' : index === 1 ? 'fade-up' : 'fade-left'} data-aos-delay={index * 100}
+                                className={`bg-[#EAEAEA] border border-transparent flex flex-col items-start text-left shadow-lg group p-10 rounded-sm relative overflow-hidden ${style['card-dark-hover']}`}
+                                style={{ width: '420px', height: '230px' }}
+                            >
                                 <div className="absolute top-0 left-0 w-1 h-0 bg-[#C8FF80] transition-all duration-300 group-hover:h-full"></div>
-                                <div className="w-full flex justify-between items-start mb-6">
-                                    <div className="w-12 h-12 flex items-center justify-center bg-[#C4A4A4] rounded-full transition-all duration-500 group-hover:bg-[rgba(200,255,128,0.12)] group-hover:border group-hover:border-[rgba(200,255,128,0.25)]">
-                                        <img src="/homepage_assets/icon_cross.svg" alt="Error" className="w-6 h-6 object-contain opacity-80 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all duration-500" />
+                                <div className="flex items-center gap-5 mb-6">
+                                    <div className="w-10 h-10 flex items-center justify-center bg-[#C4A4A4]/40 rounded-sm transition-all duration-500 group-hover:bg-[rgba(200,255,128,0.12)]">
+                                        <img src="/homepage_assets/icon_cross.svg" alt="Error" className="w-5 h-5 object-contain opacity-80 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all duration-500" />
                                     </div>
+                                    <h3 className="font-['GACCO'] text-[18px] font-bold uppercase tracking-wide leading-tight text-black transition-colors duration-500 group-hover:text-white">
+                                        {item.title}
+                                    </h3>
                                 </div>
-                                <h3 className="font-['GACCO'] text-xl font-normal uppercase mb-4 tracking-wide leading-tight text-black transition-colors duration-500 group-hover:text-white">{item.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed font-light transition-colors duration-500 group-hover:text-[rgba(255,255,255,0.7)]">{item.description}</p>
+                                <p className="text-gray-600 text-[14px] leading-relaxed font-light transition-colors duration-500 group-hover:text-[rgba(255,255,255,0.7)] pr-4">
+                                    {item.description}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -309,11 +345,11 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ TRADITIONAL SHORTFALLS (MOBILE) ═══════════════════ */}
-            <section id="why-mobile" className="block md:hidden relative w-full py-16 px-6 bg-black text-left">
-                <h2 className="font-['GACCO'] text-[16px] font-normal uppercase text-[#C8FF80] mb-6 tracking-wide text-left leading-tight">
-                    WHY TRADITIONAL <br /> INVESTMENT SYSTEMS FAIL
+            <section id="why-mobile" className="block md:hidden relative w-full py-16 px-6 bg-black text-center">
+                <h2 className="font-['GACCO'] text-[15px] font-normal uppercase text-[#C8FF80] mb-6 tracking-wide text-center leading-[130%]">
+                    WHY TRADITIONAL INVESTMENT SYSTEMS FAIL
                 </h2>
-                <div className="w-16 h-1 bg-[#C8FF80] mb-12 rounded-full"></div>
+                <div className="w-16 h-1 bg-[#C8FF80] mb-12 rounded-full mx-auto"></div>
 
                 <div className="flex flex-col gap-6 mb-12">
                     {shortfalls.map((item, index) => (
@@ -321,10 +357,10 @@ const NewHome = () => {
                             <div className="w-10 h-10 flex items-center justify-center bg-[#C4A4A4] rounded-sm mb-6">
                                 <img src="/homepage_assets/icon_cross.svg" alt="Cross Icon" className="w-5 h-5 opacity-80" />
                             </div>
-                            <h3 className="font-['GACCO'] text-[16px] font-bold uppercase mb-4 text-black tracking-wide leading-tight">
+                            <h3 className="font-['GACCO'] text-[15px] font-bold uppercase mb-4 text-black tracking-wide leading-tight">
                                 {item.title}
                             </h3>
-                            <p className="text-gray-600 text-[13px] leading-relaxed font-light">
+                            <p className="text-gray-600 text-[15px] leading-relaxed font-light">
                                 {item.description}
                             </p>
                         </div>
@@ -380,32 +416,36 @@ const NewHome = () => {
 
             {/* ═══════════════════ RESILUTION ENGINE (MOBILE) ═══════════════════ */}
             <section id="engine-mobile" className="block md:hidden bg-black py-16 px-6 text-white w-full">
-                <h2 className="font-['GACCO'] text-[16px] font-medium uppercase tracking-wide leading-relaxed mb-6">
-                    THE <span className="bg-[#C8FF80] text-black px-2 py-0.5 font-medium inline-block">RESILUTION</span><br />ENGINE
+                <h2 className="font-['GACCO'] text-[15px] font-medium uppercase tracking-wide leading-relaxed mb-6">
+                    THE <span className="bg-[#C8FF80] text-black px-2 py-0.5 font-medium inline-block">RESILUTION</span> ENGINE
                 </h2>
-                <p className="text-gray-300 text-[13px] font-light text-left mb-12 leading-relaxed">
+                <p className="text-gray-300 text-[15px] font-light text-left mb-12 leading-relaxed">
                     Resilution replaces traditional investment barriers with blockchain-powered transparency, automation, and trust.
                 </p>
 
                 {/* Golden City Background Layer */}
-                <div className="relative w-full rounded-[24px] overflow-hidden min-h-[500px] flex flex-col p-6 shadow-2xl">
+                <div className="relative w-full rounded-[8px] overflow-hidden min-h-[600px] flex flex-col p-4 shadow-2xl justify-center items-center">
                     <img src="/homepage_assets/engine_bg.jpg" alt="Engine Background" className="absolute inset-0 w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
-                    <div className="relative z-10 flex flex-col h-full mt-auto">
-                        <h3 className="font-['GACCO'] text-[24px] font-bold uppercase mb-4 leading-tight tracking-wide text-white">A SMARTER WAY TO INVEST AND GROW</h3>
-                        <p className="text-gray-200 text-[13px] mb-8 font-light leading-relaxed">Resilution connects businesses and investors through verified proposals, real-time performance tracking, and automated revenue sharing.</p>
-                        <button className="font-['GACCO'] bg-[#C8FF80] text-black w-full py-4 font-bold rounded-sm uppercase tracking-wide text-[13px] mb-10 shadow-lg">Explore the Platform</button>
+                    {/* Main Glass Content Card */}
+                    <div className="relative z-10 w-full bg-white/5 backdrop-blur-xl border border-white/20 rounded-[9px] p-6 lg:p-10 flex flex-col items-center text-center shadow-2xl">
+                        <h3 className="font-['GACCO'] text-[15px] font-bold uppercase mb-4 leading-tight tracking-wide text-white">A SMARTER WAY TO INVEST AND GROW</h3>
+                        <p className="text-gray-200 text-[13px] mb-8 font-light leading-relaxed max-w-[280px]">Resilution connects businesses and investors through verified proposals, real-time performance tracking, and automated revenue sharing.</p>
 
-                        <div className="flex flex-col gap-4">
+                        <button className="font-['GACCO'] bg-[#C8FF80] text-black w-full max-w-[240px] py-3.5 font-bold rounded-sm uppercase tracking-wide text-[13px] mb-10 shadow-lg">
+                            Explore the Platform
+                        </button>
+
+                        <div className="flex flex-col gap-4 w-full">
                             {engineFeatures.map((feature, index) => (
-                                <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl flex items-start gap-4 card-hover-dark">
+                                <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl flex items-start gap-4 card-hover-dark text-left">
                                     <div className="bg-[#C8FF80] rounded-sm w-7 h-7 flex-shrink-0 flex justify-center items-center mt-0.5">
                                         <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                                     </div>
-                                    <div>
-                                        <h4 className="font-['GACCO'] text-white text-[16px] font-bold mb-2 tracking-wide">{feature.title}</h4>
-                                        <p className="text-gray-300 text-[13px] font-light leading-relaxed">{feature.description}</p>
+                                    <div className="flex flex-col items-start">
+                                        <h4 className="font-['GACCO'] text-white text-[11px] font-bold mb-1 tracking-wide">{feature.title}</h4>
+                                        <p className="text-gray-300 text-[10px] font-light leading-relaxed">{feature.description}</p>
                                     </div>
                                 </div>
                             ))}
@@ -454,17 +494,17 @@ const NewHome = () => {
 
             {/* ═══════════════════ BENEFITS (MOBILE) ═══════════════════ */}
             <section id="benefits-mobile" className="block md:hidden bg-white py-16 px-6 text-black relative z-10 w-full text-left">
-                <h2 className="font-['GACCO'] text-[16px] font-light uppercase tracking-wide mb-6 text-left">
-                    BENEFITS FOR <span className="bg-[#C8FF80] px-2 py-0.5 font-medium block mt-1 w-fit">BUSINESSES & INVESTORS</span>
+                <h2 className="font-['GACCO'] text-[15px] font-light uppercase tracking-wide mb-6 text-left">
+                    BENEFITS FOR <span className="bg-[#C8FF80] px-2 py-0.5 font-medium inline-block">BUSINESSES & INVESTORS</span>
                 </h2>
-                <p className="text-gray-600 text-left mb-12 text-[13px] font-light">
+                <p className="text-gray-600 text-left mb-12 text-[15px] font-light leading-relaxed">
                     Resilution creates value for both businesses seeking funding and investors looking for transparent opportunities.
                 </p>
                 <div className="flex flex-col gap-6">
                     <div data-aos="fade-up" className="bg-[#EDE2E2] p-8 rounded-sm text-left card-hover-light">
                         <div className="mb-6 w-12 h-12 ml-0"><img src="/homepage_assets/icon_user.svg" alt="icon_user.svg" className="w-full h-full object-contain" /></div>
-                        <h3 className="font-['GACCO'] text-[16px] font-normal uppercase mb-6 tracking-widest text-left">FOR INVESTORS</h3>
-                        <ul className="text-left text-gray-800 space-y-4 mb-8 font-light text-[13px] leading-relaxed list-disc pl-6">
+                        <h3 className="font-['GACCO'] text-[15px] font-normal uppercase mb-6 tracking-widest text-left">FOR INVESTORS</h3>
+                        <ul className="text-left text-gray-800 space-y-4 mb-8 font-light text-[15px] leading-relaxed list-disc pl-6">
                             <li>Invest in verified businesses with full transparency.</li>
                             <li>Track real-time performance and product data on-chain.</li>
                             <li>Reduce risk through immutable records and smart contracts.</li>
@@ -474,8 +514,8 @@ const NewHome = () => {
                     </div>
                     <div data-aos="fade-up" data-aos-delay="100" className="bg-[#EDE2E2] p-8 rounded-sm text-left card-hover-light">
                         <div className="mb-6 w-12 h-12 ml-0"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
-                        <h3 className="font-['GACCO'] text-[16px] font-normal uppercase mb-6 tracking-widest text-left">FOR BUSINESSES</h3>
-                        <ul className="text-left text-gray-800 space-y-4 mb-8 font-light text-[13px] leading-relaxed list-disc pl-6">
+                        <h3 className="font-['GACCO'] text-[15px] font-normal uppercase mb-6 tracking-widest text-left">FOR BUSINESSES</h3>
+                        <ul className="text-left text-gray-800 space-y-4 mb-8 font-light text-[15px] leading-relaxed list-disc pl-6">
                             <li>Raise capital directly from a global investor community.</li>
                             <li>Gain trust through transparent performance data.</li>
                             <li>Automate revenue sharing with smart contracts.</li>
@@ -515,20 +555,65 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ HOW IT WORKS (MOBILE) ═══════════════════ */}
-            <section id="how-it-works-mobile" className="block md:hidden bg-white py-16 px-6 text-black w-full text-left">
-                <h2 className="font-['GACCO'] text-[16px] font-light uppercase tracking-wide mb-6 text-left">
-                    HOW <span className="bg-[#C8FF80] px-2 py-0.5 font-medium">RESILUTION WORKS</span>
+            <section id="how-it-works-mobile" className="block md:hidden bg-white py-12 px-6 text-black w-full text-left">
+                <h2 className="font-['GACCO'] text-[15px] font-light uppercase tracking-wide mb-6">
+                    HOW <span className="bg-[#C8FF80] px-2 py-0.5 font-medium inline-block">RESILUTION WORKS</span>
                 </h2>
-                <p className="text-gray-600 text-left mb-12 text-[13px] font-light">A simple and transparent process that connects businesses and investors through blockchain technology.</p>
-                <div className="flex flex-col gap-6">
+
+                <div className="flex items-end justify-between mb-8">
+                    <p className="text-gray-600 text-left text-[14px] font-light leading-relaxed max-w-[240px]">
+                        A simple and transparent process that connects businesses and investors through blockchain technology.
+                    </p>
+
+                    {/* Navigation Arrows */}
+                    <div className="flex items-center gap-3">
+                        <button
+                            onClick={() => scrollHowWorks('left')}
+                            className={`transition-opacity ${currentHowStep === 0 ? 'opacity-20 cursor-not-allowed' : 'opacity-100'}`}
+                            disabled={currentHowStep === 0}
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <button
+                            onClick={() => scrollHowWorks('right')}
+                            className={`transition-opacity ${currentHowStep === howItWorksSteps.length - 1 ? 'opacity-20 cursor-not-allowed' : 'opacity-100'}`}
+                            disabled={currentHowStep === howItWorksSteps.length - 1}
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+
+                {/* Carousel Container */}
+                <div
+                    ref={howWorksScrollRef}
+                    onScroll={handleHowScroll}
+                    className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6 pb-4"
+                    style={{
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none',
+                        scrollBehavior: 'smooth'
+                    }}
+                >
+                    <style jsx>{`
+                        div::-webkit-scrollbar { display: none; }
+                    `}</style>
+
                     {howItWorksSteps.map((item, index) => (
-                        <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-[#F8F5F5] p-8 rounded-sm flex flex-col items-start text-left relative card-hover-light">
-                            <span className="absolute top-4 left-4 text-xs text-gray-400 font-medium">{item.step}</span>
-                            <div className="w-16 h-16 rounded-full bg-[#C8FF80] flex justify-center items-center mb-8 mt-6">
-                                <img src={item.icon} alt={`${item.step} icon`} className="w-8 h-8 text-black object-contain" />
+                        <div key={index} className="snap-center shrink-0 w-[280px]">
+                            <div className="bg-[#F8F5F5] p-8 rounded-sm h-[340px] flex flex-col items-start text-left relative card-hover-light border border-gray-100">
+                                <span className="absolute top-4 left-4 text-xs text-gray-400 font-medium font-['Arial']">Step {index + 1}</span>
+                                <div className="relative w-20 h-20 flex justify-center items-center mb-6 mt-4">
+                                    {/* Concentric Rings */}
+                                    <div className="absolute w-20 h-20 rounded-full border border-[#C8FF80]/15"></div>
+                                    <div className="absolute w-16 h-16 rounded-full border border-[#C8FF80]/30"></div>
+                                    <div className="w-10 h-10 rounded-full bg-[#C8FF80] flex justify-center items-center z-10 shadow-sm">
+                                        <img src={item.icon} alt={`${item.step} icon`} className="w-5 h-5 text-black object-contain" />
+                                    </div>
+                                </div>
+                                <h3 className="font-['GACCO'] text-[15px] font-bold uppercase mb-3 tracking-wide text-left">{item.title}</h3>
+                                <p className="text-gray-600 text-[13px] leading-relaxed font-light text-left">{item.description}</p>
                             </div>
-                            <h3 className="font-['GACCO'] text-[16px] font-bold uppercase mb-4 tracking-wide text-left">{item.title}</h3>
-                            <p className="text-gray-600 text-[13px] leading-relaxed font-light text-left">{item.description}</p>
                         </div>
                     ))}
                 </div>
@@ -586,36 +671,47 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ PRODUCT DATA CHAINS (MOBILE) ═══════════════════ */}
-            <section id="product-chains-mobile" className="block md:hidden bg-black w-full py-16 px-6 relative overflow-hidden text-left">
-                {/* Background Decoration - Green Lines Pattern */}
-                <div className="absolute inset-0 opacity-20 pointer-events-none">
-                    <div className="absolute inset-0 bg-[url('/homepage_assets/hero_bg_waves.svg')] bg-cover opacity-30"></div>
+            <section id="product-chains-mobile" className="block md:hidden bg-black w-full py-20 px-6 relative overflow-hidden text-left min-h-[750px] flex flex-col justify-start">
+
+                {/* Background Cubes - Deep Layer (Bigger) */}
+                <div className="absolute z-0 pointer-events-none" style={{
+                    width: '306px',
+                    height: '293px',
+                    bottom: '20px',
+                    left: '194px',
+                }}>
+                    <img src="/homepage_assets/product_chains_cube2.png" alt="Data Chain Cube Back" className="w-full h-full object-contain" />
                 </div>
 
+                {/* Background Cubes - Floating Layer (Smaller) */}
+                <div className="absolute z-10 pointer-events-none" style={{
+                    width: '207px',
+                    height: '198px',
+                    bottom: '150px',
+                    left: '162px',
+                }}>
+                    <img src="/homepage_assets/product_chains_cube1.png" alt="Data Chain Cube Front" className={`w-full h-full object-contain ${style['animate-subtle-bounce-delayed']}`} />
+                </div>
+
+                {/* Content Layer */}
                 <div className="relative z-20 text-left">
-                    <h2 className="font-['GACCO'] text-[16px] font-medium uppercase leading-tight mb-6 text-[#C8FF80]">
-                        Transparency Through <br /> Product Data Chains
+                    <h2 className="font-['GACCO'] text-[24px] font-normal uppercase leading-[1.2] mb-6 text-[#C8FF80]">
+                        Transparency <br /> Through Product <br /> Data Chains
                     </h2>
 
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="h-[1px] w-16 bg-[#C8FF80] opacity-50"></div>
+                        <div className="h-[1px] w-16 bg-[#C8FF80]"></div>
                         <div className="h-[1px] flex-1 bg-gradient-to-r from-[#C8FF80]/30 to-transparent"></div>
                     </div>
 
-                    <p className="text-white text-[13px] font-light leading-relaxed mb-10 tracking-wide max-w-xs">
+                    <p className="text-white text-[15px] font-light leading-relaxed mb-10 tracking-wide max-w-[280px]">
                         Resilution introduces Product Data Chains to record key business and product events on the blockchain.
                     </p>
-
-                    <button className="font-['arial'] flex items-center justify-center gap-2 border border-[#C8FF80]/50 text-[#C8FF80] w-[200px] py-3 text-[13px] font-bold uppercase rounded-sm mb-12 hover:bg-[#C8FF80]/10 transition-all">
-                        Learn More <span className="text-lg">→</span>
-                    </button>
                 </div>
 
-                <div className="relative w-full h-[320px] flex justify-center items-center">
-                    {/* Floating Cube with Background Glow */}
-                    <div className="absolute w-[300px] h-[300px] bg-[#C8FF80]/5 rounded-full blur-[80px]"></div>
-                    <img src="/homepage_assets/product_chains_cube1.png" alt="Data Chain Cube" className={`w-[260px] h-[260px] object-contain drop-shadow-[0_0_30px_rgba(200,255,128,0.2)] ${style['animate-subtle-bounce-delayed']}`} />
-                </div>
+                <button className="absolute bottom-12 left-6 z-30 font-['GACCO'] bg-[#C8FF80] text-black px-8 py-4 text-[13px] font-bold uppercase rounded-sm shadow-[0_0_20px_rgba(200,255,128,0.3)]">
+                    Learn More
+                </button>
             </section>
 
             {/* ═══════════════════ ECOSYSTEM ═══════════════════ */}
@@ -695,53 +791,90 @@ const NewHome = () => {
 
             {/* ═══════════════════ ECOSYSTEM (MOBILE) ═══════════════════ */}
             <section id="ecosystem-mobile" className="block md:hidden bg-black py-12 px-4 relative overflow-hidden w-full">
+                {/* Background Glow */}
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full object-cover opacity-60" />
+                </div>
+
                 <div className="relative z-20 flex flex-col items-center text-center">
-                    <h2 className="font-['GACCO'] text-[36px] font-medium uppercase text-[#C8FF80] tracking-wide mb-4">
-                        The Resilution Ecosystem
+                    <h2 className="font-['GACCO'] text-[15px] font-medium uppercase text-[#C8FF80] tracking-wide mb-4">
+                        THE RESILUTION ECOSYSTEM
                     </h2>
-                    <p className="font-['arial'] text-white text-sm font-light leading-relaxed mb-10 text-gray-300">
+                    <p className="font-['arial'] text-white text-[15px] font-light leading-relaxed mb-10 text-gray-300">
                         Resilution is more than an investment platform; it&apos;s a growing ecosystem of blockchain-powered tools designed to support businesses, investors, and communities.
                     </p>
 
-                    <div className="flex flex-col gap-6 w-full">
+                    <div className="flex flex-col gap-6 w-full mb-12">
                         {/* Eden AI Assistant Card */}
-                        <div data-aos="fade-up" className="border border-white/10 bg-[#0A0A0A] p-6 rounded-xl flex flex-col items-start text-left shadow-lg card-hover-dark">
-                            <div className="w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800 mb-4">
-                                <img src="/homepage_assets/icon_eden.svg" alt="Eden AI" className="w-full h-full object-contain" />
-                            </div>
-                            <div>
-                                <h3 className="font-['GACCO'] text-white text-lg font-medium mb-2">Eden AI Assistant</h3>
-                                <p className="font-['arial'] text-gray-400 text-xs leading-relaxed font-light">
-                                    An intelligent assistant that helps users navigate the platform, understand proposals, and access real-time insights.
-                                </p>
+                        <div data-aos="fade-up"
+                            className="relative p-[1px] rounded-[12px] overflow-hidden"
+                            style={{
+                                background: 'linear-gradient(180deg, #737373 0%, #D9D9D9 100%)',
+                            }}>
+                            <div className="flex items-start gap-5 p-5 h-full w-full rounded-[11px]"
+                                style={{
+                                    background: 'rgba(0, 0, 0, 0.85)',
+                                    backdropFilter: 'blur(117.4px)',
+                                    WebkitBackdropFilter: 'blur(117.4px)',
+                                }}>
+                                <img src="/homepage_assets/icon_eden.svg" alt="Eden AI" className="w-10 h-10 shrink-0 object-contain" />
+                                <div className="flex flex-col text-left">
+                                    <h3 className="font-['arial'] text-white text-[16px] font-bold mb-1">Eden AI Assistant</h3>
+                                    <p className="font-['arial'] text-gray-300 text-[12px] leading-relaxed font-light">
+                                        An intelligent assistant that helps users navigate the platform, understand proposals, and access real-time insights.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
                         {/* ResilPay Card */}
-                        <div data-aos="fade-up" data-aos-delay="100" className="border border-white/10 bg-[#0A0A0A] p-6 rounded-xl flex flex-col items-start text-left shadow-lg card-hover-dark">
-                            <div className="w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800 mb-4">
-                                <img src="/homepage_assets/icon_pay.svg" alt="ResilPay" className="w-full h-full object-contain" />
-                            </div>
-                            <div>
-                                <h3 className="font-['GACCO'] text-white text-lg font-medium mb-2">ResilPay</h3>
-                                <p className="font-['arial'] text-gray-400 text-xs leading-relaxed font-light">
-                                    A secure payment and transfer system for seamless transactions within the ecosystem.
-                                </p>
+                        <div data-aos="fade-up" data-aos-delay="100"
+                            className="relative p-[1px] rounded-[12px] overflow-hidden"
+                            style={{
+                                background: 'linear-gradient(180deg, #737373 0%, #D9D9D9 100%)',
+                            }}>
+                            <div className="flex items-start gap-5 p-5 h-full w-full rounded-[11px]"
+                                style={{
+                                    background: 'rgba(0, 0, 0, 0.85)',
+                                    backdropFilter: 'blur(117.4px)',
+                                    WebkitBackdropFilter: 'blur(117.4px)',
+                                }}>
+                                <img src="/homepage_assets/icon_pay.svg" alt="ResilPay" className="w-10 h-10 shrink-0 object-contain" />
+                                <div className="flex flex-col text-left">
+                                    <h3 className="font-['arial'] text-white text-[16px] font-bold mb-1">ResilPay</h3>
+                                    <p className="font-['arial'] text-gray-300 text-[12px] leading-relaxed font-light">
+                                        A secure payment and transfer system for seamless transactions within the ecosystem.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
                         {/* ResilMall Card */}
-                        <div data-aos="fade-up" data-aos-delay="200" className="border border-white/10 bg-[#0A0A0A] p-6 rounded-xl flex flex-col items-start text-left shadow-lg card-hover-dark">
-                            <div className="w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800 mb-4">
-                                <img src="/homepage_assets/icon_mall.svg" alt="ResilMall" className="w-full h-full object-contain" />
-                            </div>
-                            <div>
-                                <h3 className="font-['GACCO'] text-white text-lg font-medium mb-2">ResilMall</h3>
-                                <p className="font-['arial'] text-gray-400 text-xs leading-relaxed font-light">
-                                    A decentralized marketplace connecting businesses directly with consumers.
-                                </p>
+                        <div data-aos="fade-up" data-aos-delay="200"
+                            className="relative p-[1px] rounded-[12px] overflow-hidden"
+                            style={{
+                                background: 'linear-gradient(180deg, #737373 0%, #D9D9D9 100%)',
+                            }}>
+                            <div className="flex items-start gap-5 p-5 h-full w-full rounded-[11px]"
+                                style={{
+                                    background: 'rgba(0, 0, 0, 0.85)',
+                                    backdropFilter: 'blur(117.4px)',
+                                    WebkitBackdropFilter: 'blur(117.4px)',
+                                }}>
+                                <img src="/homepage_assets/icon_mall.svg" alt="ResilMall" className="w-10 h-10 shrink-0 object-contain" />
+                                <div className="flex flex-col text-left">
+                                    <h3 className="font-['arial'] text-white text-[16px] font-bold mb-1">ResilMall</h3>
+                                    <p className="font-['arial'] text-gray-300 text-[12px] leading-relaxed font-light">
+                                        A decentralized marketplace connecting businesses directly with consumers.
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    {/* Central R Logo */}
+                    <div className="relative w-full flex justify-center mt-4">
+                        <img src="/homepage_assets/ecosystem_r_silver.svg" alt="R Logo" className="w-[300px] h-auto object-contain" />
                     </div>
                 </div>
             </section>
@@ -1027,10 +1160,10 @@ const NewHome = () => {
 
             {/* ═══════════════════ CREDITS & TOKEN SYSTEM (MOBILE) ═══════════════════ */}
             <section id="credits-token-mobile" className="block md:hidden text-white w-full py-12 px-4 bg-black">
-                <h2 className="font-['GACCO'] text-[36px] font-medium uppercase text-[#C8FF80] text-center mb-4">
-                    Credits & Token System
+                <h2 className="font-['GACCO'] text-[15px] font-medium uppercase text-[#C8FF80] text-center mb-4">
+                    CREDITS & TOKEN SYSTEM
                 </h2>
-                <p className="font-['arial'] text-gray-400 text-center text-sm mb-10 font-light">
+                <p className="font-['arial'] text-gray-300 text-center text-[15px] mb-10 font-light leading-relaxed">
                     Resilution combines simplicity with blockchain power through a dual economic model.
                 </p>
 
@@ -1191,11 +1324,11 @@ const NewHome = () => {
             <section id="tokenomics-mobile" className="block md:hidden bg-black py-16 px-6 w-full relative overflow-hidden">
 
                 <div className="text-center mb-8 relative z-10">
-                    <h2 className="font-['GACCO'] uppercase text-[#C8FF80] tracking-wide text-[16px] font-medium mb-6 leading-tight">
-                        CREDITS & TOKEN SYSTEM
+                    <h2 className="font-['GACCO'] uppercase text-[#C8FF80] tracking-wide text-[15px] font-medium mb-6 leading-tight">
+                        TOKENOMICS & UTILITY
                     </h2>
-                    <p className="font-['arial'] text-white text-[13px] font-light text-gray-300 max-w-sm mx-auto leading-relaxed">
-                        Resilution combines simplicity with blockchain power through a dual economic model.
+                    <p className="font-['arial'] text-white text-[15px] font-light text-gray-300 max-w-sm mx-auto leading-relaxed">
+                        The $RESIL token is designed to drive platform growth, reward participation, and ensure long-term ecosystem sustainability.
                     </p>
                 </div>
 
@@ -1454,10 +1587,10 @@ const NewHome = () => {
             <section id="distribution-mobile" className="block md:hidden bg-black py-12 px-4 w-full">
                 <div className="flex flex-col items-center">
                     {/* Header: Distribution Title */}
-                    <h2 className="font-['GACCO'] uppercase text-[#C8FF80] tracking-wide text-[16px] font-medium mb-6 text-center">
+                    <h2 className="font-['GACCO'] uppercase text-[#C8FF80] tracking-wide text-[15px] font-medium mb-6 text-center">
                         TOKEN DISTRIBUTION
                     </h2>
-                    <p className="font-['arial'] text-white text-[13px] font-light text-gray-300 max-w-sm text-center mb-10 leading-relaxed">
+                    <p className="font-['arial'] text-white text-[15px] font-light text-gray-300 max-w-sm text-center mb-10 leading-relaxed">
                         A balanced allocation model designed to prioritize ecosystem growth, long-term alignment, and platform sustainability.
                     </p>
 
@@ -1503,7 +1636,7 @@ const NewHome = () => {
                                 <div className="w-3 h-3 bg-[#D6E5A8] rounded-sm shrink-0"></div>
                                 <h3 className="font-['GACCO'] text-[#fff] text-[15px] font-medium uppercase tracking-[0] leading-[100%]">INVESTORS</h3>
                             </div>
-                            <p className="font-['arial'] text-gray-400 text-[16px] font-normal leading-[100%] tracking-[0]">
+                            <p className="font-['arial'] text-gray-400 text-[15px] font-normal leading-[100%] tracking-[0]">
                                 Combined allocation across strategic, private, and public funding rounds.
                             </p>
                         </div>
@@ -1514,7 +1647,7 @@ const NewHome = () => {
                                 <div className="w-3 h-3 bg-[#78994D] rounded-sm shrink-0"></div>
                                 <h3 className="font-['GACCO'] text-[#fff] text-[15px] font-medium uppercase tracking-[0] leading-[100%]">TEAM & ADVISORS</h3>
                             </div>
-                            <p className="font-['arial'] text-gray-400 text-[16px] font-normal leading-[100%] tracking-[0]">
+                            <p className="font-['arial'] text-gray-400 text-[15px] font-normal leading-[100%] tracking-[0]">
                                 Core contributors and advisors, subject to long-term vesting schedules.
                             </p>
                         </div>
@@ -1523,9 +1656,9 @@ const NewHome = () => {
                         <div className="flex flex-col items-start text-left">
                             <div className="flex items-center gap-2 mb-2">
                                 <div className="w-3 h-3 bg-[#9ACD32] rounded-sm shrink-0"></div>
-                                <h3 className="font-['GACCO'] text-[#fff] text-[15px] font-medium uppercase tracking-[0] leading-[100%] text-[14px]">OPERATIONS & NETWORK</h3>
+                                <h3 className="font-['GACCO'] text-[#fff] text-[15px] font-medium uppercase tracking-[0] leading-[100%]">OPERATIONS & NETWORK</h3>
                             </div>
-                            <p className="font-['arial'] text-gray-400 text-[16px] font-normal leading-[100%] tracking-[0]">
+                            <p className="font-['arial'] text-gray-400 text-[15px] font-normal leading-[100%] tracking-[0]">
                                 Platform operations, infrastructure, validator incentives, and network support.
                             </p>
                         </div>
@@ -1536,7 +1669,7 @@ const NewHome = () => {
                                 <div className="w-3 h-3 bg-[#C8FF80] rounded-sm shrink-0"></div>
                                 <h3 className="font-['GACCO'] text-[#fff] text-[15px] font-medium uppercase tracking-[0] leading-[100%]">COMMUNITY & ECOSYSTEM</h3>
                             </div>
-                            <p className="font-['arial'] text-gray-400 text-[16px] font-normal leading-[100%] tracking-[0]">
+                            <p className="font-['arial'] text-gray-400 text-[15px] font-normal leading-[100%] tracking-[0]">
                                 Rewards, incentives, ecosystem growth, and user participation programs.
                             </p>
                         </div>
@@ -1621,10 +1754,10 @@ const NewHome = () => {
             {/* ═══════════════════ ROADMAP (MOBILE) ═══════════════════ */}
             <section id="roadmap-mobile" className="block md:hidden bg-[#F5F5F0] py-12 px-4 w-full">
                 <div className="text-center mb-10">
-                    <h2 className="font-['GACCO'] text-[36px] font-medium uppercase text-black mb-4">
+                    <h2 className="font-['GACCO'] text-[15px] font-medium uppercase text-black mb-4">
                         PRODUCT <span className="font-['GACCO'] bg-[#C8FF80] px-2 py-0.5">ROADMAP</span>
                     </h2>
-                    <p className="font-['arial'] text-gray-600 text-sm font-light text-center">
+                    <p className="font-['arial'] text-gray-600 text-[15px] font-light text-center leading-relaxed">
                         Our phased development plan focuses on building a transparent, scalable, and community-driven investment ecosystem.
                     </p>
                 </div>
@@ -1737,10 +1870,10 @@ const NewHome = () => {
             {/* ═══════════════════ COMMUNITY (MOBILE) ═══════════════════ */}
             <section id="community-mobile" className="block md:hidden bg-black py-16 px-4 w-full">
                 <div className="text-center mb-10">
-                    <h2 className="font-['GACCO'] text-[36px] font-medium uppercase text-[#C8FF80] mb-4">
-                        JOIN THE <br /> RESILUTION COMMUNITY
+                    <h2 className="font-['GACCO'] text-[15px] font-medium uppercase text-[#C8FF80] mb-4">
+                        JOIN THE RESILUTION COMMUNITY
                     </h2>
-                    <p className="font-['arial'] text-white text-sm font-light text-center leading-relaxed mb-8">
+                    <p className="font-['arial'] text-white text-[15px] font-light text-center leading-relaxed mb-8">
                         Be part of a growing ecosystem shaping the future of transparent blockchain investment.
                     </p>
                     <button className="font-['GACCO'] bg-[#C8FF80] text-black px-8 py-3 rounded hover:bg-[#b0e660] transition-colors font-medium">

@@ -13,8 +13,8 @@ export const NewNavbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
     return (
-        <nav className="sticky top-0 z-50 bg-black py-5 border-b border-white/10">
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16 flex items-center justify-between">
+        <nav className="sticky top-0 z-50 bg-black border-b border-white/10 w-full" style={{ height: typeof window !== 'undefined' && window.innerWidth < 768 ? '44px' : '70px' }}>
+            <div className="max-w-[1440px] mx-auto px-6 md:px-16 flex items-center justify-between h-full">
 
                 {/* Logo Section */}
                 <div className="flex items-center">
@@ -67,7 +67,7 @@ export const NewNavbar = () => {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="md:hidden fixed inset-0 top-[73px] bg-black z-40 flex flex-col p-6 animate-in slide-in-from-right-10 duration-200">
+                <div className="md:hidden fixed inset-0 top-[44px] bg-black z-40 flex flex-col p-6 animate-in slide-in-from-right-10 duration-200">
                     <div className="flex flex-col gap-6 mt-4">
                         {navLinks.map((link) => (
                             <a
