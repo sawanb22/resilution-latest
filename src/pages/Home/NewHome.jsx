@@ -69,7 +69,7 @@ const NewHome = () => {
         }
         
         /* Override for specific buttons requiring white hover */
-        .new-home-page .btn-white-hover:hover {
+        .new-home-page button.btn-white-hover:hover {
             background: #ffffff !important;
             color: #000000 !important;
             border: 1px solid #000000 !important;
