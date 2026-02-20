@@ -12,29 +12,29 @@ const NewHome = () => {
     // Inline styles for the hero button hover effect
     const hoverStyles = `
         .hero-get-started {
-            background: #C8FF80 !important;
-            color: #000 !important;
-            border: 1px solid #C8FF80 !important;
-            transition: all 0.3s ease-out !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            transition: all 0.3s ease-in-out !important;
             cursor: pointer !important;
-            border-radius: 0px !important;
+            border-radius: 18px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
         }
         .hero-get-started:hover {
-            background: #ffffff !important;
-            color: #000 !important;
-            border: 1px solid #000 !important;
-            box-shadow: 8px 8px 0px 0px #C8FF80 !important;
-            transform: translate(-4px, -4px) !important;
-        }
-        .hero-get-started:hover span {
-            color: #000 !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.6) !important;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+            transform: translateY(-2px) !important;
         }
         .hero-get-started:hover svg {
-            color: #000 !important;
+            transform: translate(2px, -2px) !important;
         }
+
 
         /* ── Global button hover for all buttons on new-home page ── */
         /* Light buttons (lime green background) */
@@ -233,16 +233,21 @@ const NewHome = () => {
                         {/* GET STARTED BUTTON */}
                         <div className="mb-4 z-20">
                             <button
-                                className="hero-get-started flex items-center justify-center gap-4 shadow-2xl"
+                                className="hero-get-started group flex items-center justify-center shadow-2xl"
                                 style={{
                                     width: '341px',
                                     height: '68px',
                                 }}
                             >
-                                <span className="font-['arial'] text-[20px] font-bold tracking-wide">GET STARTED</span>
-                                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+                                <div className="flex items-center justify-center gap-4" style={{ width: '182px', height: '49px' }}>
+                                    <span className="font-['arial'] text-[24px] font-normal tracking-wide">Get Started</span>
+                                    <svg className="w-8 h-8 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
+                                    </svg>
+                                </div>
                             </button>
                         </div>
+
 
                         {/* MAIN LAYOUT: Left Info | Center R | Right Card */}
                         <div className="relative w-full h-full flex justify-between items-end pb-12 px-16">
@@ -322,10 +327,13 @@ const NewHome = () => {
                     </div>
 
                     {/* Get Started Button */}
-                    <button className="hero-get-started flex items-center gap-3 px-8 py-3 mb-4">
-                        <span className="font-['arial'] text-[16px] font-bold tracking-wide">GET STARTED</span>
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+                    <button className="hero-get-started group flex items-center justify-center gap-3 px-8 py-3 mb-4 mx-auto" style={{ borderRadius: '18px' }}>
+                        <span className="font-['arial'] text-[18px] font-normal tracking-wide">Get Started</span>
+                        <svg className="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
                     </button>
+
 
                     {/* Giant R Logo */}
                     <div className="w-[450px] h-[450px] mb-0 relative overflow-hidden flex justify-center -mt-16 scale-110 pointer-events-none -translate-x-4">
@@ -450,7 +458,7 @@ const NewHome = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
 
                         {/* Glass Morphism Part (Main Card) */}
-                        <div className="absolute z-10 bg-white/5 backdrop-blur-3xl border border-white/10 flex flex-col lg:flex-row gap-10 lg:gap-14 items-center p-10 md:p-12 lg:p-14"
+                        <div className="absolute z-10 bg-white/5 border border-white/10 flex flex-col lg:flex-row gap-10 lg:gap-14 items-center p-10 md:p-12 lg:p-14"
                             style={{
                                 width: '989px',
                                 height: '540px',
@@ -459,7 +467,8 @@ const NewHome = () => {
                                 transform: 'translateX(-50%)',
                                 borderRadius: '9px 9px 0 0',
                                 borderWidth: '1px',
-                                opacity: 1
+                                opacity: 1,
+                                backdropFilter: 'blur(15px)'
                             }}>
 
                             <div className="flex-1 flex flex-col justify-center items-start text-left">
