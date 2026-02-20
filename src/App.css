@@ -133,10 +133,10 @@ input::-webkit-inner-spin-button {
 }
 
 .card-hover-light:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   background: #C8FF80 !important;
   border-color: #000 !important;
-  box-shadow: 0 0 30px rgba(200, 255, 128, 0.4);
+  box-shadow: none !important;
 }
 
 /* Ensure text stays black on green background */
@@ -203,24 +203,24 @@ input::-webkit-inner-spin-button {
 
 .card-hover-gradient:hover {
   transform: translateY(-6px);
-  background: linear-gradient(160deg, rgba(20, 31, 10, 0.95) 0%, rgba(12, 20, 7, 0.95) 30%, rgba(10, 18, 5, 0.95) 60%, rgba(13, 22, 8, 0.95) 100%) !important;
-  border-color: rgba(200, 255, 128, 0.25) !important;
-  box-shadow: 0 0 30px rgba(200, 255, 128, 0.08);
-  color: rgba(255, 255, 255, 0.85) !important;
-  border-radius: 16px;
+  background: #C8FF80 !important;
+  border-color: #000 !important;
+  box-shadow: 0 0 30px rgba(200, 255, 128, 0.2);
+  color: #000 !important;
+  border-radius: 0px;
 }
 
 .card-hover-gradient:hover h3,
 .card-hover-gradient:hover h4,
 .card-hover-gradient:hover .font-bold {
-  color: #fff !important;
+  color: #000 !important;
 }
 
 .card-hover-gradient:hover p,
 .card-hover-gradient:hover li,
 .card-hover-gradient:hover ul,
 .card-hover-gradient:hover span {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #000 !important;
 }
 
 
@@ -230,28 +230,6 @@ input::-webkit-inner-spin-button {
   color: #000 !important;
 }
 
+
 /* ══════ Hero Button Effect ══════ */
-.hero-get-started {
-  background: #C8FF80 !important;
-  color: #000 !important;
-  border: 1px solid #C8FF80 !important;
-  transition: all 0.3s ease-out !important;
-  cursor: pointer;
-  border-radius: 0px !important;
-}
-
-.hero-get-started:hover {
-  background: #ffffff !important;
-  color: #000 !important;
-  border: 1px solid #000 !important;
-  box-shadow: 8px 8px 0px 0px #C8FF80 !important;
-  transform: translate(-4px, -4px) !important;
-}
-
-.hero-get-started:hover svg {
-  color: #000 !important;
-}
-
-.hero-get-started:hover svg path {
-  stroke: #000 !important;
-}
+/* Styles moved to inline hoverStyles in NewHome.jsx for better control */

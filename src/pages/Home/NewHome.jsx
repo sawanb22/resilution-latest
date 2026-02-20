@@ -26,13 +26,11 @@ const NewHome = () => {
         }
         .hero-get-started:hover {
             background: rgba(255, 255, 255, 0.08) !important;
-            color: #ffffff !important;
-            border: 1px solid rgba(255, 255, 255, 0.6) !important;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
-            transform: translateY(-2px) !important;
+            color: #C8FF80 !important;
+            border: 1px solid rgba(255, 255, 255, 0.9) !important;
         }
         .hero-get-started:hover svg {
-            transform: translate(2px, -2px) !important;
+            color: #C8FF80 !important;
         }
 
 
@@ -68,11 +66,14 @@ const NewHome = () => {
             transition: all 0.3s ease-out !important;
         }
         
-        /* Override for specific buttons requiring white hover */
-        .new-home-page button.btn-white-hover:hover {
+        /* Override for specific buttons requiring white hover - increased specificity to beat fallback */
+        .new-home-page button.btn-white-hover:not(.no-hover):hover {
             background: #ffffff !important;
             color: #000000 !important;
-            border: 1px solid #000000 !important;
+            border: 2px solid #000000 !important;
+            box-shadow: 6px 6px 0px 0px #000000 !important;
+            transform: translate(-3px, -3px) !important;
+            border-radius: 0px !important;
         }
     `;
 
@@ -269,7 +270,7 @@ const NewHome = () => {
                                 <p className="text-gray-300 text-sm leading-relaxed mb-8 font-light text-left">
                                     Resilution is a blockchain-powered investment platform that connects businesses and investors through real-time transparency, verified funding proposals, and automated revenue sharing.
                                 </p>
-                                <button className="bg-[#C8FF80] text-black font-medium text-base px-8 py-3 rounded-sm hover:bg-[#b5e660] transition-colors shadow-[0_0_15px_rgba(200,255,128,0.3)]">
+                                <button className="bg-[#C8FF80] text-black font-medium text-base px-8 py-3 rounded-sm transition-colors shadow-[0_0_15px_rgba(200,255,128,0.3)]">
                                     Learn More
                                 </button>
                             </div>
@@ -361,7 +362,7 @@ const NewHome = () => {
                     </p>
 
                     {/* Learn More Button */}
-                    <button className="bg-[#C8FF80] text-black font-medium text-sm px-8 py-3 rounded-sm hover:bg-[#b5e660] transition-colors shadow-[0_0_15px_rgba(200,255,128,0.3)] mb-16">
+                    <button className="bg-[#C8FF80] text-black font-medium text-sm px-8 py-3 rounded-sm transition-colors shadow-[0_0_15px_rgba(200,255,128,0.3)] mb-16">
                         Learn More
                     </button>
 
@@ -410,7 +411,7 @@ const NewHome = () => {
                         ))}
                     </div>
                     <div className="w-full flex justify-center">
-                        <button className="font-['GACCO'] inline-flex items-center justify-center font-normal transition-all duration-300 transform active:scale-95 bg-[#C8FF80] text-black hover:bg-black hover:text-[#C8FF80] hover:border-[#C8FF80] border border-[#C8FF80] rounded-sm whitespace-nowrap" style={{ minWidth: '260px', height: '54px', fontSize: '16px' }}>
+                        <button className="font-['GACCO'] inline-flex items-center justify-center font-normal transition-all duration-300 transform active:scale-95 bg-[#C8FF80] text-black border border-[#C8FF80] rounded-sm whitespace-nowrap" style={{ minWidth: '260px', height: '54px', fontSize: '16px' }}>
                             View the Solution
                         </button>
                     </div>
@@ -443,7 +444,7 @@ const NewHome = () => {
                 </div>
 
                 <div className="flex justify-center">
-                    <button className="font-['GACCO'] bg-[#C8FF80] text-black font-medium text-[12px] px-8 py-2.5 rounded-sm hover:bg-[#b5e660] transition-colors whitespace-nowrap uppercase tracking-wider">
+                    <button className="font-['GACCO'] bg-[#C8FF80] text-black font-medium text-[12px] px-8 py-2.5 rounded-sm transition-colors whitespace-nowrap uppercase tracking-wider">
                         View The Solution
                     </button>
                 </div>
@@ -489,7 +490,7 @@ const NewHome = () => {
                                     style={{ fontFamily: 'Arial', fontSize: '16px', fontWeight: 400, lineHeight: '150%' }}>
                                     Resilution connects businesses and investors through verified proposals, real-time performance tracking, and automated revenue sharing - all powered by blockchain technology.
                                 </p>
-                                <button className="font-['GACCO'] bg-[#C8FF80] text-black px-8 py-3.5 font-bold rounded-sm hover:bg-[#b0e660] transition-colors uppercase tracking-wide text-sm">Explore the Platform</button>
+                                <button className="font-['GACCO'] bg-[#C8FF80] text-black px-8 py-3.5 font-bold rounded-sm transition-colors uppercase tracking-wide text-sm">Explore the Platform</button>
                             </div>
 
                             <div className="flex-1 flex flex-col gap-5 w-full justify-center">
@@ -536,7 +537,7 @@ const NewHome = () => {
                         <h3 className="font-['GACCO'] text-[15px] font-bold uppercase mb-4 leading-tight tracking-wide text-white">A SMARTER WAY TO INVEST AND GROW</h3>
                         <p className="text-gray-200 text-[13px] mb-8 font-light leading-relaxed max-w-[280px]">Resilution connects businesses and investors through verified proposals, real-time performance tracking, and automated revenue sharing.</p>
 
-                        <button className="font-['GACCO'] bg-[#C8FF80] text-black w-full max-w-[240px] py-3.5 font-bold rounded-sm uppercase tracking-wide text-[13px] mb-10 shadow-lg">
+                        <button className="font-['GACCO'] bg-[#C8FF80] text-black w-full max-w-[240px] py-3.5 font-bold rounded-sm uppercase tracking-wide text-[13px] mb-10 shadow-lg transition-colors">
                             Explore the Platform
                         </button>
 
@@ -640,13 +641,13 @@ const NewHome = () => {
                     <p className="text-gray-600 text-left max-w-3xl mb-24 text-sm md:text-base font-light">A simple and transparent process that connects businesses and investors through blockchain technology.</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                         {howItWorksSteps.map((item, index) => (
-                            <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className={`bg-[#F8F5F5] p-8 rounded-sm h-full flex flex-col items-center text-center relative card-hover-gradient group ${style['animate-shake-hover']}`}>
+                            <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className={`bg-[#F8F5F5] p-8 rounded-none h-full flex flex-col items-center text-center relative card-hover-gradient group ${style['animate-shake-hover']}`}>
                                 <span className="absolute top-6 left-6 text-xs text-gray-500 font-medium">{item.step}</span>
                                 <div className="relative w-40 h-40 flex justify-center items-center mb-8 mt-4">
-                                    <div className="absolute w-full h-full rounded-full border border-[#C8FF80]/30 group-hover:border-black/20 transition-colors duration-500"></div>
-                                    <div className="absolute w-28 h-28 rounded-full border border-[#C8FF80]/60 group-hover:border-black/40 transition-colors duration-500"></div>
-                                    <div className="w-16 h-16 rounded-full bg-[#C8FF80] flex justify-center items-center z-10 shadow-sm">
-                                        <img src={item.icon} alt={`${item.step} icon`} className="w-8 h-8 text-black object-contain" />
+                                    <div className="absolute w-full h-full rounded-full border border-[#C8FF80]/30 group-hover:border-white transition-colors duration-500"></div>
+                                    <div className="absolute w-28 h-28 rounded-full border border-[#C8FF80]/60 group-hover:border-white transition-colors duration-500"></div>
+                                    <div className="w-16 h-16 rounded-full bg-[#C8FF80] group-hover:bg-white flex justify-center items-center z-10 shadow-sm transition-colors duration-500">
+                                        <img src={item.icon} alt={`${item.step} icon`} className="w-8 h-8 object-contain transition-all duration-500" />
                                     </div>
                                 </div>
                                 <h3 className="font-['GACCO'] text-lg font-normal uppercase mb-4 tracking-wide">{item.title}</h3>
@@ -704,14 +705,14 @@ const NewHome = () => {
 
                     {howItWorksSteps.map((item, index) => (
                         <div key={index} className="snap-center shrink-0 w-[280px]">
-                            <div className="bg-[#F8F5F5] p-8 rounded-sm h-[340px] flex flex-col items-start text-left relative card-hover-gradient group border border-gray-100">
+                            <div className="bg-[#F8F5F5] p-8 rounded-none h-[340px] flex flex-col items-start text-left relative card-hover-gradient group border border-gray-100">
                                 <span className="absolute top-4 left-4 text-xs text-gray-400 font-medium font-['Arial']">Step {index + 1}</span>
                                 <div className="relative w-20 h-20 flex justify-center items-center mb-6 mt-4">
                                     {/* Concentric Rings */}
-                                    <div className="absolute w-20 h-20 rounded-full border border-[#C8FF80]/15 group-hover:border-black/15 transition-colors duration-500"></div>
-                                    <div className="absolute w-16 h-16 rounded-full border border-[#C8FF80]/30 group-hover:border-black/30 transition-colors duration-500"></div>
-                                    <div className="w-10 h-10 rounded-full bg-[#C8FF80] flex justify-center items-center z-10 shadow-sm">
-                                        <img src={item.icon} alt={`${item.step} icon`} className="w-5 h-5 text-black object-contain" />
+                                    <div className="absolute w-20 h-20 rounded-full border border-[#C8FF80]/15 group-hover:border-white transition-colors duration-500"></div>
+                                    <div className="absolute w-16 h-16 rounded-full border border-[#C8FF80]/30 group-hover:border-white transition-colors duration-500"></div>
+                                    <div className="w-10 h-10 rounded-full bg-[#C8FF80] group-hover:bg-white flex justify-center items-center z-10 shadow-sm transition-colors duration-500">
+                                        <img src={item.icon} alt={`${item.step} icon`} className="w-5 h-5 object-contain transition-all duration-500" />
                                     </div>
                                 </div>
                                 <h3 className="font-['GACCO'] text-[15px] font-bold uppercase mb-3 tracking-wide text-left">{item.title}</h3>
@@ -742,7 +743,7 @@ const NewHome = () => {
                             Resilution introduces Product Data Chains to record key business and product events on the blockchain.
                         </p>
 
-                        <button className="font-['GACCO'] bg-[#C8FF80] text-black px-10 py-5 text-sm font-bold uppercase tracking-[0.15em] hover:bg-[#b0e660] transition-colors rounded-sm shadow-[0_0_25px_rgba(200,255,128,0.5)]">
+                        <button className="font-['GACCO'] bg-[#C8FF80] text-black px-10 py-5 text-sm font-bold uppercase tracking-[0.15em] transition-colors rounded-sm shadow-[0_0_25px_rgba(200,255,128,0.5)]">
                             Learn More
                         </button>
                     </div>
@@ -835,7 +836,6 @@ const NewHome = () => {
                             The Resilution Ecosystem
                         </h2>
                     </div>
-                    |
                     {/* Subtext */}
                     <div className="absolute text-left z-20 px-0" style={{ width: '100%', maxWidth: '800px', height: 'auto', top: '185px', left: '80px' }}>
                         <p className="text-white" style={{ fontFamily: 'arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
@@ -865,7 +865,7 @@ const NewHome = () => {
                     {/* ResilPay Card */}
                     <div data-aos="fade-right" data-aos-delay="200" className="absolute z-20 border border-white/10 bg-[#0A0A0A] p-6 rounded-2xl flex gap-4 items-start shadow-2xl left-[5%] xl:left-[50px] card-hover-light"
                         style={{ width: '421px', height: '118px', top: '550px', borderWidth: '1px', borderRadius: '9px' }}>
-                        <div className="w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800">
+                        <div className="icon-ring w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800">
                             <img src="/homepage_assets/icon_pay.svg" alt="ResilPay" className="w-full h-full object-contain" />
                         </div>
                         <div>
@@ -879,7 +879,7 @@ const NewHome = () => {
                     {/* ResilMall Card */}
                     <div data-aos="fade-left" data-aos-delay="200" className="absolute z-20 border border-white/10 bg-[#0A0A0A] p-6 rounded-2xl flex gap-4 items-start shadow-2xl right-[5%] xl:right-[50px] card-hover-light"
                         style={{ width: '421px', height: '118px', top: '550px', borderWidth: '1px', borderRadius: '9px' }}>
-                        <div className="w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800">
+                        <div className="icon-ring w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800">
                             <img src="/homepage_assets/icon_mall.svg" alt="ResilMall" className="w-full h-full object-contain" />
                         </div>
                         <div>
@@ -1146,7 +1146,7 @@ const NewHome = () => {
                                 <li>They allow users to invest, fund businesses, and transact without worrying about crypto volatility.</li>
                             </ul>
                             <button
-                                className="flex justify-center items-center mt-8 font-medium hover:brightness-110 transition-all text-black"
+                                className="flex justify-center items-center mt-8 font-medium hover:brightness-110 transition-all text-black btn-white-hover"
                                 style={{
                                     fontFamily: 'Arial',
                                     width: '190px',
@@ -1241,7 +1241,7 @@ const NewHome = () => {
                                 <li>It enables profit sharing and long-term ecosystem growth.</li>
                             </ul>
                             <button
-                                className="flex justify-center items-center mt-8 font-medium hover:brightness-110 transition-all text-black"
+                                className="flex justify-center items-center mt-8 font-medium hover:brightness-110 transition-all text-black btn-white-hover"
                                 style={{
                                     fontFamily: 'Arial',
                                     width: '190px',
@@ -1283,7 +1283,7 @@ const NewHome = () => {
                             <li>Credits are stable, USD-pegged units designed to make participation simple and secure.</li>
                             <li>They allow users to invest, fund businesses, and transact without worrying about crypto volatility.</li>
                         </ul>
-                        <button className="font-['arial'] bg-[#C8FF80] text-black w-full py-3 text-sm font-bold rounded-sm uppercase">
+                        <button className="font-['arial'] bg-[#C8FF80] text-black w-full py-3 text-sm font-bold rounded-sm uppercase btn-white-hover">
                             Learn About Credits
                         </button>
                     </div>
@@ -1300,7 +1300,7 @@ const NewHome = () => {
                             <li>The $RESIL token powers the Resilution ecosystem through rewards, governance, and tier upgrades.</li>
                             <li>It enables profit sharing and long-term ecosystem growth.</li>
                         </ul>
-                        <button className="font-['arial'] bg-[#C8FF80] text-black w-full py-3 text-sm font-bold rounded-sm uppercase">
+                        <button className="font-['arial'] bg-[#C8FF80] text-black w-full py-3 text-sm font-bold rounded-sm uppercase btn-white-hover">
                             Learn About Token
                         </button>
                     </div>
@@ -1663,21 +1663,29 @@ const NewHome = () => {
 
                     {/* Community Label */}
                     <div
-                        className="absolute text-left cursor-pointer group"
+                        className="absolute text-left"
                         style={{ top: '390px', left: '940px', width: '450px' }}
-                        onMouseEnter={() => setHoveredSlice(1)}
-                        onMouseLeave={() => setHoveredSlice(null)}
                     >
-                        <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>COMMUNITY & ECOSYSTEM</h3>
-                        <p className="text-gray-400 mb-8 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>Rewards, incentives, ecosystem growth, and user participation programs.</p>
+                        {/* Hoverable part - Connected to Pie Chart */}
+                        <div
+                            className="cursor-pointer group mb-8"
+                            onMouseEnter={() => setHoveredSlice(1)}
+                            onMouseLeave={() => setHoveredSlice(null)}
+                        >
+                            <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>COMMUNITY & ECOSYSTEM</h3>
+                            <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>Rewards, incentives, ecosystem growth, and user participation programs.</p>
+                        </div>
 
-                        <p className="text-gray-400 mb-4 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
-                            Detailed allocation breakdown and vesting schedules are available in the Resilution Litepaper.
-                        </p>
+                        {/* Non-hoverable part - Disconnected from Pie Chart */}
+                        <div className="mt-24">
+                            <p className="text-gray-400 mb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
+                                Detailed allocation breakdown and vesting schedules are available in the Resilution Litepaper.
+                            </p>
 
-                        <button className="flex items-center gap-2 bg-[#C8FF80] text-black px-4 py-2 rounded text-sm font-medium hover:bg-[#b0e660] transition-colors">
-                            <span className="text-lg">📄</span> Resilution Litepaper
-                        </button>
+                            <button className="flex items-center gap-2 bg-[#C8FF80] text-black px-4 py-2 rounded text-sm font-medium transition-colors">
+                                <span className="text-lg">📄</span> Resilution Litepaper
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1779,7 +1787,7 @@ const NewHome = () => {
                         Detailed allocation breakdown and vesting schedules are available in the Resilution Litepaper.
                     </p>
 
-                    <button className="font-['arial'] flex items-center justify-center gap-2 bg-[#C8FF80] text-black w-full max-w-[280px] py-3 rounded text-[13px] font-bold hover:bg-[#b0e660] transition-colors uppercase mx-auto">
+                    <button className="font-['arial'] flex items-center justify-center gap-2 bg-[#C8FF80] text-black w-full max-w-[280px] py-3 rounded text-[13px] font-bold transition-colors uppercase mx-auto">
                         <span className="text-lg">📄</span> Resilution Litepaper
                     </button>
                 </div>
@@ -1808,7 +1816,7 @@ const NewHome = () => {
                     {/* Phases Container */}
                     <div className="absolute w-full" style={{ top: '314px' }}>
                         {/* Horizontal Line and Nodes Overlay (Visual) - Starts from Phase 1 center and extends to match the Phase 4 text width */}
-                        <div className="absolute top-[50px] bg-[#C8FF80] z-0 opacity-50" style={{ left: '90px', width: '1170px', height: '1px' }}></div>
+                        <div className="absolute top-[50px] bg-[#C8FF80] z-0 opacity-50" style={{ left: '90px', width: '1260px', height: '1px' }}></div>
 
                         {/* 4 Columns */}
                         <div className="relative z-10">
