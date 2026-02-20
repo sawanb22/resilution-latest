@@ -571,7 +571,7 @@ const NewHome = () => {
                                 <li>Reduce risk through immutable records and smart contracts.</li>
                                 <li>Receive automated profit distributions.</li>
                             </ul>
-                            <button className="font-['GACCO'] bg-black text-white px-10 py-4 text-sm font-medium uppercase tracking-widest hover:bg-gray-800 transition-colors rounded-sm absolute bottom-16">Start Investing</button>
+                            <button className="font-['GACCO'] bg-black text-white px-10 py-4 text-sm font-medium uppercase tracking-widest hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300 rounded-sm absolute bottom-16">Start Investing</button>
                         </div>
                         <div data-aos="fade-left" className="bg-[#EDE2E2] card-hover-light flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ height: '650px', padding: '64px' }}>
                             <div className="mb-8 w-16 h-16"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
@@ -582,7 +582,7 @@ const NewHome = () => {
                                 <li>Automate revenue sharing and funding distribution with smart contracts.</li>
                                 <li>Scale faster with community-backed investment.</li>
                             </ul>
-                            <button className="font-['GACCO'] bg-black text-white px-10 py-4 text-sm font-medium uppercase tracking-widest hover:bg-gray-800 transition-colors rounded-sm absolute bottom-16">Join As A Business</button>
+                            <button className="font-['GACCO'] bg-black text-white px-10 py-4 text-sm font-medium uppercase tracking-widest hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300 rounded-sm absolute bottom-16">Join As A Business</button>
                         </div>
                     </div>
                 </div>
@@ -606,7 +606,7 @@ const NewHome = () => {
                             <li>Reduce risk through immutable records and smart contracts.</li>
                             <li>Receive automated profit distributions.</li>
                         </ul>
-                        <button className="font-['GACCO'] bg-black text-white w-full py-4 text-[13px] font-bold uppercase tracking-widest rounded-sm">Start Investing</button>
+                        <button className="font-['GACCO'] bg-black text-white w-full py-4 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300">Start Investing</button>
                     </div>
                     <div data-aos="fade-up" data-aos-delay="100" className="bg-[#EDE2E2] p-8 rounded-sm text-left card-hover-light">
                         <div className="mb-6 w-12 h-12 ml-0"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
@@ -617,7 +617,7 @@ const NewHome = () => {
                             <li>Automate revenue sharing with smart contracts.</li>
                             <li>Scale faster with community-backed investment.</li>
                         </ul>
-                        <button className="font-['GACCO'] bg-black text-white w-full py-4 text-[13px] font-bold uppercase tracking-widest rounded-sm">Join As A Business</button>
+                        <button className="font-['GACCO'] bg-black text-white w-full py-4 text-[13px] font-bold uppercase tracking-widest rounded-sm hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300">Join As A Business</button>
                     </div>
                 </div>
             </section>
