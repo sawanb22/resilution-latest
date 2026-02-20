@@ -14,8 +14,9 @@ button {
   cursor: pointer;
   transition: .3s;
 }
+
 button span,
-button div{
+button div {
   transition: .3s;
 }
 
@@ -79,13 +80,15 @@ letter-spacing: 6%; */
   transform: rotate(0deg) !important;
 }
 
-input::-webkit-inner-spin-button{
+input::-webkit-inner-spin-button {
   display: none;
 }
-.why_card{
+
+.why_card {
   transition: .3s;
 }
-.why_card.show button img{
+
+.why_card.show button img {
   /* transform: scaleY(-1); */
   scale: -1;
 }
@@ -105,14 +108,17 @@ input::-webkit-inner-spin-button{
     width: 373px;
   }
 }
+
 @media (min-width:1536px) {
+
   .gr_card,
   .g_card {
     width: 410px;
   }
 }
+
 @media (max-width:1279px) and (min-width:640px) {
-  .sm\:container{
+  .sm\:container {
     padding-left: .5rem;
     padding-right: .5rem;
   }
@@ -120,12 +126,82 @@ input::-webkit-inner-spin-button{
 
 /* ══════ Premium Card Hover Effects ══════ */
 
-/* Light cards: dark gradient hover matching Credits card style */
+/* Light cards: lime green hover matching design */
 .card-hover-light {
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
 }
+
 .card-hover-light:hover {
+  transform: translateY(-6px);
+  background: #C8FF80 !important;
+  border-color: #000 !important;
+  box-shadow: 0 0 30px rgba(200, 255, 128, 0.4);
+}
+
+/* Ensure text stays black on green background */
+.card-hover-light:hover h3,
+.card-hover-light:hover h4,
+.card-hover-light:hover .font-bold,
+.card-hover-light:hover p,
+.card-hover-light:hover li,
+.card-hover-light:hover ul,
+.card-hover-light:hover span {
+  color: #000 !important;
+}
+
+/* Ensure button stays black for contrast */
+.card-hover-light:hover button {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #000 !important;
+}
+
+/* Ensure images/logos also turn black on hover for visibility (standard) */
+.card-hover-light:hover img,
+.card-hover-light:hover svg {
+  filter: brightness(0) !important;
+  transition: all 0.5s ease;
+}
+
+.card-hover-light:hover svg path {
+  stroke: #000 !important;
+}
+
+/* Specific rule for icons inside rings: Ring goes Black, Icon goes Green */
+.card-hover-light:hover .icon-ring {
+  background: #000 !important;
+  border-color: #000 !important;
+  transition: all 0.5s ease;
+}
+
+.card-hover-light:hover .icon-ring img {
+  /* This filter converts images to the specific lime green #C8FF80 */
+  filter: brightness(0) saturate(100%) invert(88%) sepia(48%) saturate(583%) hue-rotate(33deg) brightness(106%) contrast(101%) !important;
+}
+
+
+/* Dark cards: green border glow + subtle lift */
+.card-hover-dark {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.card-hover-dark:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 15px 40px rgba(200, 255, 128, 0.1),
+    0 0 20px rgba(200, 255, 128, 0.05);
+  border-color: rgba(200, 255, 128, 0.35) !important;
+}
+
+/* Original dark gradient hover for Step cards */
+.card-hover-gradient {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.card-hover-gradient:hover {
   transform: translateY(-6px);
   background: linear-gradient(160deg, rgba(20, 31, 10, 0.95) 0%, rgba(12, 20, 7, 0.95) 30%, rgba(10, 18, 5, 0.95) 60%, rgba(13, 22, 8, 0.95) 100%) !important;
   border-color: rgba(200, 255, 128, 0.25) !important;
@@ -133,34 +209,49 @@ input::-webkit-inner-spin-button{
   color: rgba(255, 255, 255, 0.85) !important;
   border-radius: 16px;
 }
-.card-hover-light:hover h3,
-.card-hover-light:hover h4,
-.card-hover-light:hover .font-bold {
+
+.card-hover-gradient:hover h3,
+.card-hover-gradient:hover h4,
+.card-hover-gradient:hover .font-bold {
   color: #fff !important;
 }
-.card-hover-light:hover p,
-.card-hover-light:hover li,
-.card-hover-light:hover ul,
-.card-hover-light:hover span {
+
+.card-hover-gradient:hover p,
+.card-hover-gradient:hover li,
+.card-hover-gradient:hover ul,
+.card-hover-gradient:hover span {
   color: rgba(255, 255, 255, 0.7) !important;
 }
-.card-hover-light:hover img {
-  filter: brightness(0) invert(1);
-}
-.card-hover-light:hover button {
+
+
+
+.card-hover-gradient:hover button {
   background: #C8FF80 !important;
   color: #000 !important;
 }
 
-/* Dark cards: green border glow + subtle lift */
-.card-hover-dark {
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+/* ══════ Hero Button Effect ══════ */
+.hero-get-started {
+  background: #C8FF80 !important;
+  color: #000 !important;
+  border: 1px solid #C8FF80 !important;
+  transition: all 0.3s ease-out !important;
   cursor: pointer;
+  border-radius: 0px !important;
 }
-.card-hover-dark:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 15px 40px rgba(200, 255, 128, 0.1),
-    0 0 20px rgba(200, 255, 128, 0.05);
-  border-color: rgba(200, 255, 128, 0.35) !important;
+
+.hero-get-started:hover {
+  background: #ffffff !important;
+  color: #000 !important;
+  border: 1px solid #000 !important;
+  box-shadow: 8px 8px 0px 0px #C8FF80 !important;
+  transform: translate(-4px, -4px) !important;
+}
+
+.hero-get-started:hover svg {
+  color: #000 !important;
+}
+
+.hero-get-started:hover svg path {
+  stroke: #000 !important;
 }
