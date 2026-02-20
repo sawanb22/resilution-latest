@@ -167,7 +167,7 @@ const NewHome = () => {
             <NewNavbar />
 
             {/* ═══════════════════ HERO SECTION (DESKTOP) ═══════════════════ */}
-            <section id="hero" className="hidden md:flex relative w-full bg-black text-white overflow-hidden justify-center" style={{ height: '700px' }}>
+            <section id="hero" className="hidden md:flex relative w-full bg-black text-white overflow-hidden justify-center" style={{ minHeight: '700px' }}>
 
                 {/* Background Waves (Absolute - Full screen width) */}
                 <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -190,56 +190,66 @@ const NewHome = () => {
 
                     {/* Green tint glow at top-center */}
                     <div className="absolute z-10" style={{
-                        top: '-50px',
+                        top: '-100px',
                         left: '50%',
                         transform: 'translateX(-50%)',
-                        width: '700px',
-                        height: '350px',
-                        background: 'radial-gradient(ellipse at 50% 30%, rgba(200,255,128,0.12) 0%, rgba(200,255,128,0.06) 40%, transparent 70%)',
-                        pointerEvents: 'none'
+                        width: '900px',
+                        height: '500px',
+                        background: 'radial-gradient(circle at 50% 40%, rgba(200,255,128,0.20) 0%, rgba(200,255,128,0.10) 25%, rgba(200,255,128,0.04) 50%, transparent 70%)',
+                        pointerEvents: 'none',
+                        filter: 'blur(20px)'
                     }}></div>
 
                     {/* Left black fade - extends into mid */}
                     <div className="absolute top-0 bottom-0 left-0 z-10" style={{
-                        width: '45%',
-                        background: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)'
+                        width: '55%',
+                        background: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.6) 75%, transparent 100%)'
                     }}></div>
 
                     {/* Right black fade - extends into mid */}
                     <div className="absolute top-0 bottom-0 right-0 z-10" style={{
-                        width: '45%',
-                        background: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)'
+                        width: '55%',
+                        background: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.6) 75%, transparent 100%)'
                     }}></div>
 
                     {/* Bottom black fade - strong, extends up into mid */}
                     <div className="absolute bottom-0 left-0 right-0 z-10" style={{
-                        height: '350px',
-                        background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.3) 70%, transparent 100%)'
+                        height: '450px',
+                        background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 50%, rgba(0,0,0,0.5) 80%, transparent 100%)'
                     }}></div>
 
                     {/* Radial vignette - dark edges, open at top-center for green glow */}
                     <div className="absolute inset-0 z-10" style={{
-                        background: 'radial-gradient(ellipse 55% 50% at 50% 25%, transparent 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%)'
+                        background: 'radial-gradient(ellipse 60% 60% at 50% 25%, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.95) 100%)'
                     }}></div>
                 </div>
 
                 <div className="relative w-full h-full">
 
                     {/* Content Container */}
-                    <div className="relative z-10 w-full h-full flex flex-col items-center pt-10">
+                    <div className="relative z-10 w-full flex flex-col items-center pt-[78px]" style={{ minHeight: '700px' }}>
+
+                        {/* Ambient Radial Glow */}
+                        <div
+                            className="absolute top-[-5%] left-1/2 -translate-x-1/2 w-[140%] max-w-[1800px] h-[500px] z-10 pointer-events-none rounded-[100%]"
+                            style={{
+                                background: 'radial-gradient(circle at top center, #2F431A 0%, rgba(47, 67, 26, 0.4) 15%, rgba(47, 67, 26, 0.1) 35%, transparent 60%)',
+                                filter: 'blur(100px)'
+                            }}
+                        ></div>
 
                         {/* HEADLINE */}
-                        <div className="text-center mb-6 z-20 flex flex-col items-center w-full px-4">
-                            <h1 className="font-['GACCO'] font-hairline uppercase tracking-widest leading-none mb-3 text-[#C8FF80] w-full max-w-none md:max-w-[1000px] whitespace-nowrap" style={{ fontSize: '48px', letterSpacing: '0.1em' }}>
+                        <div className="relative text-center z-20 flex flex-col items-center w-full px-4">
+                            <h1 className="font-['GACCO'] font-hairline uppercase tracking-widest leading-none mb-[36px] text-[#C8FF80] w-full max-w-none md:max-w-[1000px] text-center" style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '0.1em' }}>
                                 FINANCIAL <span>FREEDOM</span>
                             </h1>
-                            <h2 className="font-['GACCO'] font-hairline uppercase tracking-[0.15em] text-white flex items-center justify-center whitespace-normal md:whitespace-nowrap w-full max-w-[1141px]" style={{ fontSize: '32px' }}>
+                            <h2 className="font-['GACCO'] font-hairline uppercase tracking-[0.15em] text-white text-center w-full max-w-[1300px] mx-auto block mb-[39px]" style={{ fontSize: 'clamp(18px, 2vw, 24px)', lineHeight: '1.4' }}>
                                 THROUGH TRANSPARENT BLOCKCHAIN INVESTMENT
                             </h2>
                         </div>
 
                         {/* GET STARTED BUTTON */}
-                        <div className="mb-4 z-20">
+                        <div className="relative z-20">
                             <button
                                 className="hero-get-started group flex items-center justify-center shadow-2xl"
                                 style={{
@@ -258,11 +268,11 @@ const NewHome = () => {
 
 
                         {/* MAIN LAYOUT: Left Info | Center R | Right Card */}
-                        <div className="relative w-full h-full flex justify-between items-end pb-12 px-16">
+                        <div className="relative w-full flex-grow flex justify-between items-end pb-6 px-8 lg:px-16" style={{ marginTop: 'auto' }}>
 
 
                             {/* LEFT: Intro Text & Button */}
-                            <div className="w-full max-w-[350px] mb-12 z-20 relative">
+                            <div className="w-full max-w-[350px] mb-0 z-20 relative">
                                 <div className="flex gap-2 mb-6">
                                     <div className="w-16 h-1.5 bg-[#C8FF80] rounded-full"></div>
                                     <div className="w-4 h-1.5 bg-[#C8FF80] rounded-full"></div>
@@ -276,12 +286,12 @@ const NewHome = () => {
                             </div>
 
                             {/* CENTER: Giant R Logo (Absolute Center Bottom) */}
-                            <div className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: '800px', height: '800px', bottom: '-180px' }}>
+                            <div className="absolute z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: '800px', height: '800px', bottom: '-260px', left: '50%', transform: 'translateX(-55%)' }}>
                                 <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                             </div>
 
                             {/* RIGHT: Transparency Card */}
-                            <div className="w-full max-w-[300px] mb-10 z-20 relative">
+                            <div className="w-full max-w-[300px] mb-0 z-20 relative">
                                 <div className="border border-[#C8FF80]/50 bg-black/80 backdrop-blur-md p-6 rounded-[24px] relative">
                                     {/* Floating Crystal Cube */}
                                     <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-40 h-40">
@@ -381,19 +391,33 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ TRADITIONAL SHORTFALLS (DESKTOP) ═══════════════════ */}
-            <section id="why" className="hidden md:block relative w-full py-20 md:py-32 overflow-hidden bg-black text-white text-left">
-                <div className="w-full flex flex-col items-start px-8 md:px-20">
-                    <h2 data-aos="fade-up" className="font-['GACCO'] font-normal uppercase text-[#C8FF80] mb-8 tracking-wide drop-shadow-[0_0_5px_rgba(200,255,128,0.5)] flex items-center justify-start text-left whitespace-normal w-full max-w-[1023px] text-[36px]">
+            <section id="why" className="hidden md:block relative w-full py-20 md:py-32 overflow-hidden bg-black text-white text-center">
+                <div className="w-full flex flex-col items-center px-8 lg:px-16">
+                    <h2 className="font-['GACCO'] uppercase text-[#C8FF80] mb-4 drop-shadow-[0_0_5px_rgba(200,255,128,0.5)] text-center"
+                        style={{
+                            fontFamily: 'GACCO',
+                            fontWeight: 500,
+                            fontSize: '32px',
+                            lineHeight: '100%',
+                            letterSpacing: '0%'
+                        }}>
                         Why Traditional Investment Systems Fail
                     </h2>
-                    <p className="text-white mb-20 font-light tracking-wide text-left flex items-center justify-start whitespace-normal w-full max-w-[960px]" style={{ fontSize: '18px', minHeight: '18px' }}>
+                    <p className="text-white mb-16 text-center whitespace-normal mx-auto"
+                        style={{
+                            fontFamily: 'Arial',
+                            fontWeight: 400,
+                            fontSize: '16px',
+                            lineHeight: '100%',
+                            letterSpacing: '0%'
+                        }}>
                         Traditional financial markets rely on intermediaries and delayed reporting, making funding difficult for businesses and risky for investors.
                     </p>
-                    <div className="flex flex-row flex-nowrap gap-4 lg:gap-8 mb-20 justify-between w-full">
+                    <div className="flex flex-row gap-6 lg:gap-8 mb-20 w-full justify-center items-stretch">
                         {shortfalls.map((item, index) => (
-                            <div key={index} data-aos={index === 0 ? 'fade-right' : index === 1 ? 'fade-up' : 'fade-left'} data-aos-delay={index * 100}
-                                className={`bg-[#EAEAEA] border border-transparent flex flex-col items-start text-left shadow-lg group p-8 lg:p-10 rounded-sm relative overflow-hidden flex-1 ${style['card-dark-hover']}`}
-                                style={{ minWidth: '300px', height: '230px' }}
+                            <div key={index}
+                                className={`flex-1 bg-[#EAEAEA] border border-transparent flex flex-col items-start text-left shadow-lg group p-8 lg:p-10 rounded-sm relative overflow-hidden ${style['card-dark-hover']}`}
+                                style={{ minHeight: '230px' }}
                             >
                                 <div className="absolute top-0 left-0 w-1 h-0 bg-[#C8FF80] transition-all duration-300 group-hover:h-full"></div>
                                 <div className="flex items-center gap-5 mb-6">
@@ -453,60 +477,72 @@ const NewHome = () => {
             {/* ═══════════════════ RESILUTION ENGINE ═══════════════════ */}
             {/* ═══════════════════ RESILUTION ENGINE ═══════════════════ */}
             {/* ═══════════════════ RESILUTION ENGINE (DESKTOP) ═══════════════════ */}
-            <section id="engine" className="hidden md:block bg-black pt-20 pb-0 px-8 md:px-16 text-white relative overflow-hidden w-full">
-                <div className="max-w-[1300px] mx-auto">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-10">
-                        <h2 className="font-['GACCO'] text-[36px] font-medium uppercase tracking-wide leading-relaxed">
+            <section id="engine" className="hidden md:block bg-black pt-20 pb-0 px-8 lg:px-16 text-white relative overflow-hidden w-full">
+                <div className="w-full">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 xl:mb-16 gap-6 xl:gap-10">
+                        <h2 className="font-['GACCO'] font-medium uppercase tracking-wide leading-relaxed" style={{ fontSize: 'clamp(22px, 2.8vw, 36px)' }}>
                             THE <span className="bg-[#C8FF80] text-black px-3 py-1 font-medium inline-block">RESILUTION</span><br />ENGINE
                         </h2>
-                        <p className="text-gray-300 max-w-lg text-lg font-light text-left md:text-right">
+                        <p className="text-gray-300 max-w-lg font-light text-left md:text-right" style={{ fontSize: 'clamp(14px, 1.2vw, 18px)' }}>
                             Resilution replaces traditional investment barriers with blockchain-powered transparency, automation, and trust.
                         </p>
                     </div>
-                    <div className="relative w-full rounded-[40px] overflow-hidden min-h-[850px]">
+
+                    <div className="relative w-full rounded-[24px] md:rounded-[40px] overflow-hidden mx-auto flex items-end justify-center" style={{ aspectRatio: '16/10' }}>
                         <img src="/homepage_assets/engine_bg.jpg" alt="engine_bg.jpg" className="absolute inset-0 w-full h-full object-cover object-[center_30%]" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
                         {/* Glass Morphism Part (Main Card) */}
-                        <div className="absolute z-10 bg-white/5 border border-white/10 flex flex-col lg:flex-row gap-10 lg:gap-14 items-center p-10 md:p-12 lg:p-14"
+                        <div className="relative z-10 flex flex-col lg:flex-row items-center border border-white/20 shadow-2xl"
                             style={{
-                                width: '989px',
-                                height: '540px',
-                                bottom: '0',
-                                left: '50%',
-                                transform: 'translateX(-50%)',
-                                borderRadius: '9px 9px 0 0',
-                                borderWidth: '1px',
-                                opacity: 1,
-                                backdropFilter: 'blur(15px)'
+                                width: '85%',
+                                marginBottom: '5%',
+                                borderRadius: 'clamp(12px, 1.5vw, 24px)',
+                                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%)',
+                                backdropFilter: 'blur(16px)',
+                                WebkitBackdropFilter: 'blur(16px)',
+                                padding: 'clamp(28px, 3vw, 44px) clamp(32px, 4vw, 56px)',
+                                gap: '5%',
                             }}>
 
-                            <div className="flex-1 flex flex-col justify-center items-start text-left">
-                                <h3 className="font-['GACCO'] font-medium uppercase mb-7 text-white"
-                                    style={{ fontSize: '24px', lineHeight: '30px', fontWeight: 500 }}>
+                            {/* Left Text Content */}
+                            <div className="flex-1 flex flex-col justify-center items-start text-left w-full pl-2 xl:pl-6">
+                                <h3 className="font-['GACCO'] font-medium uppercase text-white" style={{ fontSize: 'clamp(18px, 2.2vw, 32px)', lineHeight: '1.2', marginBottom: '8%', fontWeight: 500 }}>
                                     A SMARTER WAY TO <br /> INVEST AND GROW
                                 </h3>
-                                <p className="text-gray-200 mb-10 max-w-lg"
-                                    style={{ fontFamily: 'Arial', fontSize: '16px', fontWeight: 400, lineHeight: '150%' }}>
-                                    Resilution connects businesses and investors through verified proposals, real-time performance tracking, and automated revenue sharing - all powered by blockchain technology.
+                                <p className="text-gray-200" style={{ fontFamily: 'Arial', fontSize: 'clamp(12px, 1.1vw, 16px)', fontWeight: 400, lineHeight: '150%', marginBottom: '10%', maxWidth: '90%' }}>
+                                    Resilution connects businesses and investors through verified proposals, real-time performance tracking, and automated revenue sharing&nbsp;&mdash;&nbsp;all powered by blockchain technology.
                                 </p>
-                                <button className="font-['GACCO'] bg-[#C8FF80] text-black px-8 py-3.5 font-bold rounded-sm transition-colors uppercase tracking-wide text-sm">Explore the Platform</button>
+                                <button className="font-['Arial'] bg-[#C8FF80] text-black transition-colors btn-light hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(200,255,128,0.4)]" style={{ fontSize: 'clamp(13px, 1.1vw, 16px)', fontWeight: 600, padding: '3.5% 8%', borderRadius: '4px' }}>
+                                    Explore the Platform
+                                </button>
                             </div>
 
-                            <div className="flex-1 flex flex-col gap-5 w-full justify-center">
+                            {/* Right Features Column */}
+                            <div className="flex-1 flex flex-col w-full justify-center" style={{ gap: 'clamp(28px, 3vw, 44px)' }}>
                                 {engineFeatures.map((feature, index) => (
                                     <div key={index} data-aos="fade-up" data-aos-delay={index * 150}
-                                        className="group bg-white/5 border border-white/10 backdrop-blur-md p-4 rounded-xl flex items-start gap-4 hover:bg-white/10 transition-all duration-300 cursor-pointer">
-                                        <div className="bg-[#C8FF80] rounded-sm w-6 h-6 flex-shrink-0 flex justify-center items-center mt-0.5 transition-colors">
-                                            <svg className="w-3.5 h-3.5 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                                        className="group border border-white/20 flex flex-row items-center transition-all duration-300 hover:bg-white/10 shadow-lg hover:shadow-xl cursor-default"
+                                        style={{
+                                            background: 'rgba(255, 255, 255, 0.05)',
+                                            backdropFilter: 'blur(10px)',
+                                            WebkitBackdropFilter: 'blur(10px)',
+                                            padding: 'clamp(12px, 1.4vw, 22px)',
+                                            borderRadius: 'clamp(8px, 1.2vw, 16px)',
+                                            gap: 'clamp(14px, 1.5vw, 24px)'
+                                        }}>
+                                        {/* Icon Box */}
+                                        <div className="bg-[#C8FF80] flex justify-center items-center flex-shrink-0 transition-transform group-hover:scale-105" style={{ width: 'clamp(20px, 1.8vw, 28px)', height: 'clamp(20px, 1.8vw, 28px)', borderRadius: '4px' }}>
+                                            <svg className="w-[65%] h-[65%] text-[#000000]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>
                                         </div>
-                                        <div className="flex flex-col gap-1">
-                                            <h4 className="text-white group-hover:text-[#C8FF80] uppercase tracking-wide transition-colors"
-                                                style={{ fontFamily: 'Arial', fontSize: '15px', fontWeight: 400, lineHeight: '100%' }}>
+                                        {/* Text Info */}
+                                        <div className="flex flex-col" style={{ gap: 'clamp(2px, 0.3vw, 6px)' }}>
+                                            <h4 className="text-white tracking-wide group-hover:text-[#C8FF80] transition-colors"
+                                                style={{ fontFamily: 'Arial', fontSize: 'clamp(14px, 1.25vw, 20px)', fontWeight: 400, lineHeight: '120%' }}>
                                                 {feature.title}
                                             </h4>
-                                            <p className="text-gray-300"
-                                                style={{ fontFamily: 'Arial', fontSize: '11px', fontWeight: 400, lineHeight: '150%' }}>
+                                            <p className="text-[#A0A0A0] transition-colors group-hover:text-gray-300 inline-block"
+                                                style={{ fontFamily: 'Arial', fontSize: 'clamp(11px, 0.95vw, 14px)', fontWeight: 400, lineHeight: '150%' }}>
                                                 {feature.description}
                                             </p>
                                         </div>
@@ -562,15 +598,15 @@ const NewHome = () => {
             {/* ═══════════════════ BENEFITS ═══════════════════ */}
             {/* ═══════════════════ BENEFITS (DESKTOP) ═══════════════════ */}
             <section id="benefits" className="hidden md:flex bg-white py-24 px-8 md:px-16 text-black justify-center -mt-20 relative z-10 w-full">
-                <div className="w-full max-w-[1440px] flex flex-col items-start px-12 lg:px-20">
-                    <h2 data-aos="fade-up" className="font-['GACCO'] font-light uppercase tracking-wide mb-6 text-left flex items-center justify-start whitespace-normal md:whitespace-nowrap w-full max-w-[1033px] text-[36px]">
-                        BENEFITS FOR <span className="bg-[#C8FF80] px-3 py-1 font-medium">BUSINESSES & INVESTORS</span>
+                <div className="w-full max-w-[1440px] flex flex-col items-center px-12 lg:px-20">
+                    <h2 data-aos="fade-up" className="font-['GACCO'] font-light uppercase tracking-wide mb-6 text-center flex items-center justify-center w-full" style={{ fontSize: 'clamp(24px, 3vw, 36px)' }}>
+                        <span className="whitespace-nowrap">BENEFITS FOR&nbsp;<span className="bg-[#C8FF80] px-3 py-1 font-medium ml-2">BUSINESSES & INVESTORS</span></span>
                     </h2>
-                    <p className="text-gray-600 text-left mb-20 font-light flex items-center justify-start whitespace-normal md:whitespace-nowrap w-full max-w-[795px]" style={{ fontSize: '18px', minHeight: '18px' }}>
+                    <p className="text-gray-600 text-center mb-20 font-light flex items-center justify-center w-full" style={{ fontSize: '18px', minHeight: '18px' }}>
                         Resilution creates value for both businesses seeking funding and investors looking for transparent opportunities.
                     </p>
                     <div className="flex flex-col lg:flex-row gap-10 justify-center w-full items-center lg:items-stretch">
-                        <div data-aos="fade-right" className="bg-[#EDE2E2] card-hover-light flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ height: '650px', padding: '64px' }}>
+                        <div data-aos="fade-right" className="bg-[#EDE2E2] card-hover-light flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
                             <div className="mb-8 w-16 h-16"><img src="/homepage_assets/icon_user.svg" alt="icon_user.svg" className="w-full h-full object-contain" /></div>
                             <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest">FOR INVESTORS</h3>
                             <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-5">
@@ -581,7 +617,7 @@ const NewHome = () => {
                             </ul>
                             <button className="font-['GACCO'] bg-black text-white px-10 py-4 text-sm font-medium uppercase tracking-widest btn-white-hover transition-all duration-300 rounded-sm absolute bottom-16">Start Investing</button>
                         </div>
-                        <div data-aos="fade-left" className="bg-[#EDE2E2] card-hover-light flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ height: '650px', padding: '64px' }}>
+                        <div data-aos="fade-left" className="bg-[#EDE2E2] card-hover-light flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
                             <div className="mb-8 w-16 h-16"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
                             <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest">FOR BUSINESSES</h3>
                             <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-5">
@@ -633,12 +669,12 @@ const NewHome = () => {
             {/* ═══════════════════ HOW IT WORKS ═══════════════════ */}
             {/* ═══════════════════ HOW IT WORKS ═══════════════════ */}
             {/* ═══════════════════ HOW IT WORKS (DESKTOP) ═══════════════════ */}
-            <section id="how-it-works" className="hidden md:block bg-white py-24 px-8 md:px-20 text-black w-full">
-                <div className="max-w-[1440px] mx-auto flex flex-col items-start">
-                    <h2 data-aos="fade-up" className="font-['GACCO'] text-[36px] font-light uppercase tracking-wide mb-6 text-left">
-                        HOW <span className="bg-[#C8FF80] px-3 py-1 font-medium">RESILUTION WORKS</span>
+            <section id="how-it-works" className="hidden md:block bg-white py-24 px-8 lg:px-16 text-black w-full">
+                <div className="w-full flex flex-col items-center">
+                    <h2 data-aos="fade-up" className="font-['GACCO'] text-[36px] font-light uppercase tracking-wide mb-6 text-center">
+                        <span className="whitespace-nowrap">HOW&nbsp;<span className="bg-[#C8FF80] px-3 py-1 font-medium ml-2">RESILUTION WORKS</span></span>
                     </h2>
-                    <p className="text-gray-600 text-left max-w-3xl mb-24 text-sm md:text-base font-light">A simple and transparent process that connects businesses and investors through blockchain technology.</p>
+                    <p className="text-gray-600 text-center max-w-3xl mb-24 text-sm md:text-base font-light">A simple and transparent process that connects businesses and investors through blockchain technology.</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                         {howItWorksSteps.map((item, index) => (
                             <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className={`bg-[#F8F5F5] p-8 rounded-none h-full flex flex-col items-center text-center relative card-hover-gradient group ${style['animate-shake-hover']}`}>
@@ -727,9 +763,9 @@ const NewHome = () => {
             {/* ═══════════════════ PRODUCT DATA CHAINS ═══════════════════ */}
             {/* ═══════════════════ PRODUCT DATA CHAINS (DESKTOP) ═══════════════════ */}
             <section id="product-chains" className="hidden md:flex bg-black w-full justify-center relative overflow-hidden" style={{ minHeight: '922px' }}>
-                <div className="w-full relative h-full mx-auto max-w-[1451px]">
+                <div className="w-full relative h-full px-8 lg:px-16">
                     {/* Left Content */}
-                    <div className="relative z-20 text-left pl-8 md:pl-16 pt-[100px] lg:pt-[200px]" style={{ width: '100%', maxWidth: '650px' }}> {/* Adjusted Layout Top & Padding */}
+                    <div className="relative z-20 text-left pt-[100px] lg:pt-[200px]" style={{ width: '100%', maxWidth: '650px' }}> {/* Adjusted Layout Top & Padding */}
                         <h2 className="font-['GACCO'] text-[36px] font-normal uppercase mb-8 text-[#C8FF80] drop-shadow-[0_0_15px_rgba(200,255,128,0.4)]" style={{ lineHeight: '69px' }}>
                             Transparency <br /> Through Product <br /> Data Chains
                         </h2>
@@ -823,70 +859,78 @@ const NewHome = () => {
             {/* ═══════════════════ ECOSYSTEM ═══════════════════ */}
             {/* ═══════════════════ ECOSYSTEM ═══════════════════ */}
             {/* ═══════════════════ ECOSYSTEM (DESKTOP) ═══════════════════ */}
-            <section id="ecosystem" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '864px' }}>
+            <section id="ecosystem" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ minHeight: '864px' }}>
                 {/* Background Glow (Optional - kept for ambience) */}
                 <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
                     <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full object-cover opacity-60" />
                 </div>
 
-                <div className="relative max-w-[1440px] mx-auto h-full">
+                <div className="relative w-full z-20 px-8 lg:px-16 pt-24 pb-16">
                     {/* Headline */}
-                    <div data-aos="fade-up" className="absolute text-left z-20" style={{ width: 'auto', height: 'auto', top: '97px', left: '80px', whiteSpace: 'nowrap' }}>
-                        <h2 className="uppercase text-[#C8FF80] tracking-wide" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '130%' }}>
+                    <div data-aos="fade-up" className="text-center mb-6 flex justify-center w-full">
+                        <h2 className="uppercase text-[#C8FF80] tracking-wide" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: 'clamp(24px, 3vw, 36px)', lineHeight: '130%' }}>
                             The Resilution Ecosystem
                         </h2>
                     </div>
                     {/* Subtext */}
-                    <div className="absolute text-left z-20 px-0" style={{ width: '100%', maxWidth: '800px', height: 'auto', top: '185px', left: '80px' }}>
-                        <p className="text-white" style={{ fontFamily: 'arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
+                    <div className="text-center mb-16 max-w-[800px] mx-auto">
+                        <p className="text-white" style={{ fontFamily: 'arial', fontWeight: 400, fontSize: '15.5px', lineHeight: '150%' }}>
                             Resilution is more than an investment platform; it&apos;s a growing ecosystem of blockchain-powered tools designed to support businesses, investors, and communities.
                         </p>
                     </div>
 
-                    {/* Eden AI Assistant Card */}
-                    <div data-aos="fade-down" data-aos-delay="100" className="absolute z-20 border border-white/10 bg-[#0A0A0A] p-6 rounded-2xl flex gap-4 items-start shadow-2xl left-1/2 -translate-x-1/2 card-hover-light"
-                        style={{ width: '421px', height: '118px', top: '345px', borderWidth: '1px', borderRadius: '9px' }}>
-                        <div className="icon-ring w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800">
-                            <img src="/homepage_assets/icon_eden.svg" alt="Eden AI" className="w-full h-full object-contain" />
+                    {/* Cards + R Logo Layout */}
+                    <div className="relative min-h-[500px]">
+                        {/* Central R Logo - decorative background */}
+                        <div className="absolute z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: 'min(560px, 45vw)', height: 'min(560px, 45vw)', top: '100%', left: '50%', transform: 'translate(-54%, -65%)' }}>
+                            <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                         </div>
-                        <div>
-                            <h3 className="text-white text-lg font-medium mb-1">Eden AI Assistant</h3>
-                            <p className="text-gray-400 text-xs leading-relaxed font-light">
-                                An intelligent assistant that helps users navigate the platform, understand proposals, and access real-time insights.
-                            </p>
-                        </div>
-                    </div>
 
-                    {/* Central R Logo */}
-                    <div className="absolute z-10 left-1/2 -translate-x-1/2 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: '800px', height: '800px', top: '320px' }}>
-                        <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
-                    </div>
+                        {/* Eden AI Assistant Card - centered */}
+                        <div className="flex justify-center mb-8 relative z-20">
+                            <div data-aos="fade-down" data-aos-delay="100" className="border border-white/10 bg-[#0A0A0A] p-6 pt-7 px-8 rounded-[9px] flex gap-5 items-start shadow-2xl card-hover-light w-full max-w-[421px]"
+                                style={{ minHeight: '118px', borderWidth: '1px' }}>
+                                <div className="shrink-0 flex items-center justify-center w-[26px] h-[26px] mt-1">
+                                    <img src="/homepage_assets/icon_eden.svg" alt="Eden AI" className="w-full h-full object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }} />
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="text-white text-[17px] font-medium mb-1.5" style={{ fontFamily: 'Arial' }}>Eden AI Assistant</h3>
+                                    <p className="text-gray-400 text-[13px] leading-relaxed font-light tracking-wide" style={{ fontFamily: 'Arial' }}>
+                                        An intelligent assistant that helps users navigate the platform, understand proposals, and access real-time insights.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                    {/* ResilPay Card */}
-                    <div data-aos="fade-right" data-aos-delay="200" className="absolute z-20 border border-white/10 bg-[#0A0A0A] p-6 rounded-2xl flex gap-4 items-start shadow-2xl left-[5%] xl:left-[50px] card-hover-light"
-                        style={{ width: '421px', height: '118px', top: '550px', borderWidth: '1px', borderRadius: '9px' }}>
-                        <div className="icon-ring w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800">
-                            <img src="/homepage_assets/icon_pay.svg" alt="ResilPay" className="w-full h-full object-contain" />
-                        </div>
-                        <div>
-                            <h3 className="text-white text-lg font-medium mb-1">ResilPay</h3>
-                            <p className="text-gray-400 text-xs leading-relaxed font-light">
-                                A secure payment and transfer system for seamless transactions within the ecosystem.
-                            </p>
-                        </div>
-                    </div>
+                        {/* ResilPay + ResilMall side by side */}
+                        <div className="flex flex-col lg:flex-row justify-between gap-6 relative z-20 mt-16">
+                            {/* ResilPay Card */}
+                            <div data-aos="fade-right" data-aos-delay="200" className="border border-white/10 bg-[#0A0A0A] p-6 pt-7 px-8 rounded-[9px] flex gap-5 items-start shadow-2xl card-hover-light w-full max-w-[421px]"
+                                style={{ minHeight: '118px', borderWidth: '1px' }}>
+                                <div className="shrink-0 flex items-center justify-center w-[26px] h-[26px] mt-1">
+                                    <img src="/homepage_assets/icon_pay.svg" alt="ResilPay" className="w-full h-full object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }} />
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="text-white text-[17px] font-medium mb-1.5" style={{ fontFamily: 'Arial' }}>ResilPay</h3>
+                                    <p className="text-gray-400 text-[13px] leading-relaxed font-light tracking-wide" style={{ fontFamily: 'Arial' }}>
+                                        A secure payment and transfer system for seamless transactions within the ecosystem.
+                                    </p>
+                                </div>
+                            </div>
 
-                    {/* ResilMall Card */}
-                    <div data-aos="fade-left" data-aos-delay="200" className="absolute z-20 border border-white/10 bg-[#0A0A0A] p-6 rounded-2xl flex gap-4 items-start shadow-2xl right-[5%] xl:right-[50px] card-hover-light"
-                        style={{ width: '421px', height: '118px', top: '550px', borderWidth: '1px', borderRadius: '9px' }}>
-                        <div className="icon-ring w-10 h-10 shrink-0 bg-[#1a1a1a] rounded-full p-2 flex items-center justify-center border border-gray-800">
-                            <img src="/homepage_assets/icon_mall.svg" alt="ResilMall" className="w-full h-full object-contain" />
-                        </div>
-                        <div>
-                            <h3 className="text-white text-lg font-medium mb-1">ResilMall</h3>
-                            <p className="text-gray-400 text-xs leading-relaxed font-light">
-                                A decentralized marketplace connecting businesses directly with consumers.
-                            </p>
+                            {/* ResilMall Card */}
+                            <div data-aos="fade-left" data-aos-delay="200" className="border border-white/10 bg-[#0A0A0A] p-6 pt-7 px-8 rounded-[9px] flex gap-5 items-start shadow-2xl card-hover-light w-full max-w-[421px] lg:ml-auto"
+                                style={{ minHeight: '118px', borderWidth: '1px' }}>
+                                <div className="shrink-0 flex items-center justify-center w-[26px] h-[26px] mt-1">
+                                    <img src="/homepage_assets/icon_mall.svg" alt="ResilMall" className="w-full h-full object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }} />
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="text-white text-[17px] font-medium mb-1.5" style={{ fontFamily: 'Arial' }}>ResilMall</h3>
+                                    <p className="text-gray-400 text-[13px] leading-relaxed font-light tracking-wide" style={{ fontFamily: 'Arial' }}>
+                                        A decentralized marketplace connecting businesses directly with consumers.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -989,7 +1033,7 @@ const NewHome = () => {
                 id="credits-token"
                 className="hidden md:block text-white relative overflow-hidden w-full"
                 style={{
-                    height: '1062px',
+                    minHeight: '900px',
                     background: '#000000',
                 }}
             >
@@ -1005,27 +1049,28 @@ const NewHome = () => {
                     }}
                 ></div>
 
-                <div className="relative max-w-[1440px] mx-auto h-full">
+                <div className="relative w-full z-20 px-8 lg:px-16 pt-40 pb-20">
                     {/* 3D Token Image - BEHIND everything (z-index 1) */}
                     <div
                         className="absolute pointer-events-none"
                         style={{
-                            width: '706px',
-                            height: '1059px',
-                            top: '-15px',
-                            left: '247px',
+                            right: 'calc(clamp(2rem, 4vw, 4rem) + 380px + 80px)', /* Increased offset to shift the image further to the left */
+                            width: 'clamp(550px, 49vw, 860px)',
+                            top: '-150px',
                             zIndex: 1,
                         }}
                     >
                         <img
                             src="/homepage_assets/token_box_3d.svg"
                             alt="3D Token Box"
-                            className="w-full h-full object-contain"
+                            className="w-full h-auto object-contain"
                             style={{
                                 opacity: 1,
+                                maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 97%, rgba(0,0,0,0) 100%)',
+                                WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 97%, rgba(0,0,0,0) 100%)'
                             }}
                         />
-                        {/* Black shade fade at bottom of image - extends to card bottoms */}
+                        {/* Black shade fade at bottom of image */}
                         <div
                             className="absolute bottom-0 left-0 right-0 pointer-events-none"
                             style={{
@@ -1033,228 +1078,107 @@ const NewHome = () => {
                                 background: 'linear-gradient(to top, #000000 0%, #000000 15%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.5) 60%, transparent 100%)',
                             }}
                         ></div>
+                        {/* Shifting the blending overlays slightly to the right to preserve edge visibility */}
+                        <div
+                            className="absolute top-0 bottom-0 pointer-events-none"
+                            style={{
+                                right: '-30px', /* Shift the blend center further to the right */
+                                width: '60px',
+                                background: 'linear-gradient(to right, transparent 0%, #000000 50%, #000000 100%)',
+                            }}
+                        ></div>
+                        {/* Outward black shadow extension starting further right */}
+                        <div
+                            className="absolute top-0 bottom-0 pointer-events-none"
+                            style={{
+                                left: 'calc(100% + 30px)',
+                                width: '150px',
+                                background: 'linear-gradient(to right, #000000 0%, transparent 100%)',
+                            }}
+                        ></div>
                     </div>
 
-                    {/* Header - GACCO font, positioned per Figma */}
-                    <div data-aos="fade-up" className="absolute z-10" style={{ width: 'auto', height: 'auto', top: '171px', left: '80px', whiteSpace: 'nowrap' }}>
+                    {/* Header */}
+                    <div data-aos="fade-up" className="relative z-10 mb-4 flex justify-center w-full">
                         <h2
-                            className="text-left uppercase text-[#C8FF80]"
+                            className="text-center uppercase text-[#C8FF80]"
                             style={{
                                 fontFamily: 'GACCO',
                                 fontWeight: 500,
-                                fontSize: '36px',
+                                fontSize: 'clamp(24px, 3vw, 36px)',
                                 lineHeight: '130%',
-                                letterSpacing: '0%',
                             }}
                         >
                             Credits & Token System
                         </h2>
                     </div>
 
-                    {/* Subtext - Arial, positioned per Figma */}
-                    <div className="absolute z-10" style={{ width: '607px', height: 'auto', top: '230px', left: '80px' }}>
+                    {/* Subtext */}
+                    <div className="relative z-10 mb-20 max-w-[607px] mx-auto">
                         <p
-                            className="text-left"
+                            className="text-center"
                             style={{
                                 fontFamily: 'Arial',
                                 fontWeight: 400,
-                                fontSize: '16px',
+                                fontSize: '15.5px',
                                 lineHeight: '150%',
-                                letterSpacing: '0%',
-                                color: 'rgba(255,255,255,0.6)',
+                                color: 'rgba(255,255,255,0.8)',
                             }}
                         >
                             Resilution combines simplicity with blockchain power through a dual economic model.
                         </p>
                     </div>
 
-                    {/* Left Card: Credits - positioned above image */}
-                    <div
-                        data-aos="fade-right"
-                        className="absolute z-10 group"
-                        style={{
-                            top: '380px',
-                            left: '73px',
-                            width: '380px',
-                        }}
-                    >
-                        {/* Gradient border wrapper */}
+                    {/* Cards Row */}
+                    <div className="relative z-10 flex flex-col lg:flex-row justify-between gap-8">
+                        {/* Left Card: Credits */}
                         <div
-                            className="absolute inset-0 rounded-[16px] pointer-events-none group-hover:opacity-0 transition-opacity duration-500"
-                            style={{
-                                padding: '1px',
-                                background: 'linear-gradient(135deg, rgba(200,255,128,0.5) 0%, rgba(200,255,128,0.15) 20%, rgba(200,255,128,0.03) 50%, rgba(200,255,128,0.15) 80%, rgba(200,255,128,0.5) 100%)',
-                                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                                WebkitMaskComposite: 'xor',
-                                maskComposite: 'exclude',
-                                borderRadius: '16px',
-                            }}
-                        ></div>
-                        <div
-                            className="relative rounded-[16px] flex flex-col card-hover-light"
-                            style={{
-                                background: 'linear-gradient(160deg, rgba(20, 31, 10, 0.85) 0%, rgba(12, 20, 7, 0.9) 30%, rgba(10, 18, 5, 0.9) 60%, rgba(13, 22, 8, 0.85) 100%)',
-                                backdropFilter: 'blur(20px)',
-                                padding: '45px 30px 40px',
-                                minHeight: '520px',
-                            }}
+                            data-aos="fade-right"
+                            className="relative z-10 group flex-1 max-w-[380px] lg:translate-x-12"
                         >
-                            {/* Icon circle */}
                             <div
-                                className="icon-ring flex items-center justify-center shrink-0"
+                                className="relative rounded-[16px] flex flex-col card-hover-light shadow-lg"
                                 style={{
-                                    width: '42px',
-                                    height: '42px',
-                                    marginBottom: '20px',
-                                    borderRadius: '50%',
-                                    background: 'rgba(200, 255, 128, 0.12)',
-                                    border: '1px solid rgba(200, 255, 128, 0.25)',
+                                    border: '1.5px solid transparent',
+                                    background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(135deg, #C8FF80 0%, transparent 35%, transparent 65%, #C8FF80 100%) border-box',
+                                    backdropFilter: 'blur(20px)',
+                                    padding: '50px 30px',
+                                    minHeight: '480px',
                                 }}
                             >
-                                <img
-                                    src="/homepage_assets/icon_credits.svg"
-                                    alt="Credits"
-                                    className="w-5 h-5 object-contain"
-                                    style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }}
-                                />
+                                <div className="icon-ring flex items-center justify-center shrink-0" style={{ width: '42px', height: '42px', marginBottom: '20px', borderRadius: '50%', background: 'rgba(200, 255, 128, 0.12)', border: '1px solid rgba(200, 255, 128, 0.25)' }}>
+                                    {/* Swapped Icon */}
+                                    <img src="/homepage_assets/icon_token.svg" alt="Credits" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }} />
+                                </div>
+                                <h3 className="text-white uppercase" style={{ fontFamily: 'GACCO', fontSize: '22px', lineHeight: '26px', fontWeight: 600, letterSpacing: '1.5px', marginBottom: '28px' }}>CREDITS</h3>
+                                <ul className="flex-grow list-disc pl-5 space-y-3" style={{ fontFamily: 'Arial', fontSize: '14.5px', lineHeight: '22px', fontWeight: 400, maxWidth: '300px', color: 'rgba(255,255,255,0.85)' }}>
+                                    <li>Credits are stable, USD-pegged units designed to make participation simple and secure.</li>
+                                    <li>They allow users to invest, fund businesses, and transact without worrying about crypto volatility.</li>
+                                </ul>
+                                <button className="flex justify-center items-center mt-8 font-medium hover:brightness-110 transition-all text-black btn-white-hover bg-[#C8FF80]" style={{ fontFamily: 'Arial', width: '190px', height: '46px', fontSize: '15.5px', color: '#000', border: 'none', borderRadius: '2px' }}>
+                                    Learn About Credits
+                                </button>
                             </div>
-                            <h3
-                                className="text-white uppercase"
-                                style={{
-                                    fontFamily: 'GACCO',
-                                    fontSize: '22px',
-                                    lineHeight: '26px',
-                                    fontWeight: 600,
-                                    letterSpacing: '1.5px',
-                                    marginBottom: '28px',
-                                }}
-                            >
-                                CREDITS
-                            </h3>
-                            <ul
-                                className="flex-grow list-disc pl-5 space-y-3"
-                                style={{
-                                    fontFamily: 'Arial',
-                                    fontSize: '14px',
-                                    lineHeight: '20px',
-                                    fontWeight: 400,
-                                    maxWidth: '300px',
-                                    color: 'rgba(255,255,255,0.7)',
-                                }}
-                            >
-                                <li>Credits are stable, USD-pegged units designed to make participation simple and secure.</li>
-                                <li>They allow users to invest, fund businesses, and transact without worrying about crypto volatility.</li>
-                            </ul>
-                            <button
-                                className="flex justify-center items-center mt-8 font-medium hover:brightness-110 transition-all text-black btn-white-hover"
-                                style={{
-                                    fontFamily: 'Arial',
-                                    width: '190px',
-                                    height: '44px',
-                                    fontSize: '15px',
-                                    background: '#C8FF80',
-                                    color: '#000',
-                                    border: 'none',
-                                    borderRadius: '2px',
-                                }}
-                            >
-                                Learn About Credits
-                            </button>
                         </div>
-                    </div>
 
-                    {/* Right Card: Token - positioned above image, touching right edge of 3D image */}
-                    <div
-                        data-aos="fade-left"
-                        className="absolute z-10 group"
-                        style={{
-                            top: '380px',
-                            left: '987px',
-                            width: '380px',
-                        }}
-                    >
-                        {/* Gradient border wrapper */}
                         <div
-                            className="absolute inset-0 rounded-[16px] pointer-events-none group-hover:opacity-0 transition-opacity duration-500"
-                            style={{
-                                padding: '1px',
-                                background: 'linear-gradient(135deg, rgba(200,255,128,0.5) 0%, rgba(200,255,128,0.15) 20%, rgba(200,255,128,0.03) 50%, rgba(200,255,128,0.15) 80%, rgba(200,255,128,0.5) 100%)',
-                                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                                WebkitMaskComposite: 'xor',
-                                maskComposite: 'exclude',
-                                borderRadius: '16px',
-                            }}
-                        ></div>
-                        <div
-                            className="relative rounded-[16px] flex flex-col card-hover-light"
-                            style={{
-                                background: 'linear-gradient(160deg, rgba(20, 31, 10, 0.85) 0%, rgba(12, 20, 7, 0.9) 30%, rgba(10, 18, 5, 0.9) 60%, rgba(13, 22, 8, 0.85) 100%)',
-                                backdropFilter: 'blur(20px)',
-                                padding: '45px 30px 40px',
-                                minHeight: '520px',
-                            }}
+                            data-aos="fade-left"
+                            className="relative z-10 group flex-1 max-w-[380px] lg:ml-auto lg:-translate-x-12"
                         >
-                            {/* Icon circle */}
-                            <div
-                                className="icon-ring flex items-center justify-center shrink-0"
-                                style={{
-                                    width: '42px',
-                                    height: '42px',
-                                    marginBottom: '20px',
-                                    borderRadius: '50%',
-                                    background: 'rgba(200, 255, 128, 0.12)',
-                                    border: '1px solid rgba(200, 255, 128, 0.25)',
-                                }}
-                            >
-                                <img
-                                    src="/homepage_assets/icon_token.svg"
-                                    alt="Token"
-                                    className="w-5 h-5 object-contain"
-                                    style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }}
-                                />
+                            <div className="relative rounded-[16px] flex flex-col card-hover-light shadow-lg" style={{ border: '1.5px solid transparent', background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(135deg, #C8FF80 0%, transparent 35%, transparent 65%, #C8FF80 100%) border-box', backdropFilter: 'blur(20px)', padding: '50px 30px', minHeight: '480px' }}>
+                                <div className="icon-ring flex items-center justify-center shrink-0" style={{ width: '42px', height: '42px', marginBottom: '20px', borderRadius: '50%', background: 'rgba(200, 255, 128, 0.12)', border: '1px solid rgba(200, 255, 128, 0.25)' }}>
+                                    {/* Swapped Icon */}
+                                    <img src="/homepage_assets/icon_credits.svg" alt="Token" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }} />
+                                </div>
+                                <h3 className="text-white uppercase" style={{ fontFamily: 'GACCO', fontSize: '22px', lineHeight: '26px', fontWeight: 600, letterSpacing: '1.5px', marginBottom: '28px' }}>$RESIL TOKEN</h3>
+                                <ul className="flex-grow list-disc pl-5 space-y-3" style={{ fontFamily: 'Arial', fontSize: '14.5px', lineHeight: '22px', fontWeight: 400, maxWidth: '300px', color: 'rgba(255,255,255,0.85)' }}>
+                                    <li>The $RESIL token powers the Resilution ecosystem through rewards, governance, and tier upgrades.</li>
+                                    <li>It enables profit sharing and long-term ecosystem growth.</li>
+                                </ul>
+                                <button className="flex justify-center items-center mt-8 font-medium hover:brightness-110 transition-all text-black btn-white-hover bg-[#C8FF80]" style={{ fontFamily: 'Arial', width: '190px', height: '46px', fontSize: '15.5px', color: '#000', border: 'none', borderRadius: '2px' }}>
+                                    Learn About Token
+                                </button>
                             </div>
-                            <h3
-                                className="text-white uppercase"
-                                style={{
-                                    fontFamily: 'GACCO',
-                                    fontSize: '22px',
-                                    lineHeight: '26px',
-                                    fontWeight: 600,
-                                    letterSpacing: '1.5px',
-                                    marginBottom: '28px',
-                                }}
-                            >
-                                $RESIL TOKEN
-                            </h3>
-                            <ul
-                                className="flex-grow list-disc pl-5 space-y-3"
-                                style={{
-                                    fontFamily: 'Arial',
-                                    fontSize: '14px',
-                                    lineHeight: '20px',
-                                    fontWeight: 400,
-                                    maxWidth: '300px',
-                                    color: 'rgba(255,255,255,0.7)',
-                                }}
-                            >
-                                <li>The $RESIL token powers the Resilution ecosystem through rewards, governance, and tier upgrades.</li>
-                                <li>It enables profit sharing and long-term ecosystem growth.</li>
-                            </ul>
-                            <button
-                                className="flex justify-center items-center mt-8 font-medium hover:brightness-110 transition-all text-black btn-white-hover"
-                                style={{
-                                    fontFamily: 'Arial',
-                                    width: '190px',
-                                    height: '44px',
-                                    fontSize: '15px',
-                                    background: '#C8FF80',
-                                    color: '#000',
-                                    border: 'none',
-                                    borderRadius: '2px',
-                                }}
-                            >
-                                Learn About Token
-                            </button>
                         </div>
                     </div>
 
@@ -1272,151 +1196,146 @@ const NewHome = () => {
 
                 <div className="flex flex-col gap-6">
                     {/* Credits Card */}
-                    <div data-aos="fade-up" className="rounded-[16px] bg-[#141f0a] border border-[#C8FF80]/20 p-6 card-hover-light group">
+                    <div data-aos="fade-up" className="rounded-[16px] bg-gradient-to-b from-[#202b10] to-black border border-[#C8FF80]/30 p-6 card-hover-light group shadow-lg">
                         <div className="flex items-center gap-4 mb-4">
                             <div className="icon-ring w-10 h-10 rounded-full bg-[#C8FF80]/10 flex justify-center items-center border border-[#C8FF80]/30 transition-all duration-500">
-                                <img src="/homepage_assets/icon_credits.svg" alt="Credits" className="w-5 h-5 object-contain" />
+                                <img src="/homepage_assets/icon_token.svg" alt="Credits" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }} />
                             </div>
                             <h3 className="font-['GACCO'] text-white text-xl font-bold uppercase">CREDITS</h3>
                         </div>
-                        <ul className="font-['arial'] list-disc pl-5 space-y-2 text-gray-300 text-sm font-light mb-6">
+                        <ul className="font-['arial'] list-disc pl-5 space-y-2 text-gray-300 text-[14.5px] font-light mb-6">
                             <li>Credits are stable, USD-pegged units designed to make participation simple and secure.</li>
                             <li>They allow users to invest, fund businesses, and transact without worrying about crypto volatility.</li>
                         </ul>
-                        <button className="font-['arial'] bg-[#C8FF80] text-black w-full py-3 text-sm font-bold rounded-sm uppercase btn-white-hover">
+                        <button className="font-['arial'] bg-[#C8FF80] text-black w-full py-3 text-[15.5px] font-medium rounded-sm btn-white-hover">
                             Learn About Credits
                         </button>
                     </div>
 
                     {/* Token Card */}
-                    <div data-aos="fade-up" data-aos-delay="100" className="rounded-[16px] bg-[#141f0a] border border-[#C8FF80]/20 p-6 card-hover-light group">
+                    <div data-aos="fade-up" data-aos-delay="100" className="rounded-[16px] bg-gradient-to-b from-[#202b10] to-black border border-[#C8FF80]/30 p-6 card-hover-light group shadow-lg">
                         <div className="flex items-center gap-4 mb-4">
                             <div className="icon-ring w-10 h-10 rounded-full bg-[#C8FF80]/10 flex justify-center items-center border border-[#C8FF80]/30 transition-all duration-500">
-                                <img src="/homepage_assets/icon_token.svg" alt="Token" className="w-5 h-5 object-contain" />
+                                <img src="/homepage_assets/icon_credits.svg" alt="Token" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }} />
                             </div>
                             <h3 className="font-['GACCO'] text-white text-xl font-bold uppercase">$RESIL TOKEN</h3>
                         </div>
-                        <ul className="font-['arial'] list-disc pl-5 space-y-2 text-gray-300 text-sm font-light mb-6">
+                        <ul className="font-['arial'] list-disc pl-5 space-y-2 text-gray-300 text-[14.5px] font-light mb-6">
                             <li>The $RESIL token powers the Resilution ecosystem through rewards, governance, and tier upgrades.</li>
                             <li>It enables profit sharing and long-term ecosystem growth.</li>
                         </ul>
-                        <button className="font-['arial'] bg-[#C8FF80] text-black w-full py-3 text-sm font-bold rounded-sm uppercase btn-white-hover">
+                        <button className="font-['arial'] bg-[#C8FF80] text-black w-full py-3 text-[15.5px] font-medium rounded-sm btn-white-hover">
                             Learn About Token
                         </button>
                     </div>
                 </div>
             </section>
 
-            {/* ═══════════════════ TOKENOMICS & UTILITY ═══════════════════ */}
-            {/* ═══════════════════ TOKENOMICS & UTILITY ═══════════════════ */}
             {/* ═══════════════════ TOKENOMICS & UTILITY (DESKTOP) ═══════════════════ */}
-            <section id="tokenomics" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '1283px' }}>
+            <section id="tokenomics" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ minHeight: '900px' }}>
 
-                <div className="relative max-w-[1440px] mx-auto h-full">
-                    {/* Headline */}
-                    <div className="absolute z-20" style={{ top: '103px', left: '80px' }}>
-                        <h2 className="uppercase text-[#C8FF80] tracking-wide" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '130%' }}>
-                            TOKENOMICS & UTILITY
-                        </h2>
+                <div className="relative w-full z-20 px-8 lg:px-16 pt-24 pb-20">
+                    {/* Header Row */}
+                    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-6">
+                        <div>
+                            <h2 className="uppercase text-[#C8FF80] tracking-wide" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: 'clamp(24px, 3vw, 36px)', lineHeight: '130%' }}>
+                                TOKENOMICS & UTILITY
+                            </h2>
+                        </div>
+                        <button className="bg-[#C8FF80] text-black hover:bg-[#b0e660] transition-colors flex items-center justify-center shrink-0 rounded-[2px]" style={{ fontFamily: 'Arial', width: '160px', height: '42px', fontSize: '15px' }}>
+                            Learn More
+                        </button>
                     </div>
 
                     {/* Subtext */}
-                    <div className="absolute z-20" style={{ top: '192px', left: '80px', width: '577px' }}>
+                    <div className="mb-16 max-w-[577px]">
                         <p className="text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%', color: '#FFFFFF' }}>
                             The $RESIL token is designed to drive platform growth, reward participation, and ensure long-term ecosystem sustainability.
                         </p>
                     </div>
 
-                    {/* Learn More Button */}
-                    <button className="absolute z-20 bg-[#C8FF80] text-black font-bold uppercase hover:bg-[#b0e660] transition-colors flex items-center justify-center"
-                        style={{ top: '110px', left: '1163px', width: '185px', height: '43px', fontSize: '14px', letterSpacing: '0.05em' }}>
-                        Learn More
-                    </button>
+                    {/* Central Grid and Coin Container */}
+                    <div className="relative w-full max-w-[1240px] mx-auto mt-20 mb-12 flex justify-center items-center" style={{ minHeight: '600px' }}>
 
-                    {/* Central Coin Image */}
-                    <div className="absolute z-30" style={{ top: '474px', left: '489px', width: '555px', height: '510px' }}>
-                        <img src="/homepage_assets/tokenomics_coin.svg" alt="Tokenomics Coin" className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(200,255,128,0.2)]" />
-                    </div>
+                        {/* Central Coin Image */}
+                        <div
+                            className="absolute z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none lg:pointer-events-auto"
+                            style={{ width: '45%', maxWidth: '520px', aspectRatio: '1/1' }}
+                        >
+                            <img
+                                src="/homepage_assets/tokenomics_coin.svg"
+                                alt="Tokenomics Coin"
+                                className="w-full h-full object-contain drop-shadow-[0_0_80px_rgba(200,255,128,0.25)] hover:drop-shadow-[0_0_100px_rgba(200,255,128,0.4)] hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+                            />
+                        </div>
 
-                    {/* Access & Tiers Card (Top Left) */}
-                    <div data-aos="fade-right" className="absolute z-20 flex flex-col items-start justify-center text-left p-8 pl-12 card-hover-light"
-                        style={{
-                            top: '315px',
-                            left: '170px',
-                            width: '383px',
-                            height: '317px',
-                            borderRadius: '18px',
-                            border: '1px solid transparent',
-                            background: 'linear-gradient(180deg, rgba(32, 43, 16, 0.6) 0%, #000000 100%) padding-box, linear-gradient(45deg, #C8FF80 0%, transparent 40%, transparent 60%, #C8FF80 100%) border-box',
-                            backdropFilter: 'blur(500px)'
-                        }}>
-                        <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Access & Tiers</h3>
-                        <p className="text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
-                            $RESIL tokens unlock premium features, higher investment limits, and advanced platform tools through tier-based access.
-                        </p>
-                    </div>
+                        {/* 4 Cards Grid */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-[320px] gap-y-16 relative z-20 w-full">
+                            {/* Access & Tiers Card */}
+                            <div data-aos="fade-right" className="flex flex-col items-start justify-center text-left p-8 xl:p-10 card-hover-light bg-black"
+                                style={{
+                                    minHeight: '280px',
+                                    borderRadius: '16px',
+                                    border: '1.5px solid transparent',
+                                    background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
+                                }}>
+                                <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Access & Tiers</h3>
+                                <p className="text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '15px', lineHeight: '150%' }}>
+                                    $RESIL tokens unlock premium features, higher investment limits, and advanced platform tools through tier-based access.
+                                </p>
+                            </div>
 
-                    {/* Rewards System Card (Top Right) */}
-                    <div data-aos="fade-left" className="absolute z-20 flex flex-col items-start justify-center text-left p-8 pl-12 card-hover-light"
-                        style={{
-                            top: '315px',
-                            left: '888px',
-                            width: '383px',
-                            height: '317px',
-                            borderRadius: '18px',
-                            border: '1px solid transparent',
-                            background: 'linear-gradient(180deg, rgba(32, 43, 16, 0.6) 0%, #000000 100%) padding-box, linear-gradient(225deg, #C8FF80 0%, transparent 40%, transparent 60%, #C8FF80 100%) border-box',
-                            backdropFilter: 'blur(500px)'
-                        }}>
-                        <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Rewards System</h3>
-                        <ul className="text-white list-disc pl-5 space-y-2" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
-                            <li>Users earn $RESIL through investments, platform participation, and ecosystem contributions.</li>
-                            <li>Automated smart contracts distribute rewards transparently.</li>
-                        </ul>
-                    </div>
+                            {/* Rewards System Card */}
+                            <div data-aos="fade-left" className="flex flex-col items-start justify-center text-left p-8 xl:p-10 card-hover-light bg-black"
+                                style={{
+                                    minHeight: '280px',
+                                    borderRadius: '16px',
+                                    border: '1.5px solid transparent',
+                                    background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
+                                }}>
+                                <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Rewards System</h3>
+                                <ul className="text-white list-disc pl-5 space-y-2" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '15px', lineHeight: '150%' }}>
+                                    <li>Users earn $RESIL through investments, platform participation, and ecosystem contributions.</li>
+                                    <li>Automated smart contracts distribute rewards transparently.</li>
+                                </ul>
+                            </div>
 
-                    {/* Staking Card (Bottom Left) */}
-                    <div data-aos="fade-right" data-aos-delay="200" className="absolute z-20 flex flex-col items-start justify-center text-left p-8 pl-12 card-hover-light"
-                        style={{
-                            top: '800px',
-                            left: '170px',
-                            width: '383px',
-                            height: '317px',
-                            borderRadius: '18px',
-                            border: '1px solid transparent',
-                            background: 'linear-gradient(180deg, rgba(32, 43, 16, 0.6) 0%, #000000 100%) padding-box, linear-gradient(45deg, #C8FF80 0%, transparent 40%, transparent 60%, #C8FF80 100%) border-box',
-                            backdropFilter: 'blur(500px)'
-                        }}>
-                        <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Staking</h3>
-                        <div className="text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
-                            <p className="mb-4">Stake $RESIL tokens to receive:</p>
-                            <ul className="list-disc pl-5 space-y-2">
-                                <li>Reduced platform fees</li>
-                                <li>Priority access to deals</li>
-                                <li>Additional rewards</li>
-                            </ul>
+                            {/* Staking Card */}
+                            <div data-aos="fade-right" data-aos-delay="100" className="flex flex-col items-start justify-center text-left p-8 xl:p-10 card-hover-light bg-black"
+                                style={{
+                                    minHeight: '280px',
+                                    borderRadius: '16px',
+                                    border: '1.5px solid transparent',
+                                    background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
+                                }}>
+                                <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Staking</h3>
+                                <div className="text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '15px', lineHeight: '150%' }}>
+                                    <p className="mb-4 font-bold">Stake $RESIL tokens to receive:</p>
+                                    <ul className="list-disc pl-5 space-y-2 text-[15px]">
+                                        <li>Reduced platform fees</li>
+                                        <li>Priority access to deals</li>
+                                        <li>Additional rewards</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* Governance Card */}
+                            <div data-aos="fade-left" data-aos-delay="100" className="flex flex-col items-start justify-center text-left p-8 xl:p-10 card-hover-light bg-black"
+                                style={{
+                                    minHeight: '280px',
+                                    borderRadius: '16px',
+                                    border: '1.5px solid transparent',
+                                    background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
+                                }}>
+                                <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Governance</h3>
+                                <p className="text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '15px', lineHeight: '150%' }}>
+                                    Token holders can vote on platform upgrades, ecosystem decisions, and future developments.
+                                </p>
+                            </div>
                         </div>
                     </div>
-
-                    {/* Governance Card (Bottom Right) */}
-                    <div data-aos="fade-left" data-aos-delay="200" className="absolute z-20 flex flex-col items-start justify-center text-left p-8 pl-12 card-hover-light"
-                        style={{
-                            top: '800px',
-                            left: '888px',
-                            width: '383px',
-                            height: '317px',
-                            borderRadius: '18px',
-                            border: '1px solid transparent',
-                            background: 'linear-gradient(180deg, rgba(32, 43, 16, 0.6) 0%, #000000 100%) padding-box, linear-gradient(225deg, #C8FF80 0%, transparent 40%, transparent 60%, #C8FF80 100%) border-box',
-                            backdropFilter: 'blur(500px)'
-                        }}>
-                        <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Governance</h3>
-                        <p className="text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
-                            Token holders can vote on platform upgrades, ecosystem decisions, and future developments.
-                        </p>
-                    </div>
-
                 </div>
+
                 {/* Background Decoration (Lower Waves - Layer 2) */}
                 <div className="absolute bottom-0 left-0 w-full z-10 pointer-events-none">
                     <img src="/homepage_assets/Layer 2.svg" alt="Background Waves" className="w-full h-auto object-cover object-bottom opacity-100" />
@@ -1435,9 +1354,10 @@ const NewHome = () => {
                     </p>
                 </div>
 
-                {/* 3D Coin Image - Centered and Large */}
+                {/* 3D Coin Image - Centered and Large with Callouts */}
                 <div className="relative w-full flex justify-center mb-8 pointer-events-none">
                     <div className="w-[280px] h-[280px] relative">
+                        {/* Mobile Callouts Removed */}
                         <img
                             src="/homepage_assets/tokenomics_coin.svg"
                             alt="Tokenomics Coin"
@@ -1534,157 +1454,214 @@ const NewHome = () => {
                 </div>
             </section>
 
-            {/* ═══════════════════ TOKEN DISTRIBUTION ═══════════════════ */}
-            {/* ═══════════════════ TOKEN DISTRIBUTION ═══════════════════ */}
             {/* ═══════════════════ TOKEN DISTRIBUTION (DESKTOP) ═══════════════════ */}
-            <section id="distribution" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '1009px' }}>
+            <section id="distribution" className="hidden md:block bg-black relative overflow-hidden w-full py-24">
 
-                <div className="relative max-w-[1440px] mx-auto h-full">
+                <div className="relative w-full px-8 lg:px-16">
                     {/* Header & Subtext */}
-                    <div className="absolute flex flex-col md:flex-row justify-between items-start md:items-end w-full px-20 gap-10" style={{ top: '133px', left: '0' }}>
-                        <h2 className="uppercase text-[#C8FF80]" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '130%', letterSpacing: '0%' }}>
+                    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end w-full gap-10 mb-16">
+                        <h2 className="uppercase text-[#C8FF80]" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: 'clamp(24px, 3vw, 36px)', lineHeight: '130%' }}>
                             TOKEN DISTRIBUTION
                         </h2>
-                        <p className="text-white text-left md:text-right max-w-lg" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
+                        <p className="text-white text-left lg:text-right max-w-lg" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
                             A balanced allocation model designed to prioritize ecosystem growth, long-term alignment, and platform sustainability.
                         </p>
                     </div>
 
-                    {/* Pie Chart Container */}
-                    <div className="absolute z-10" style={{ top: '286px', left: '478px', width: '366.5px', height: '366.5px' }}>
-                        <svg viewBox="0 0 366.5 366.5" className="w-full h-full overflow-visible">
-                            {/* 
-                            Pie Chart Segments 
-                            Center: 183.25, 183.25
-                            Radius: 183.25
-                         */}
-                            {(() => {
-                                const CX = 183.25;
-                                const CY = 183.25;
-                                const R = 183;
-                                // Match indices: 0:Investors, 1:Community, 2:Operations, 3:Team
-                                const segmentsKey = [
-                                    { name: 'Investors', start: 180, end: 270, color: '#D6E5A8', index: 0 },
-                                    { name: 'Community', start: 270, end: 442.8, color: '#C8FF80', index: 1 },
-                                    { name: 'Operations', start: 82.8, end: 136.8, color: '#9ACD32', index: 2 },
-                                    { name: 'Team', start: 136.8, end: 180, color: '#78994D', index: 3 }
-                                ];
+                    {/* Main Content: Precision Desktop View (lg and up) perfectly matching Image 2 */}
+                    <div className="hidden lg:block relative w-full max-w-[1200px] mx-auto mt-16" style={{ aspectRatio: '1200 / 550', minHeight: '450px' }}>
 
-                                const rad = deg => (deg * Math.PI) / 180;
+                        {/* CONNECTING LINES SVG (Spans full 1200x550) */}
+                        <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1200 550" preserveAspectRatio="xMidYMid meet">
+                            {/* INVESTORS */}
+                            <path d="M 348 105 L 420 105 L 470.6 145.6" fill="none" stroke="#D6E5A8" strokeWidth="1.5" opacity="0.8" />
 
-                                return segmentsKey.map((seg) => {
-                                    const isHovered = hoveredSlice === seg.index;
-                                    const radius = isHovered ? R + 10 : R; // Pop out effect
+                            {/* TEAM & ADVISORS */}
+                            <path d="M 348 270 L 410 270 L 441.5 366.7" fill="none" stroke="#78994D" strokeWidth="1.5" opacity="0.8" />
 
-                                    const x1 = CX + radius * Math.cos(rad(seg.start));
-                                    const y1 = CY + radius * Math.sin(rad(seg.start));
-                                    const x2 = CX + radius * Math.cos(rad(seg.end));
-                                    const y2 = CY + radius * Math.sin(rad(seg.end));
+                            {/* OPERATIONS */}
+                            <path d="M 348 435 L 480 435 L 537.4 447.2" fill="none" stroke="#9ACD32" strokeWidth="1.5" opacity="0.8" />
 
-                                    const largeArc = (seg.end - seg.start) > 180 ? 1 : 0;
-
-                                    const d = `M ${CX} ${CY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`;
-
-                                    return (
-                                        <path
-                                            key={seg.index}
-                                            d={d}
-                                            fill={seg.color}
-                                            stroke={isHovered ? "white" : "none"}
-                                            strokeWidth={isHovered ? "2" : "0"}
-                                            className="transition-all duration-300 ease-out cursor-pointer"
-                                            onMouseEnter={() => setHoveredSlice(seg.index)}
-                                            onMouseLeave={() => setHoveredSlice(null)}
-                                            style={{ transformOrigin: `${CX}px ${CY}px` }}
-                                        />
-                                    );
-                                });
-                            })()}
-
-                            {/* Percentage Labels Inside the Pie - positioned at mid-angle of segments */}
-                            <text x="105" y="105" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="14" fill="#000" className="pointer-events-none font-bold">25%</text> {/* Investors */}
-                            <text x="293" y="176" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="18" fill="#000" className="pointer-events-none font-bold">48%</text> {/* Community */}
-                            <text x="146" y="287" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="14" fill="#000" className="pointer-events-none font-bold">15%</text> {/* Operations */}
-                            <text x="81" y="224" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="14" fill="#000" className="pointer-events-none font-bold">12%</text> {/* Team */}
+                            {/* COMMUNITY */}
+                            <path d="M 852 140 L 800 140 L 758.5 183.7" fill="none" stroke="#C8FF80" strokeWidth="1.5" opacity="0.8" />
                         </svg>
-                    </div>
 
-                    {/* Connector Lines Overlay */}
-                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
-                        <svg viewBox="0 0 1447 1009" className="w-full h-full">
-                            {/* Investors Line: Horizontal then Diagonal Down-Left */}
-                            <path d="M 550 360 L 450 360 L 380 410" fill="none" stroke="#C8FF80" strokeWidth="1" />
+                        {/* PIE CHART SVG (Centered) */}
+                        <div className="absolute z-10" style={{ left: '50%', top: '92px', width: '30.5%', aspectRatio: '1 / 1', transform: 'translateX(-50%)' }}>
+                            <svg viewBox="0 0 366.5 366.5" className="w-full h-full overflow-visible">
+                                {(() => {
+                                    const CX = 183.25;
+                                    const CY = 183.25;
+                                    const R = 183;
+                                    const segmentsKey = [
+                                        { name: 'Investors', start: 180, end: 270, color: '#D6E5A8', index: 0 },
+                                        { name: 'Community', start: 270, end: 442.8, color: '#C8FF80', index: 1 },
+                                        { name: 'Operations', start: 82.8, end: 136.8, color: '#9ACD32', index: 2 },
+                                        { name: 'Team', start: 136.8, end: 180, color: '#78994D', index: 3 }
+                                    ];
 
-                            {/* Team Line: Diagonal Down-Left */}
-                            <path d="M 490 480 L 340 550" fill="none" stroke="#C8FF80" strokeWidth="1" />
+                                    const rad = deg => (deg * Math.PI) / 180;
 
-                            {/* Operations Line: Diagonal Down-Left */}
-                            <path d="M 560 600 L 410 690" fill="none" stroke="#C8FF80" strokeWidth="1" />
+                                    return segmentsKey.map((seg) => {
+                                        const isHovered = hoveredSlice === seg.index;
+                                        const radius = isHovered ? R + 10 : R;
 
-                            {/* Community Line: Horizontal Right then Diagonal Up-Right */}
-                            <path d="M 830 469 L 880 469 L 910 420" fill="none" stroke="#C8FF80" strokeWidth="1" />
-                        </svg>
-                    </div>
+                                        const x1 = CX + radius * Math.cos(rad(seg.start));
+                                        const y1 = CY + radius * Math.sin(rad(seg.start));
+                                        const x2 = CX + radius * Math.cos(rad(seg.end));
+                                        const y2 = CY + radius * Math.sin(rad(seg.end));
 
-                    {/* Labels Layout */}
+                                        const largeArc = (seg.end - seg.start) > 180 ? 1 : 0;
 
-                    {/* Investors Label */}
-                    <div
-                        className="absolute text-right cursor-pointer group"
-                        style={{ top: '340px', left: '100px', width: '270px' }}
-                        onMouseEnter={() => setHoveredSlice(0)}
-                        onMouseLeave={() => setHoveredSlice(null)}
-                    >
-                        <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>INVESTORS</h3>
-                        <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>Combined allocation across strategic, private, and public funding rounds.</p>
-                    </div>
+                                        const d = `M ${CX} ${CY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`;
 
-                    {/* Team & Advisors Label */}
-                    <div
-                        className="absolute text-right cursor-pointer group"
-                        style={{ top: '540px', left: '60px', width: '270px' }}
-                        onMouseEnter={() => setHoveredSlice(3)}
-                        onMouseLeave={() => setHoveredSlice(null)}
-                    >
-                        <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>TEAM & ADVISORS</h3>
-                        <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>Core contributors and advisors, subject to long-term vesting schedules.</p>
-                    </div>
+                                        return (
+                                            <path
+                                                key={seg.index}
+                                                d={d}
+                                                fill={seg.color}
+                                                stroke={isHovered ? "white" : "black"}
+                                                strokeWidth={isHovered ? "2" : "1"}
+                                                className="transition-all duration-300 ease-out cursor-pointer"
+                                                onMouseEnter={() => setHoveredSlice(seg.index)}
+                                                onMouseLeave={() => setHoveredSlice(null)}
+                                                style={{ transformOrigin: `${CX}px ${CY}px` }}
+                                            />
+                                        );
+                                    });
+                                })()}
 
-                    {/* Operations Label */}
-                    <div
-                        className="absolute text-right cursor-pointer group"
-                        style={{ top: '680px', left: '130px', width: '270px' }}
-                        onMouseEnter={() => setHoveredSlice(2)}
-                        onMouseLeave={() => setHoveredSlice(null)}
-                    >
-                        <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>OPERATIONS & NETWORK</h3>
-                        <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>Platform operations, infrastructure, validator incentives, and network support.</p>
-                    </div>
-
-                    {/* Community Label */}
-                    <div
-                        className="absolute text-left"
-                        style={{ top: '390px', left: '940px', width: '450px' }}
-                    >
-                        {/* Hoverable part - Connected to Pie Chart */}
-                        <div
-                            className="cursor-pointer group mb-8"
-                            onMouseEnter={() => setHoveredSlice(1)}
-                            onMouseLeave={() => setHoveredSlice(null)}
-                        >
-                            <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>COMMUNITY & ECOSYSTEM</h3>
-                            <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>Rewards, incentives, ecosystem growth, and user participation programs.</p>
+                                {/* Percentage Labels Inside the Pie */}
+                                <text x="105" y="105" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="14" fill="#000" className="pointer-events-none font-bold">25%</text>
+                                <text x="293" y="176" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="18" fill="#000" className="pointer-events-none font-bold">48%</text>
+                                <text x="146" y="287" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="14" fill="#000" className="pointer-events-none font-bold">15%</text>
+                                <text x="81" y="224" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="14" fill="#000" className="pointer-events-none font-bold">12%</text>
+                            </svg>
                         </div>
 
-                        {/* Non-hoverable part - Disconnected from Pie Chart */}
-                        <div className="mt-24">
-                            <p className="text-gray-400 mb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
+                        {/* HTML Elements overlaid via percentage/absolute positions */}
+                        {/* Left Wrappers */}
+                        <div className="absolute z-20 cursor-pointer group flex flex-col items-end text-right" style={{ left: '4%', top: '70px', width: '25%' }} onMouseEnter={() => setHoveredSlice(0)} onMouseLeave={() => setHoveredSlice(null)}>
+                            <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors whitespace-nowrap" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>INVESTORS</h3>
+                            <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%' }}>Combined allocation across strategic,<br />private, and public funding rounds.</p>
+                        </div>
+
+                        <div className="absolute z-20 cursor-pointer group flex flex-col items-end text-right" style={{ left: '4%', top: '235px', width: '25%' }} onMouseEnter={() => setHoveredSlice(3)} onMouseLeave={() => setHoveredSlice(null)}>
+                            <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors whitespace-nowrap" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>TEAM & ADVISORS</h3>
+                            <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%' }}>Core contributors and advisors,<br />subject to long-term vesting schedules.</p>
+                        </div>
+
+                        <div className="absolute z-20 cursor-pointer group flex flex-col items-end text-right" style={{ left: '4%', top: '400px', width: '25%' }} onMouseEnter={() => setHoveredSlice(2)} onMouseLeave={() => setHoveredSlice(null)}>
+                            <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors whitespace-nowrap" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>OPERATIONS & NETWORK</h3>
+                            <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%' }}>Platform operations, infrastructure,<br />validator incentives, and network support.</p>
+                        </div>
+
+                        {/* Right Wrappers */}
+                        <div className="absolute z-20 cursor-pointer group flex flex-col items-start text-left" style={{ left: '71%', top: '105px', width: '25%' }} onMouseEnter={() => setHoveredSlice(1)} onMouseLeave={() => setHoveredSlice(null)}>
+                            <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors whitespace-nowrap" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>COMMUNITY & ECOSYSTEM</h3>
+                            <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '150%' }}>Rewards, incentives, ecosystem growth, and user participation programs.</p>
+                        </div>
+
+                        <div className="absolute z-20 flex flex-col items-start text-left" style={{ left: '71%', top: '315px', width: '25%' }}>
+                            <p className="text-gray-400 mb-6" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%', maxWidth: '280px' }}>
                                 Detailed allocation breakdown and vesting schedules are available in the Resilution Litepaper.
                             </p>
-
-                            <button className="flex items-center gap-2 bg-[#C8FF80] text-black px-4 py-2 rounded text-sm font-medium transition-colors">
-                                <span className="text-lg">📄</span> Resilution Litepaper
+                            <button className="flex items-center justify-center gap-3 bg-[#C8FF80] text-black px-5 py-3 rounded-[4px] font-bold text-[14px] hover:bg-[#b0e660] transition-colors btn-white-hover w-max">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 2H6C4.895 2 4 2.895 4 4V20C4 21.105 4.895 22 6 22H18C19.105 22 20 21.105 20 20V8L14 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M14 2V8H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M16 13H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M16 17H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path d="M10 9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                                Resilution Litepaper
                             </button>
+                        </div>
+                    </div>
+
+                    {/* Main Content: Fallback for Tablet (md only: 768px - 1023px) */}
+                    <div className="hidden md:flex lg:hidden flex-col items-center justify-center gap-12 w-full mt-16 text-center">
+                        <div className="w-full max-w-[366px] aspect-square shrink-0">
+                            <svg viewBox="0 0 366.5 366.5" className="w-full h-full overflow-visible">
+                                {(() => {
+                                    const CX = 183.25;
+                                    const CY = 183.25;
+                                    const R = 183;
+                                    const segmentsKey = [
+                                        { name: 'Investors', start: 180, end: 270, color: '#D6E5A8', index: 0 },
+                                        { name: 'Community', start: 270, end: 442.8, color: '#C8FF80', index: 1 },
+                                        { name: 'Operations', start: 82.8, end: 136.8, color: '#9ACD32', index: 2 },
+                                        { name: 'Team', start: 136.8, end: 180, color: '#78994D', index: 3 }
+                                    ];
+                                    const rad = deg => (deg * Math.PI) / 180;
+                                    return segmentsKey.map((seg) => {
+                                        const isHovered = hoveredSlice === seg.index;
+                                        const radius = isHovered ? R + 10 : R;
+                                        const x1 = CX + radius * Math.cos(rad(seg.start));
+                                        const y1 = CY + radius * Math.sin(rad(seg.start));
+                                        const x2 = CX + radius * Math.cos(rad(seg.end));
+                                        const y2 = CY + radius * Math.sin(rad(seg.end));
+                                        const largeArc = (seg.end - seg.start) > 180 ? 1 : 0;
+                                        const d = `M ${CX} ${CY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`;
+                                        return (
+                                            <path
+                                                key={seg.index}
+                                                d={d}
+                                                fill={seg.color}
+                                                stroke={isHovered ? "white" : "black"}
+                                                strokeWidth={isHovered ? "2" : "1"}
+                                                className="transition-all duration-300 ease-out cursor-pointer"
+                                                onMouseEnter={() => setHoveredSlice(seg.index)}
+                                                onMouseLeave={() => setHoveredSlice(null)}
+                                                style={{ transformOrigin: `${CX}px ${CY}px` }}
+                                            />
+                                        );
+                                    });
+                                })()}
+                                {/* Percentage Labels Inside the Pie */}
+                                <text x="105" y="105" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="14" fill="#000" className="pointer-events-none font-bold">25%</text>
+                                <text x="293" y="176" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="18" fill="#000" className="pointer-events-none font-bold">48%</text>
+                                <text x="146" y="287" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="14" fill="#000" className="pointer-events-none font-bold">15%</text>
+                                <text x="81" y="224" textAnchor="middle" dominantBaseline="middle" fontFamily="Arial" fontSize="14" fill="#000" className="pointer-events-none font-bold">12%</text>
+                            </svg>
+                        </div>
+
+                        <div className="flex flex-col gap-8 w-full">
+                            <div className="flex flex-col items-center cursor-pointer group" onMouseEnter={() => setHoveredSlice(0)} onMouseLeave={() => setHoveredSlice(null)}>
+                                <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>INVESTORS</h3>
+                                <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%' }}>Combined allocation across strategic,<br />private, and public funding rounds.</p>
+                            </div>
+
+                            <div className="flex flex-col items-center cursor-pointer group" onMouseEnter={() => setHoveredSlice(3)} onMouseLeave={() => setHoveredSlice(null)}>
+                                <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>TEAM & ADVISORS</h3>
+                                <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%' }}>Core contributors and advisors,<br />subject to long-term vesting schedules.</p>
+                            </div>
+
+                            <div className="flex flex-col items-center cursor-pointer group" onMouseEnter={() => setHoveredSlice(2)} onMouseLeave={() => setHoveredSlice(null)}>
+                                <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>OPERATIONS & NETWORK</h3>
+                                <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%' }}>Platform operations, infrastructure,<br />validator incentives, and network support.</p>
+                            </div>
+
+                            <div className="flex flex-col items-center cursor-pointer group" onMouseEnter={() => setHoveredSlice(1)} onMouseLeave={() => setHoveredSlice(null)}>
+                                <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>COMMUNITY & ECOSYSTEM</h3>
+                                <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '150%' }}>Rewards, incentives, ecosystem growth, and user participation programs.</p>
+                            </div>
+
+                            <div className="flex flex-col items-center mt-4">
+                                <p className="text-gray-400 mb-6" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%', maxWidth: '280px' }}>
+                                    Detailed allocation breakdown and vesting schedules are available in the Resilution Litepaper.
+                                </p>
+                                <button className="flex items-center justify-center gap-3 bg-[#C8FF80] text-black px-5 py-3 rounded-[4px] font-bold text-[14px] hover:bg-[#b0e660] transition-colors btn-white-hover">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M14 2V8H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M16 13H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M16 17H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M10 9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    Resilution Litepaper
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1793,71 +1770,63 @@ const NewHome = () => {
                 </div>
             </section>
 
-            {/* ═══════════════════ ROADMAP ═══════════════════ */}
-            {/* ═══════════════════ ROADMAP ═══════════════════ */}
             {/* ═══════════════════ ROADMAP (DESKTOP) ═══════════════════ */}
-            <section id="roadmap" className="hidden md:block relative overflow-hidden bg-[#F5F5F0] w-full" style={{ height: '800px' }}>
+            <section id="roadmap" className="hidden md:block relative overflow-hidden bg-[#F5F5F0] w-full py-24">
 
-                <div className="relative max-w-[1440px] mx-auto h-full">
+                <div className="relative w-full px-8 lg:px-16">
                     {/* Header: PRODUCT ROADMAP */}
-                    <div className="absolute" style={{ top: '120px', left: '80px', width: '520px', height: 'auto' }}>
-                        <h2 className="text-black uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '130%', letterSpacing: '0%' }}>
+                    <div className="mb-4">
+                        <h2 className="text-black uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: 'clamp(24px, 3vw, 36px)', lineHeight: '130%' }}>
                             PRODUCT <span className="bg-[#C8FF80] px-3 py-1">ROADMAP</span>
                         </h2>
                     </div>
 
                     {/* Subtext */}
-                    <div className="absolute" style={{ top: '185px', left: '80px', width: '412px' }}>
+                    <div className="mb-16 max-w-[412px]">
                         <p className="text-gray-600 text-left" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
                             Our phased development plan focuses on building a transparent, scalable, and community-driven investment ecosystem.
                         </p>
                     </div>
 
-                    {/* Phases Container */}
-                    <div className="absolute w-full" style={{ top: '314px' }}>
-                        {/* Horizontal Line and Nodes Overlay (Visual) - Starts from Phase 1 center and extends to match the Phase 4 text width */}
-                        <div className="absolute top-[50px] bg-[#C8FF80] z-0 opacity-50" style={{ left: '90px', width: '1260px', height: '1px' }}></div>
+                    {/* Phases Grid */}
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                        {roadmapPhases.map((phase, i) => (
+                            <div key={i} className="flex flex-col items-start">
 
-                        {/* 4 Columns */}
-                        <div className="relative z-10">
-                            {roadmapPhases.map((phase, i) => {
-                                // Calculate left position: 80, 380, 680, 980
-                                // Spacing set to 300px between nodes
-                                const leftPos = 80 + (i * 300);
+                                {/* Phase Label */}
+                                <span className="uppercase text-gray-400 mb-4 tracking-widest" style={{ fontFamily: 'Arial', fontSize: '12px', fontWeight: 600, lineHeight: '24px' }}>
+                                    {phase.phase}
+                                </span>
 
-                                return (
-                                    <div key={i} className="absolute top-0 flex flex-col items-start" style={{ left: `${leftPos}px`, width: '280px' }} data-aos="fade-up" data-aos-delay={i * 150}>
+                                {/* Node / Marker & Connecting Line */}
+                                <div className="relative w-full mb-6 h-5 flex items-center justify-start">
+                                    {/* The connecting horizontal line */}
+                                    <div className={`absolute top-1/2 left-[10px] h-[2px] bg-[#C8FF80]/60 -translate-y-1/2 z-0 ${i === 1 ? 'hidden lg:block' : ''}`}
+                                        style={i === roadmapPhases.length - 1
+                                            ? { width: '100%' }
+                                            : { width: 'calc(100% + 2rem)' }}></div>
 
-                                        {/* Phase Label */}
-                                        <span className="uppercase text-gray-400 mb-4 tracking-widest" style={{ fontFamily: 'Arial', fontSize: '12px', fontWeight: 600, lineHeight: '24px' }}>
-                                            {phase.phase}
-                                        </span>
-
-                                        {/* Node / Marker - Updated to Ring + Dot style aligned with line */}
-                                        <div className="relative mb-6 flex items-center justify-center" style={{ width: '20px', height: '20px' }}>
-                                            <div className="w-5 h-5 rounded-full border border-[#C8FF80] bg-[#F5F5F0] flex items-center justify-center z-10">
-                                                <div className="w-2 h-2 rounded-full bg-[#C8FF80]"></div>
-                                            </div>
-                                        </div>
-
-                                        {/* Header */}
-                                        <h3 className="text-black uppercase mb-4" style={{ fontFamily: 'GACCO', fontWeight: 400, fontSize: '20px', lineHeight: '130%' }}>
-                                            {phase.title}
-                                        </h3>
-
-                                        {/* List */}
-                                        <ul className="space-y-2">
-                                            {phase.items.map((item, j) => (
-                                                <li key={j} className="text-gray-600 flex items-start" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
-                                                    <span className="mr-2">•</span>
-                                                    {item}
-                                                </li>
-                                            ))}
-                                        </ul>
+                                    <div className="w-5 h-5 rounded-full border-[1.5px] border-[#C8FF80] bg-[#F5F5F0] flex items-center justify-center z-10 relative">
+                                        <div className="w-2 h-2 rounded-full bg-[#C8FF80]"></div>
                                     </div>
-                                );
-                            })}
-                        </div>
+                                </div>
+
+                                {/* Header */}
+                                <h3 className="text-black uppercase mb-4" style={{ fontFamily: 'GACCO', fontWeight: 400, fontSize: '20px', lineHeight: '130%' }}>
+                                    {phase.title}
+                                </h3>
+
+                                {/* List */}
+                                <ul className="space-y-2">
+                                    {phase.items.map((item, j) => (
+                                        <li key={j} className="text-gray-600 flex items-start" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
+                                            <span className="mr-2">•</span>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -1903,83 +1872,78 @@ const NewHome = () => {
                 </div>
             </section>
 
-            {/* ═══════════════════ COMMUNITY ═══════════════════ */}
-            {/* ═══════════════════ COMMUNITY ═══════════════════ */}
             {/* ═══════════════════ COMMUNITY (DESKTOP) ═══════════════════ */}
-            <section id="community" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ height: '775px' }}>
+            <section id="community" className="hidden md:block bg-black relative overflow-hidden w-full py-24" style={{ minHeight: '700px' }}>
 
-                <div className="relative max-w-[1440px] mx-auto h-full">
-                    {/* Header */}
-                    <div className="absolute" style={{ top: '56px', left: '80px', width: '549px', height: 'auto' }}>
-                        <h2 className="font-['GACCO'] uppercase text-[#C8FF80]" style={{ fontWeight: 500, fontSize: '36px', lineHeight: '42px', letterSpacing: '0%' }}>
-                            JOIN THE RESILUTION COMMUNITY
-                        </h2>
+                <div className="relative w-full px-8 lg:px-16">
+                    {/* Header Row */}
+                    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-6 relative z-20">
+                        <div className="max-w-[549px]">
+                            <h2 className="font-['GACCO'] uppercase text-[#C8FF80]" style={{ fontWeight: 500, fontSize: 'clamp(24px, 3vw, 36px)', lineHeight: '42px' }}>
+                                JOIN THE RESILUTION COMMUNITY
+                            </h2>
+                        </div>
+                        <button className="font-['GACCO'] bg-[#C8FF80] text-black px-6 py-3 rounded hover:bg-[#b0e660] transition-colors shrink-0" style={{ fontWeight: 500, fontSize: '16px' }}>
+                            Join Community
+                        </button>
                     </div>
 
                     {/* Subtext */}
-                    <div className="absolute" style={{ top: '161px', left: '80px', width: '679px', height: 'auto' }}>
-                        <p className="text-white" style={{ fontFamily: 'arial', fontWeight: 400, fontSize: '24px', lineHeight: '100%', letterSpacing: '0%' }}>
+                    <div className="mb-20 max-w-[679px] relative z-20">
+                        <p className="text-white" style={{ fontFamily: 'arial', fontWeight: 400, fontSize: '24px', lineHeight: '100%' }}>
                             Be part of a growing ecosystem shaping the future of transparent blockchain investment.
                         </p>
                     </div>
 
-                    {/* Join Button */}
-                    <button className="font-['GACCO'] absolute bg-[#C8FF80] text-black px-6 py-3 rounded hover:bg-[#b0e660] transition-colors" style={{ top: '56px', right: '73.5px', fontWeight: 500, fontSize: '16px' }}>
-                        Join Community
-                    </button>
-
-                    {/* Big R Graphic (Union.svg) */}
-                    <div className="absolute pointer-events-none" style={{ bottom: '0px', left: '73.5px', width: '447px', height: '421px' }}>
-                        <img src="/homepage_assets/Union.svg" alt="Resilution R" className="w-full h-full object-contain" style={{ opacity: 1 }} />
-                    </div>
-
-                    {/* Card 1: Community Channels */}
-                    <div data-aos="fade-up" className="absolute flex flex-col items-start p-8 card-hover-light"
-                        style={{
-                            top: '400px',
-                            left: '685px',
-                            width: '310px',
-                            height: '290px',
-                            borderRadius: '6px',
-                            background: '#FBF5F5',
-                            border: '1px solid rgba(0,0,0,0.1)'
-                        }}>
-                        {/* Icon */}
-                        <div className="mb-6">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.01 6.11683 19.01 7.005C19.01 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
+                    {/* Content: R Graphic + Cards */}
+                    <div className="flex flex-col lg:flex-row items-end gap-8 relative">
+                        {/* Big R Graphic */}
+                        <div className="hidden lg:block pointer-events-none flex-shrink-0" style={{ width: '447px', height: '421px' }}>
+                            <img src="/homepage_assets/Union.svg" alt="Resilution R" className="w-full h-full object-contain" style={{ opacity: 1 }} />
                         </div>
-                        <h3 className="font-['GACCO'] text-black text-lg font-medium mb-4">Community Channels</h3>
-                        <p className="font-['arial'] text-gray-600 text-sm leading-relaxed">
-                            Connect with other users, businesses, and investors through our official community platforms.
-                        </p>
-                    </div>
 
-                    {/* Card 2: Platform Updates */}
-                    <div data-aos="fade-up" data-aos-delay="150" className="absolute flex flex-col items-start p-8 card-hover-light"
-                        style={{
-                            top: '400px',
-                            left: '1025px',
-                            width: '310px',
-                            height: '290px',
-                            borderRadius: '6px',
-                            background: '#FBF5F5',
-                            border: '1px solid rgba(0,0,0,0.1)'
-                        }}>
-                        {/* Icon */}
-                        <div className="mb-6">
-                            <img src="/homepage_assets/Page-1.svg" alt="Platform Updates Icon" className="w-[40px] h-[40px]" />
+                        {/* Cards */}
+                        <div className="flex flex-col md:flex-row gap-6 flex-1 justify-end relative z-20">
+                            {/* Card 1: Community Channels */}
+                            <div data-aos="fade-up" className="flex flex-col items-start p-8 card-hover-light w-full max-w-[310px]"
+                                style={{
+                                    minHeight: '290px',
+                                    borderRadius: '6px',
+                                    background: '#FBF5F5',
+                                    border: '1px solid rgba(0,0,0,0.1)'
+                                }}>
+                                <div className="mb-6">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.01 6.11683 19.01 7.005C19.01 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 className="font-['GACCO'] text-black text-lg font-medium mb-4">Community Channels</h3>
+                                <p className="font-['arial'] text-gray-600 text-sm leading-relaxed">
+                                    Connect with other users, businesses, and investors through our official community platforms.
+                                </p>
+                            </div>
+
+                            {/* Card 2: Platform Updates */}
+                            <div data-aos="fade-up" data-aos-delay="150" className="flex flex-col items-start p-8 card-hover-light w-full max-w-[310px]"
+                                style={{
+                                    minHeight: '290px',
+                                    borderRadius: '6px',
+                                    background: '#FBF5F5',
+                                    border: '1px solid rgba(0,0,0,0.1)'
+                                }}>
+                                <div className="mb-6">
+                                    <img src="/homepage_assets/Page-1.svg" alt="Platform Updates Icon" className="w-[40px] h-[40px]" />
+                                </div>
+                                <h3 className="font-['GACCO'] text-black text-lg font-medium mb-4">Platform Updates</h3>
+                                <p className="font-['arial'] text-gray-600 text-sm leading-relaxed">
+                                    Get the latest news, feature launches, and ecosystem progress directly from Resilution.
+                                </p>
+                            </div>
                         </div>
-                        <h3 className="font-['GACCO'] text-black text-lg font-medium mb-4">Platform Updates</h3>
-                        <p className="font-['arial'] text-gray-600 text-sm leading-relaxed">
-                            Get the latest news, feature launches, and ecosystem progress directly from Resilution.
-                        </p>
                     </div>
-
                 </div>
             </section>
 
