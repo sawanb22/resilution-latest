@@ -54,6 +54,65 @@ const NewHome = () => {
             box-shadow: 4px 4px 0px #C5F680 !important;
             transform: translate(-4px, -4px) !important;
         }
+
+        /* Benefits Cards Hover */
+        .card-hover-light {
+            transition: all 0.4s ease !important;
+        }
+        .card-hover-light:hover {
+            background: #C8FF80 !important;
+            transform: translateY(-8px) !important;
+        }
+        .card-hover-light:hover h3, 
+        .card-hover-light:hover p, 
+        .card-hover-light:hover li, 
+        .card-hover-light:hover ul {
+            color: #000 !important;
+        }
+        .card-hover-light:hover img {
+            filter: brightness(0) !important;
+        }
+        .card-hover-light:hover button {
+            background: #000 !important;
+            color: #fff !important;
+        }
+
+        /* How it Works Cards */
+        .how-works-card {
+            border-radius: 6px !important;
+            transition: all 0.3s ease;
+        }
+        /* How it Works Cards */
+        .how-works-card {
+            border-radius: 6px !important;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .how-works-card:hover {
+            background: #C8FF80 !important;
+        }
+        .how-works-card:hover h3,
+        .how-works-card:hover p,
+        .how-works-card:hover span {
+            color: #000 !important;
+        }
+        .how-works-card:hover .how-works-circle {
+            border-color: #fff !important;
+        }
+        .how-works-card:hover .logo-circle {
+            background: transparent !important;
+            border: 1px solid #fff !important;
+        }
+        .how-works-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 1px solid rgba(200, 255, 128, 0.6);
+            transition: border-color 0.4s ease;
+        }
+    
     `;
 
     // FAQ state
@@ -618,13 +677,13 @@ const NewHome = () => {
                     <h2 data-aos="fade-up" className="font-['GACCO'] font-light uppercase tracking-wide mb-6 text-center flex items-center justify-center w-full" style={{ fontSize: 'clamp(24px, 3vw, 36px)' }}>
                         <span className="whitespace-nowrap">BENEFITS FOR&nbsp;<span className="bg-[#C8FF80] px-3 py-[7px] font-medium ml-2">BUSINESSES & INVESTORS</span></span>
                     </h2>
-                    <p className="text-gray-600 text-center mb-20 font-light flex items-center justify-center w-full" style={{ fontSize: '18px', minHeight: '18px' }}>
+                    <p className="text-gray-600 text-left mb-20 font-light w-full" style={{ fontSize: '18px', minHeight: '18px' }}>
                         Resilution creates value for both businesses seeking funding and investors looking for transparent opportunities.
                     </p>
                     <div className="flex flex-col lg:flex-row gap-10 justify-center w-full items-center lg:items-stretch">
-                        <div data-aos="fade-right" className="bg-[#EDE2E2] card-hover-light flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
+                        <div data-aos="fade-right" className="bg-[#EDE2E2] card-hover-light flex flex-col items-start text-left rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
                             <div className="mb-8 w-16 h-16"><img src="/homepage_assets/icon_user.svg" alt="icon_user.svg" className="w-full h-full object-contain" /></div>
-                            <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest">FOR INVESTORS</h3>
+                            <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest text-left">FOR INVESTORS</h3>
                             <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-5">
                                 <li>Invest in verified businesses with full transparency.</li>
                                 <li>Track real-time performance and product data on-chain.</li>
@@ -633,9 +692,9 @@ const NewHome = () => {
                             </ul>
                             <button className="font-['GACCO'] bg-black text-white px-10 py-4 text-sm font-medium uppercase tracking-widest btn-white-hover transition-all duration-300 rounded-sm absolute bottom-16">Start Investing</button>
                         </div>
-                        <div data-aos="fade-left" className="bg-[#EDE2E2] card-hover-light flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
+                        <div data-aos="fade-left" className="bg-[#EDE2E2] card-hover-light flex flex-col items-start text-left rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
                             <div className="mb-8 w-16 h-16"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
-                            <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest">FOR BUSINESSES</h3>
+                            <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest text-left">FOR BUSINESSES</h3>
                             <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-5">
                                 <li>Raise capital directly from a global investor community without banks or intermediaries.</li>
                                 <li>Gain trust through transparent performance data recorded on blockchain.</li>
@@ -693,15 +752,22 @@ const NewHome = () => {
                     <p className="text-gray-600 text-center max-w-3xl mb-24 text-sm md:text-base font-light">A simple and transparent process that connects businesses and investors through blockchain technology.</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                         {howItWorksSteps.map((item, index) => (
-                            <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-[#FBF5F5] p-8 rounded-[12px] border border-[#0000001A] h-full flex flex-col items-center text-center relative group overflow-hidden">
-                                <span className="absolute top-6 left-6 text-xs text-gray-500 font-medium">{item.step}</span>
-                                <div className="relative w-40 h-40 flex justify-center items-center mb-8 mt-4">
-                                    <div className="w-16 h-16 rounded-full bg-[#C8FF80] group-hover:bg-white flex justify-center items-center z-10 shadow-sm transition-colors duration-500">
-                                        <img src={item.icon} alt={`${item.step} icon`} className="w-8 h-8 object-contain transition-all duration-500" />
+                            <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="how-works-card bg-[#FBF5F5] p-6 lg:p-8 border border-[#0000001A] h-full flex flex-col items-start text-left relative overflow-hidden">
+                                <span className="absolute top-5 left-6 text-sm text-black font-medium" style={{ fontFamily: 'Arial' }}>{item.step}</span>
+                                <div className="relative w-full flex justify-center items-center mt-12 mb-24 h-28">
+                                    {/* Concentric Circles (Always visible) */}
+                                    <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+                                        <div className="how-works-circle" style={{ width: '130px', height: '130px', border: '1px solid rgba(200, 255, 128, 0.6)' }}></div>
+                                        <div className="how-works-circle" style={{ width: '210px', height: '210px', border: '1px solid rgba(200, 255, 128, 0.3)' }}></div>
+                                    </div>
+
+                                    {/* Core Icon */}
+                                    <div className="logo-circle w-14 h-14 rounded-full bg-[#C8FF80] flex justify-center items-center z-10 transition-all duration-300">
+                                        <img src={item.icon} alt={`${item.step} icon`} className="w-[85%] h-[85%] object-contain" />
                                     </div>
                                 </div>
-                                <h3 className="font-['GACCO'] text-lg font-normal uppercase mb-4 tracking-wide">{item.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed font-light">{item.description}</p>
+                                <h3 className="mb-4 text-left uppercase text-black" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>{item.title}</h3>
+                                <p className="text-black text-left" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '120%', letterSpacing: '0%' }}>{item.description}</p>
                             </div>
                         ))}
                     </div>
