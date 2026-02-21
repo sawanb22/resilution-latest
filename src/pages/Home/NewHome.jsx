@@ -235,7 +235,7 @@ const NewHome = () => {
                         ></div>
 
                         <div className="relative text-center z-30 flex flex-col items-center w-full px-4">
-                            <h1 className="font-['GACCO'] font-hairline uppercase tracking-widest leading-[1.1] mb-[36px] text-[#C8FF80] w-full max-w-none md:max-w-7xl text-center" style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '0.1em' }}>
+                            <h1 className="font-['GACCO'] font-hairline uppercase tracking-widest leading-[1.2] mb-[36px] text-[#C8FF80] w-full max-w-none md:max-w-7xl text-center" style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '0.1em' }}>
                                 FINANCIAL <span>FREEDOM</span>
                             </h1>
                             <h2 className="font-['GACCO'] font-hairline uppercase tracking-[0.15em] text-white text-center w-full max-w-[1300px] mx-auto block mb-[39px]" style={{ fontSize: 'clamp(18px, 2vw, 24px)', lineHeight: '1.4' }}>
