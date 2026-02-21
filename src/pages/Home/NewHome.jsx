@@ -33,43 +33,26 @@ const NewHome = () => {
             color: #C8FF80 !important;
         }
 
-
-        /* ── Global button hover for all buttons on new-home page ── */
-        /* Light buttons (lime green background) */
-        .new-home-page button:not(.no-hover) {
-            transition: all 0.3s ease-out !important;
-        }
-        .new-home-page button.btn-light:hover,
-        .new-home-page button.bg-\\[\\#C8FF80\\]:hover,
-        .new-home-page button[class*="bg-[#C8FF80]"]:hover {
-            background: #ffffff !important;
-            color: #000 !important;
-            border: 1px solid #000 !important;
-            transform: translate(-3px, -3px) !important;
-        }
-        /* Dark buttons (black background) */
-        .new-home-page button.btn-dark:hover,
-        .new-home-page button.bg-black:hover,
-        .new-home-page button[class*="bg-black"]:hover {
-            background: #C8FF80 !important;
-            color: #000 !important;
-            border: 1px solid #C8FF80 !important;
-            transform: translate(-3px, -3px) !important;
+        /* Base transition for all regular buttons */
+        .new-home-page button:not(.hero-get-started) {
+            transition: all 0.2s ease-out !important;
         }
 
-        /* Universal fallback hover for any button not already handled */
-        .new-home-page button:not(.no-hover):not(.hero-get-started):hover {
-            transform: translate(-3px, -3px) !important;
-            transition: all 0.3s ease-out !important;
-        }
-        
-        /* Override for specific buttons requiring white hover - increased specificity to beat fallback */
-        .new-home-page button.btn-white-hover:not(.no-hover):hover {
-            background: #ffffff !important;
-            color: #000000 !important;
-            border: 2px solid #000000 !important;
-            transform: translate(-3px, -3px) !important;
-            border-radius: 0px !important;
+        /* ── Specific solid-shadow hover for rectangular buttons ── */
+        .new-home-page button.btn-light:not(.no-hover):hover,
+        .new-home-page button.btn-dark:not(.no-hover):hover,
+        .new-home-page button.btn-white-hover:not(.no-hover):hover,
+        .new-home-page button[class*="rounded-sm"]:not(.no-hover):hover,
+        .new-home-page button[class*="rounded-[2px]"]:not(.no-hover):hover,
+        .new-home-page button.bg-\\[\\#C8FF80\\]:not(.no-hover):hover,
+        .new-home-page button[class*="bg-[#C8FF80]"]:not(.no-hover):hover,
+        .new-home-page button.bg-black:not(.no-hover):hover,
+        .new-home-page button[class*="bg-black"]:not(.no-hover):hover {
+            background: #EFFFDB !important;
+            color: #000 !important;
+            border: 1px solid #C5F680 !important;
+            box-shadow: 4px 4px 0px #C5F680 !important;
+            transform: translate(-4px, -4px) !important;
         }
     `;
 
@@ -79,6 +62,26 @@ const NewHome = () => {
     const [hoveredSlice, setHoveredSlice] = useState(null);
     const splineDesktopRef = useRef(null);
     const splineMobileRef = useRef(null);
+
+    // ── Product Data Chains Dynamic Line Length ──
+    const productButtonRef = useRef(null);
+    const productCubeRef = useRef(null);
+    const [productLineLength, setProductLineLength] = useState(400);
+
+    useEffect(() => {
+        const updateLine = () => {
+            if (productButtonRef.current && productCubeRef.current) {
+                const btnRect = productButtonRef.current.getBoundingClientRect();
+                const cubeRect = productCubeRef.current.getBoundingClientRect();
+                // We add 65px so it penetrates exactly 50px further into the soft border
+                const dist = cubeRect.left - btnRect.right + 65;
+                setProductLineLength(Math.max(0, dist));
+            }
+        };
+        setTimeout(updateLine, 100);
+        window.addEventListener('resize', updateLine);
+        return () => window.removeEventListener('resize', updateLine);
+    }, []);
 
     // Carousel state for mobile tokenomics
     const [currentTokenCard, setCurrentTokenCard] = useState(0);
@@ -778,18 +781,46 @@ const NewHome = () => {
                             Transparency <br /> Through Product <br /> Data Chains
                         </h2>
 
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-[1px] w-16 bg-[#C8FF80] opacity-50"></div>
-                            <div className="h-[1px] flex-1 bg-gradient-to-r from-[#C8FF80]/30 to-transparent"></div>
-                        </div>
+
 
                         <p className="text-white text-lg md:text-xl font-light leading-relaxed mb-12 max-w-lg tracking-wide">
                             Resilution introduces Product Data Chains to record key business and product events on the blockchain.
                         </p>
 
-                        <button className="font-['GACCO'] bg-[#C8FF80] text-black px-10 py-5 text-sm font-bold uppercase tracking-[0.15em] transition-colors rounded-sm">
-                            Learn More
-                        </button>
+                        <div ref={productButtonRef} className="relative inline-block w-max">
+                            <button className="font-['GACCO'] bg-[#C8FF80] text-black px-10 py-5 text-sm font-bold uppercase tracking-[0.15em] transition-colors rounded-sm relative z-20">
+                                Learn More
+                            </button>
+                            <div className="hidden md:block absolute" style={{
+                                top: '18px',
+                                left: '100%',
+                                width: `${productLineLength}px`,
+                                bottom: '-250px',
+                                overflow: 'hidden',
+                                zIndex: 5,
+                                pointerEvents: 'none',
+                                WebkitMaskImage: 'linear-gradient(to right, black calc(100% - 30px), transparent 100%)',
+                                maskImage: 'linear-gradient(to right, black calc(100% - 30px), transparent 100%)'
+                            }}>
+                                <svg
+                                    className="absolute"
+                                    style={{
+                                        top: '0',
+                                        left: '0',
+                                        width: '1200px',
+                                        height: '250px'
+                                    }}
+                                    viewBox="0 0 1200 250"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M 0 0 L 20 0 Q 30 0 30 10 L 30 40 Q 30 50 40 50 L 460 50 Q 470 50 470 60 L 470 110 Q 470 120 480 120 L 1200 120"
+                                        stroke="rgba(255,255,255,0.25)"
+                                        strokeWidth="1.5"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Right Images (Absolute Positioning from Figma Layers) */}
@@ -805,7 +836,7 @@ const NewHome = () => {
                     </div>
 
                     {/* Cube 1 (Top/Front) */}
-                    <div className="absolute z-10 pointer-events-none right-[5%] lg:right-[15%]" style={{
+                    <div ref={productCubeRef} className="absolute z-10 pointer-events-none right-[5%] lg:right-[15%]" style={{
                         top: '100px',
                         width: 'min(580px, 45vw)',
                         height: 'auto',
@@ -816,8 +847,14 @@ const NewHome = () => {
                     </div>
                 </div>
 
-                {/* Background Decoration */}
-                <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-[#C8FF80]/5 to-transparent pointer-events-none"></div>
+                {/* Background Decoration (Waves + Green Fade) */}
+                <div className="absolute bottom-0 left-0 w-[60%] h-[calc(60%+100px)] pointer-events-none z-0 flex items-end justify-start overflow-visible">
+                    <div className="absolute bottom-[-20%] left-[-20%] w-[120%] h-[120%] rounded-full" style={{
+                        background: 'radial-gradient(ellipse at center, rgba(200,255,128,0.18) 0%, transparent 70%)',
+                        filter: 'blur(50px)'
+                    }}></div>
+                    <img src="/homepage_assets/Layer 1 (1).svg" alt="Background Waves" className="absolute bottom-0 left-0 w-[150%] max-w-none h-auto object-cover opacity-50 mix-blend-screen" style={{ transform: 'translate(-15%, 20%)' }} />
+                </div>
             </section>
 
             {/* ═══════════════════ PRODUCT DATA CHAINS (MOBILE) ═══════════════════ */}
@@ -849,10 +886,7 @@ const NewHome = () => {
                         Transparency <br /> Through Product <br /> Data Chains
                     </h2>
 
-                    <div className="flex items-center gap-4 mb-8">
-                        <div className="h-[1px] w-16 bg-[#C8FF80]"></div>
-                        <div className="h-[1px] flex-1 bg-gradient-to-r from-[#C8FF80]/30 to-transparent"></div>
-                    </div>
+
 
                     <p className="text-white text-[15px] font-light leading-relaxed mb-10 tracking-wide max-w-[280px]">
                         Resilution introduces Product Data Chains to record key business and product events on the blockchain.
@@ -862,6 +896,15 @@ const NewHome = () => {
                 <button className="absolute bottom-12 left-6 z-30 font-['GACCO'] bg-[#C8FF80] text-black px-8 py-4 text-[13px] font-bold uppercase rounded-sm">
                     Learn More
                 </button>
+
+                {/* Background Decoration (Waves + Green Fade) Mobile */}
+                <div className="absolute bottom-0 left-0 w-full h-[450px] pointer-events-none z-0 flex items-end justify-start overflow-visible">
+                    <div className="absolute bottom-[-30%] left-[-20%] w-[150%] h-[150%] rounded-full" style={{
+                        background: 'radial-gradient(ellipse at center, rgba(200,255,128,0.18) 0%, transparent 70%)',
+                        filter: 'blur(40px)'
+                    }}></div>
+                    <img src="/homepage_assets/Layer 1 (1).svg" alt="Background Waves" className="absolute bottom-0 left-0 w-[180%] max-w-none h-auto object-cover opacity-50 mix-blend-screen" style={{ transform: 'translate(-20%, 30%)' }} />
+                </div>
             </section>
 
             {/* ═══════════════════ ECOSYSTEM ═══════════════════ */}
@@ -1278,10 +1321,9 @@ const NewHome = () => {
                     {/* Central Grid and Coin Container */}
                     <div className="relative w-full max-w-[1240px] mx-auto mt-20 mb-12 flex justify-center items-center" style={{ minHeight: '600px' }}>
 
-                        {/* Central Coin Image */}
                         <div
-                            className="absolute z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none lg:pointer-events-auto"
-                            style={{ width: '45%', maxWidth: '520px', aspectRatio: '1/1' }}
+                            className="absolute z-30 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none lg:pointer-events-auto"
+                            style={{ left: 'calc(50% + 20px)', width: '45%', maxWidth: '520px', aspectRatio: '1/1' }}
                         >
                             <img
                                 src="/homepage_assets/tokenomics_coin.svg"
@@ -1299,7 +1341,7 @@ const NewHome = () => {
                                     borderRadius: '16px',
                                     border: '1.5px solid transparent',
                                     background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
-                                    marginLeft: '20%',
+                                    marginLeft: 'calc(20% - 20px)',
                                     width: '80%'
                                 }}>
                                 <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Access & Tiers</h3>
@@ -1315,7 +1357,7 @@ const NewHome = () => {
                                     borderRadius: '16px',
                                     border: '1.5px solid transparent',
                                     background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
-                                    marginLeft: '20%',
+                                    marginLeft: 'calc(20% - 40px)',
                                     width: '80%'
                                 }}>
                                 <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Rewards System</h3>
@@ -1332,7 +1374,7 @@ const NewHome = () => {
                                     borderRadius: '16px',
                                     border: '1.5px solid transparent',
                                     background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
-                                    marginLeft: '20%',
+                                    marginLeft: 'calc(20% - 20px)',
                                     width: '80%'
                                 }}>
                                 <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Staking</h3>
@@ -1353,7 +1395,7 @@ const NewHome = () => {
                                     borderRadius: '16px',
                                     border: '1.5px solid transparent',
                                     background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
-                                    marginLeft: '20%',
+                                    marginLeft: 'calc(20% - 40px)',
                                     width: '80%'
                                 }}>
                                 <h3 className="text-white uppercase mb-6" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '24px', lineHeight: '130%' }}>Governance</h3>
@@ -1434,7 +1476,7 @@ const NewHome = () => {
                         `}</style>
                         {/* Access & Tiers Card */}
                         <div className="snap-center shrink-0 w-full p-2">
-                            <div className="h-full p-8 rounded-[24px] bg-gradient-to-b from-[#1a240e] to-black border border-[#C8FF80]/30 flex flex-col items-center text-center card-hover-light" style={{ marginLeft: '20%', width: '80%' }}>
+                            <div className="h-full p-8 rounded-[24px] bg-gradient-to-b from-[#1a240e] to-black border border-[#C8FF80]/30 flex flex-col items-center text-center card-hover-light" style={{ marginLeft: 'calc(20% - 20px)', width: '80%' }}>
                                 <h3 className="font-['GACCO'] text-white uppercase mb-4 text-[16px] font-bold tracking-wide">Access & Tiers</h3>
                                 <p className="font-['arial'] text-white text-[13px] leading-relaxed font-light">
                                     $RESIL tokens unlock premium features, higher investment limits, and advanced platform tools through tier-based access.
@@ -1444,7 +1486,7 @@ const NewHome = () => {
 
                         {/* Rewards System Card */}
                         <div className="snap-center shrink-0 w-full p-2">
-                            <div className="h-full p-8 rounded-[24px] bg-gradient-to-b from-[#1a240e] to-black border border-[#C8FF80]/30 flex flex-col items-center text-center card-hover-light" style={{ marginLeft: '20%', width: '80%' }}>
+                            <div className="h-full p-8 rounded-[24px] bg-gradient-to-b from-[#1a240e] to-black border border-[#C8FF80]/30 flex flex-col items-center text-center card-hover-light" style={{ marginLeft: 'calc(20% - 40px)', width: '80%' }}>
                                 <h3 className="font-['GACCO'] text-white uppercase mb-4 text-[16px] font-bold tracking-wide">Rewards System</h3>
                                 <ul className="font-['arial'] text-white text-[13px] leading-relaxed list-disc pl-6 space-y-3 text-left font-light">
                                     <li>Users earn $RESIL through investments, platform participation, and ecosystem contributions.</li>
@@ -1455,7 +1497,7 @@ const NewHome = () => {
 
                         {/* Staking Card */}
                         <div className="snap-center shrink-0 w-full p-2">
-                            <div className="h-full p-8 rounded-[24px] bg-gradient-to-b from-[#1a240e] to-black border border-[#C8FF80]/30 flex flex-col items-center text-center card-hover-light" style={{ marginLeft: '20%', width: '80%' }}>
+                            <div className="h-full p-8 rounded-[24px] bg-gradient-to-b from-[#1a240e] to-black border border-[#C8FF80]/30 flex flex-col items-center text-center card-hover-light" style={{ marginLeft: 'calc(20% - 20px)', width: '80%' }}>
                                 <h3 className="font-['GACCO'] text-white uppercase mb-4 text-[16px] font-bold tracking-wide">Staking</h3>
                                 <div className="text-left w-full pl-2">
                                     <p className="font-['arial'] text-white text-[13px] mb-3 font-medium">Stake $RESIL tokens to receive:</p>
@@ -1470,7 +1512,7 @@ const NewHome = () => {
 
                         {/* Governance Card */}
                         <div className="snap-center shrink-0 w-full p-2">
-                            <div className="h-full p-8 rounded-[24px] bg-gradient-to-b from-[#1a240e] to-black border border-[#C8FF80]/30 flex flex-col items-center text-center card-hover-light" style={{ marginLeft: '20%', width: '80%' }}>
+                            <div className="h-full p-8 rounded-[24px] bg-gradient-to-b from-[#1a240e] to-black border border-[#C8FF80]/30 flex flex-col items-center text-center card-hover-light" style={{ marginLeft: 'calc(20% - 40px)', width: '80%' }}>
                                 <h3 className="font-['GACCO'] text-white uppercase mb-4 text-[16px] font-bold tracking-wide">Governance</h3>
                                 <p className="font-['arial'] text-white text-[13px] leading-relaxed font-light">
                                     Token holders can vote on platform upgrades, ecosystem decisions, and future developments.
