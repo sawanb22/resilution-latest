@@ -222,8 +222,8 @@ const NewHome = () => {
 
                 <div className="relative w-full h-full">
 
-                    {/* Content Container - more space from navbar */}
-                    <div className="relative z-10 w-full flex flex-col items-center pt-[100px]" style={{ minHeight: '700px' }}>
+                    {/* Content Container */}
+                    <div className="relative z-10 w-full flex flex-col items-center pt-[78px]" style={{ minHeight: '700px' }}>
 
                         {/* Ambient Radial Glow */}
                         <div
