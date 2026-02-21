@@ -1899,8 +1899,8 @@ const NewHome = () => {
                     {/* Content: R Graphic + Cards */}
                     <div className="flex flex-col lg:flex-row items-end gap-8 relative flex-grow">
                         {/* Big R Graphic */}
-                        <div className="hidden lg:block pointer-events-none flex-shrink-0 absolute bottom-0 left-0" style={{ width: '510px', height: '480px', transform: 'translateX(-57%)' }}>
-                            <img src="/homepage_assets/Union.svg" alt="Resilution R" className="w-full h-full object-cover object-bottom" style={{ opacity: 1, objectPosition: 'left bottom' }} />
+                        <div className="hidden lg:block pointer-events-none flex-shrink-0 absolute bottom-0 left-0" style={{ width: '460px', height: '380px' }}>
+                            <img src="/homepage_assets/Union.svg" alt="Resilution R" className="w-full h-full object-contain" style={{ opacity: 1, objectPosition: 'left bottom' }} />
                         </div>
 
                         {/* Cards */}
