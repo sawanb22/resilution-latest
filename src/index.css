@@ -73,3 +73,24 @@ section {
     }
   }
 }
+
+.gradient-border-engine {
+  position: relative;
+  border: none !important;
+}
+
+.gradient-border-engine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  /* Using 1.5px for better visibility of gradient */
+  background: linear-gradient(to right, #D9D9D9, #737373);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}

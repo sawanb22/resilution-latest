@@ -185,5 +185,4 @@
 .card-dark-hover:hover {
     background: #ACB5BD !important;
     border-color: transparent !important;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
