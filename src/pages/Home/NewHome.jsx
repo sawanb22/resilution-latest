@@ -676,7 +676,7 @@ const NewHome = () => {
                     <h2 data-aos="fade-up" className="font-['GACCO'] font-light uppercase tracking-wide mb-6 text-center flex items-center justify-center w-full" style={{ fontSize: 'clamp(24px, 3vw, 36px)' }}>
                         <span className="whitespace-nowrap">BENEFITS FOR&nbsp;<span className="bg-[#C8FF80] px-3 py-[7px] font-medium ml-2">BUSINESSES & INVESTORS</span></span>
                     </h2>
-                    <p className="text-gray-600 text-left mb-20 font-light w-full" style={{ fontSize: '18px', minHeight: '18px' }}>
+                    <p className="text-gray-600 text-center mb-20 font-light w-full" style={{ fontSize: '18px', minHeight: '18px' }}>
                         Resilution creates value for both businesses seeking funding and investors looking for transparent opportunities.
                     </p>
                     <div className="flex flex-col lg:flex-row gap-10 justify-center w-full items-center lg:items-stretch">
