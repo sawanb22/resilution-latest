@@ -788,8 +788,9 @@ const NewHome = () => {
                     {/* Cube 2 (Bottom/Back) */}
                     <div className="absolute z-0 pointer-events-none right-[-300px] lg:right-[-100px]" style={{
                         top: '241px',
-                        width: '866px',
-                        height: '829px',
+                        width: 'min(866px, 60vw)',
+                        height: 'auto',
+                        aspectRatio: '866 / 829',
                         transform: 'none' // Ensure no other transforms interfere
                     }}>
                         <img src="/homepage_assets/product_chains_cube2.png" alt="Data Chain Cube Back" className="w-full h-full object-cover object-bottom opacity-100" />
@@ -798,8 +799,9 @@ const NewHome = () => {
                     {/* Cube 1 (Top/Front) */}
                     <div className="absolute z-10 pointer-events-none right-[5%] lg:right-[15%]" style={{
                         top: '100px',
-                        width: '580px',
-                        height: '555px',
+                        width: 'min(580px, 45vw)',
+                        height: 'auto',
+                        aspectRatio: '580 / 555',
                         transform: 'none'
                     }}>
                         <img src="/homepage_assets/product_chains_cube1.png" alt="Data Chain Cube Front" className={`w-full h-full object-contain drop-shadow-2xl opacity-100 ${style['animate-subtle-bounce-delayed']}`} />
@@ -1033,7 +1035,6 @@ const NewHome = () => {
                 id="credits-token"
                 className="hidden md:block text-white relative overflow-hidden w-full"
                 style={{
-                    minHeight: '900px',
                     background: '#000000',
                 }}
             >
@@ -1049,7 +1050,7 @@ const NewHome = () => {
                     }}
                 ></div>
 
-                <div className="relative w-full z-20 px-8 lg:px-16 pt-40 pb-20">
+                <div className="relative w-full z-20 px-8 lg:px-16 pt-24 pb-64">
                     {/* 3D Token Image - BEHIND everything (z-index 1) */}
                     <div
                         className="absolute pointer-events-none"
@@ -1114,7 +1115,7 @@ const NewHome = () => {
                     </div>
 
                     {/* Subtext */}
-                    <div className="relative z-10 mb-20 max-w-[607px] mx-auto">
+                    <div className="relative z-10 mb-40 max-w-[607px] mx-auto">
                         <p
                             className="text-center"
                             style={{
@@ -1270,7 +1271,7 @@ const NewHome = () => {
                         </div>
 
                         {/* 4 Cards Grid */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-[320px] gap-y-16 relative z-20 w-full">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-[200px] xl:gap-x-[320px] gap-y-16 relative z-20 w-full">
                             {/* Access & Tiers Card */}
                             <div data-aos="fade-right" className="flex flex-col items-start justify-center text-left p-8 xl:p-10 card-hover-light bg-black"
                                 style={{
@@ -1487,7 +1488,7 @@ const NewHome = () => {
                         </svg>
 
                         {/* PIE CHART SVG (Centered) */}
-                        <div className="absolute z-10" style={{ left: '50%', top: '92px', width: '30.5%', aspectRatio: '1 / 1', transform: 'translateX(-50%)' }}>
+                        <div className="absolute z-10" style={{ left: '50%', top: '16.72%', width: '30.5%', aspectRatio: '1 / 1', transform: 'translateX(-50%)' }}>
                             <svg viewBox="0 0 366.5 366.5" className="w-full h-full overflow-visible">
                                 {(() => {
                                     const CX = 183.25;
@@ -1541,28 +1542,28 @@ const NewHome = () => {
 
                         {/* HTML Elements overlaid via percentage/absolute positions */}
                         {/* Left Wrappers */}
-                        <div className="absolute z-20 cursor-pointer group flex flex-col items-end text-right" style={{ left: '4%', top: '70px', width: '25%' }} onMouseEnter={() => setHoveredSlice(0)} onMouseLeave={() => setHoveredSlice(null)}>
+                        <div className="absolute z-20 cursor-pointer group flex flex-col items-end text-right" style={{ left: '4%', top: '12.72%', width: '25%' }} onMouseEnter={() => setHoveredSlice(0)} onMouseLeave={() => setHoveredSlice(null)}>
                             <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors whitespace-nowrap" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>INVESTORS</h3>
                             <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%' }}>Combined allocation across strategic,<br />private, and public funding rounds.</p>
                         </div>
 
-                        <div className="absolute z-20 cursor-pointer group flex flex-col items-end text-right" style={{ left: '4%', top: '235px', width: '25%' }} onMouseEnter={() => setHoveredSlice(3)} onMouseLeave={() => setHoveredSlice(null)}>
+                        <div className="absolute z-20 cursor-pointer group flex flex-col items-end text-right" style={{ left: '4%', top: '42.72%', width: '25%' }} onMouseEnter={() => setHoveredSlice(3)} onMouseLeave={() => setHoveredSlice(null)}>
                             <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors whitespace-nowrap" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>TEAM & ADVISORS</h3>
                             <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%' }}>Core contributors and advisors,<br />subject to long-term vesting schedules.</p>
                         </div>
 
-                        <div className="absolute z-20 cursor-pointer group flex flex-col items-end text-right" style={{ left: '4%', top: '400px', width: '25%' }} onMouseEnter={() => setHoveredSlice(2)} onMouseLeave={() => setHoveredSlice(null)}>
+                        <div className="absolute z-20 cursor-pointer group flex flex-col items-end text-right" style={{ left: '4%', top: '72.72%', width: '25%' }} onMouseEnter={() => setHoveredSlice(2)} onMouseLeave={() => setHoveredSlice(null)}>
                             <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors whitespace-nowrap" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>OPERATIONS & NETWORK</h3>
                             <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%' }}>Platform operations, infrastructure,<br />validator incentives, and network support.</p>
                         </div>
 
                         {/* Right Wrappers */}
-                        <div className="absolute z-20 cursor-pointer group flex flex-col items-start text-left" style={{ left: '71%', top: '105px', width: '25%' }} onMouseEnter={() => setHoveredSlice(1)} onMouseLeave={() => setHoveredSlice(null)}>
+                        <div className="absolute z-20 cursor-pointer group flex flex-col items-start text-left" style={{ left: '71%', top: '19.09%', width: '25%' }} onMouseEnter={() => setHoveredSlice(1)} onMouseLeave={() => setHoveredSlice(null)}>
                             <h3 className="text-white uppercase mb-2 group-hover:text-[#C8FF80] transition-colors whitespace-nowrap" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '20px', lineHeight: '130%' }}>COMMUNITY & ECOSYSTEM</h3>
                             <p className="text-gray-400 group-hover:text-gray-300 transition-colors" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '150%' }}>Rewards, incentives, ecosystem growth, and user participation programs.</p>
                         </div>
 
-                        <div className="absolute z-20 flex flex-col items-start text-left" style={{ left: '71%', top: '315px', width: '25%' }}>
+                        <div className="absolute z-20 flex flex-col items-start text-left" style={{ left: '71%', top: '57.27%', width: '25%' }}>
                             <p className="text-gray-400 mb-6" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '150%', maxWidth: '280px' }}>
                                 Detailed allocation breakdown and vesting schedules are available in the Resilution Litepaper.
                             </p>
@@ -1873,9 +1874,9 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ COMMUNITY (DESKTOP) ═══════════════════ */}
-            <section id="community" className="hidden md:block bg-black relative overflow-hidden w-full py-24" style={{ minHeight: '700px' }}>
+            <section id="community" className="hidden md:block bg-black relative overflow-hidden w-full pt-24 pb-0" style={{ minHeight: '700px' }}>
 
-                <div className="relative w-full px-8 lg:px-16">
+                <div className="relative w-full px-8 lg:px-16 h-full flex flex-col">
                     {/* Header Row */}
                     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-6 relative z-20">
                         <div className="max-w-[549px]">
@@ -1896,14 +1897,14 @@ const NewHome = () => {
                     </div>
 
                     {/* Content: R Graphic + Cards */}
-                    <div className="flex flex-col lg:flex-row items-end gap-8 relative">
+                    <div className="flex flex-col lg:flex-row items-end gap-8 relative flex-grow">
                         {/* Big R Graphic */}
-                        <div className="hidden lg:block pointer-events-none flex-shrink-0" style={{ width: '447px', height: '421px' }}>
-                            <img src="/homepage_assets/Union.svg" alt="Resilution R" className="w-full h-full object-contain" style={{ opacity: 1 }} />
+                        <div className="hidden lg:block pointer-events-none flex-shrink-0 absolute bottom-0 left-0" style={{ width: '510px', height: '480px', transform: 'translateX(-57%)' }}>
+                            <img src="/homepage_assets/Union.svg" alt="Resilution R" className="w-full h-full object-cover object-bottom" style={{ opacity: 1, objectPosition: 'left bottom' }} />
                         </div>
 
                         {/* Cards */}
-                        <div className="flex flex-col md:flex-row gap-6 flex-1 justify-end relative z-20">
+                        <div className="flex flex-col md:flex-row gap-6 flex-1 justify-end relative z-20 mb-24">
                             {/* Card 1: Community Channels */}
                             <div data-aos="fade-up" className="flex flex-col items-start p-8 card-hover-light w-full max-w-[310px]"
                                 style={{
