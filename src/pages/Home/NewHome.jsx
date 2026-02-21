@@ -73,8 +73,8 @@ const NewHome = () => {
             if (productButtonRef.current && productCubeRef.current) {
                 const btnRect = productButtonRef.current.getBoundingClientRect();
                 const cubeRect = productCubeRef.current.getBoundingClientRect();
-                // We add 65px so it penetrates exactly 50px further into the soft border
-                const dist = cubeRect.left - btnRect.right + 65;
+                // We add 100px so it penetrates further and allows for a longer, subtler fade
+                const dist = cubeRect.left - btnRect.right + 100;
                 setProductLineLength(Math.max(0, dist));
             }
         };
@@ -799,8 +799,8 @@ const NewHome = () => {
                                 overflow: 'hidden',
                                 zIndex: 5,
                                 pointerEvents: 'none',
-                                WebkitMaskImage: 'linear-gradient(to right, black calc(100% - 30px), transparent 100%)',
-                                maskImage: 'linear-gradient(to right, black calc(100% - 30px), transparent 100%)'
+                                WebkitMaskImage: 'linear-gradient(to right, black calc(100% - 70px), rgba(0,0,0,0.5) calc(100% - 35px), transparent 100%)',
+                                maskImage: 'linear-gradient(to right, black calc(100% - 70px), rgba(0,0,0,0.5) calc(100% - 35px), transparent 100%)'
                             }}>
                                 <svg
                                     className="absolute"
