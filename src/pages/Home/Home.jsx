@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Spline from '@splinetool/react-spline'
+import { SplineWithFallback } from '../../Component/Common/SplineWithFallback'
 import style from "./home.module.css"
 import Marquee from "react-fast-marquee";
 import { Link, useSearchParams } from 'react-router-dom';
@@ -52,11 +52,11 @@ export const Home = () => {
     }
     const playPause = () => {
         let vd = vdRef.current
-        vdRef.current.addEventListener('pause', ()=>{
+        vdRef.current.addEventListener('pause', () => {
             // console.log("video pushed")
             setVdState(false)
         });
-        
+
         if (vd.paused) {
             vd.play()
             vd.loop = true
@@ -93,12 +93,12 @@ export const Home = () => {
                         <p className='my-7 sx:my-9 lg:text-xl text-[#5C5C5C]'>Resilution transforms investment by allowing consumers to fund businesses directly through blockchain. Businesses can raise capital with transparent terms, while investors earn returns in RESIL tokens. Integrated CRM ensures real-time updates on investments, making the process seamless and secure. </p>
                         <div className='flex gap-3 vs:gap-7 mt-15 sx:mt-25'>
                             <a
-                            href="https://discord.com/invite/KG5WKCnkWW"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => trackMetaEvent("GetStartedClick", { location: "home_hero" })}
+                                href="https://discord.com/invite/KG5WKCnkWW"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => trackMetaEvent("GetStartedClick", { location: "home_hero" })}
                             >
-                            <button className='bg-(--savegreen) px-5 vs:px-8 py-2 g_hover'>Get Started</button>
+                                <button className='bg-(--savegreen) px-5 vs:px-8 py-2 g_hover'>Get Started</button>
                             </a>
                             <a href="/resilution-whitepaper.pdf" target='_blank'>
                                 <button className='bg-(--dark) px-5 vs:px-8 py-2 text-(--light) b_hover'>Learn More</button>
@@ -225,7 +225,7 @@ export const Home = () => {
                         </div>
                         <div className='flex justify-center items-center w-[100%] lg:w-[40%] xl:w-[30%] h-80 2xl:h-92 overflow-visible' >
                             <div className={style.scene + " relative -z-1"}>
-                                <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' />
+                                <SplineWithFallback scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' />
                             </div>
                         </div>
                         <div className='bg-(--dark) p-5 xl:p-8 xl:pt-10 relative lg:w-[362px] lg:min-h-[327px] 2xl:w-[400px]  text-(--light) hover:bg-(--light) hover:text-(--dark) flex flex-col justify-between' style={{ transition: ".4s ease" }} data-aos="fade-left">

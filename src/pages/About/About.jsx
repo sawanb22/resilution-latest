@@ -1,4 +1,4 @@
-import Spline from '@splinetool/react-spline'
+import { SplineWithFallback } from '../../Component/Common/SplineWithFallback'
 import React from 'react'
 import style from "./about.module.css"
 import { Link } from 'react-router-dom'
@@ -31,7 +31,7 @@ export const About = () => {
                     </div>
                     <div className='max-lg:mt-10 flex justify-center items-center max-sx:w-[100vw] lg:w-[45%] py-10 max-h-[400px] sx:max-h-[500px] max-lg:relative max-sm:overflow-hidden'>
                         <div className={style.scene + ' min-h-[500px]'}>
-                            <Spline scene='https://prod.spline.design/graT9nIIdUfrKwW0/scene.splinecode' />
+                            <SplineWithFallback scene='https://prod.spline.design/graT9nIIdUfrKwW0/scene.splinecode' />
                         </div>
                         <div className='absolute -z-1 top-0  sx:right-[50%] sx:max-lg:translate-x-[50%] lg:right-0 w-[100vw] lg:w-[45%] h-[100%] bg-(--dark)'></div>
                         {/* <img src="/assets/logo.svg" className='w-[70%] mix-blend-difference' alt="" /> */}

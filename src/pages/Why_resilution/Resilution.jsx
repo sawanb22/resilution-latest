@@ -1,4 +1,4 @@
-import Spline from '@splinetool/react-spline'
+import { SplineWithFallback } from '../../Component/Common/SplineWithFallback'
 import React, { useEffect } from 'react'
 import Marquee from 'react-fast-marquee'
 import style from "./why.module.css"
@@ -28,16 +28,16 @@ export const Resilution = () => {
             item.style.height = `${child.clientHeight}px`
         })
     }
-    const mover = ()=>{
+    const mover = () => {
         const target = document.querySelector(".sec2").offsetTop
-        window.scroll(0,target)
+        window.scroll(0, target)
     }
-    useEffect(()=>{
-        if(searchParams.get("_ks")==="xerjkea_erakf"){
-            mover()    
+    useEffect(() => {
+        if (searchParams.get("_ks") === "xerjkea_erakf") {
+            mover()
         }
 
-    },[])
+    }, [])
 
     return (
         <>
@@ -90,11 +90,11 @@ export const Resilution = () => {
                             </div>
                             <div className='relative mt-8 lg:mt-12'>
                                 <div className=' bg-(--savegreen) h-12 transition dutation-500 c_acr1 why_card overflow-hidden' onLoad={acrLoad}>
-                                    <div className='head py-3 px-5 lg:px-10 '  data-acr="c_acr1" onClick={c_acr}>
+                                    <div className='head py-3 px-5 lg:px-10 ' data-acr="c_acr1" onClick={c_acr}>
                                         <p data-acr="c_acr1">Find out our Solution</p>
                                         <button className='bg-(--dark) flex justify-center items-center w-[50px] h-[50px] absolute top-0 right-5 translate-y-[-50%]'
                                             data-acr="c_acr1"
-                                           
+
                                         >
                                             <img src="/icons/down-arrow.svg" className='transition dutation-500' alt="" data-acr="c_acr1" />
                                         </button>
@@ -120,7 +120,7 @@ export const Resilution = () => {
                                         <p data-acr="c_acr2">Find out our Solution</p>
                                         <button className='bg-(--dark) flex justify-center items-center w-[50px] h-[50px] absolute top-0 right-5 translate-y-[-50%]'
                                             data-acr="c_acr2"
-                                            
+
                                         >
                                             <img src="/icons/down-arrow.svg" className='transition dutation-500' alt="" data-acr="c_acr2" />
                                         </button>
@@ -142,11 +142,11 @@ export const Resilution = () => {
                             </div>
                             <div className='relative mt-8 lg:mt-12 '>
                                 <div className=' bg-(--savegreen) h-12 transition dutation-500 c_acr3 why_card overflow-hidden' onLoad={acrLoad}>
-                                    <div className='head py-3 px-5 lg:px-10 ' data-acr="c_acr3"  onClick={c_acr}>
-                                        <p  data-acr="c_acr3">Find out our Solution</p>
+                                    <div className='head py-3 px-5 lg:px-10 ' data-acr="c_acr3" onClick={c_acr}>
+                                        <p data-acr="c_acr3">Find out our Solution</p>
                                         <button className='bg-(--dark) flex justify-center items-center w-[50px] h-[50px] absolute top-0 right-5 translate-y-[-50%]'
                                             data-acr="c_acr3"
-                                           
+
                                         >
                                             <img src="/icons/down-arrow.svg" className='transition dutation-500' alt="" data-acr="c_acr3" />
                                         </button>
@@ -168,11 +168,11 @@ export const Resilution = () => {
                             </div>
                             <div className='relative mt-8 lg:mt-12'>
                                 <div className=' bg-(--savegreen) h-12 overflow-hidden transition dutation-500 c_acr4 why_card' onLoad={acrLoad}>
-                                    <div className='head py-3 px-5 lg:px-10 '  data-acr="c_acr4" onClick={c_acr}>
+                                    <div className='head py-3 px-5 lg:px-10 ' data-acr="c_acr4" onClick={c_acr}>
                                         <p data-acr="c_acr4">Find out our Solution</p>
                                         <button className='bg-(--dark) flex justify-center items-center w-[50px] h-[50px] absolute top-0 right-5 translate-y-[-50%]'
                                             data-acr="c_acr4"
-                                            
+
                                         >
                                             <img src="/icons/down-arrow.svg" className='transition dutation-500' alt="" data-acr="c_acr4" />
                                         </button>
@@ -194,11 +194,11 @@ export const Resilution = () => {
                             </div>
                             <div className='relative mt-8 lg:mt-12'>
                                 <div className=' bg-(--savegreen) h-12 overflow-hidden transition dutation-500 c_acr5 why_card' onLoad={acrLoad}>
-                                    <div className='head py-3 px-5 lg:px-10 '  data-acr="c_acr5"  onClick={c_acr}>
-                                        <p  data-acr="c_acr5">Find out our Solution</p>
+                                    <div className='head py-3 px-5 lg:px-10 ' data-acr="c_acr5" onClick={c_acr}>
+                                        <p data-acr="c_acr5">Find out our Solution</p>
                                         <button className='bg-(--dark) flex justify-center items-center w-[50px] h-[50px] absolute top-0 right-5 translate-y-[-50%]'
                                             data-acr="c_acr5"
-                                           
+
                                         >
                                             <img src="/icons/down-arrow.svg" className='transition dutation-500' alt="" data-acr="c_acr5" />
                                         </button>
@@ -220,11 +220,11 @@ export const Resilution = () => {
                             </div>
                             <div className='relative mt-8 lg:mt-12'>
                                 <div className=' bg-(--savegreen) h-12 overflow-hidden transition dutation-500 c_acr6 why_card' onLoad={acrLoad}>
-                                    <div className='head py-3 px-5 lg:px-10 '  data-acr="c_acr6"  onClick={c_acr}>
-                                        <p  data-acr="c_acr6">Find out our Solution</p>
+                                    <div className='head py-3 px-5 lg:px-10 ' data-acr="c_acr6" onClick={c_acr}>
+                                        <p data-acr="c_acr6">Find out our Solution</p>
                                         <button className='bg-(--dark) flex justify-center items-center w-[50px] h-[50px] absolute top-0 right-5 translate-y-[-50%]'
                                             data-acr="c_acr6"
-                                           
+
                                         >
                                             <img src="/icons/down-arrow.svg" className='transition dutation-500' alt="" data-acr="c_acr6" />
                                         </button>
@@ -259,7 +259,7 @@ export const Resilution = () => {
                 </div>
                 <div className=' sm:w-[40%] lg:w-[45%] flex justify-center items-center overflow-hidden '>
                     <div className={style.scene}>
-                        <Spline scene='https://prod.spline.design/2g0IQbUKbYsDAUMq/scene.splinecode' />
+                        <SplineWithFallback scene='https://prod.spline.design/2g0IQbUKbYsDAUMq/scene.splinecode' />
                     </div>
                 </div>
             </section>

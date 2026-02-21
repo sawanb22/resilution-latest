@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import Spline from '@splinetool/react-spline';
+import { SplineWithFallback } from '../../Component/Common/SplineWithFallback';
 import { NewNavbar } from './NewNavbar';
 import { Footer } from '../../Component/Common/Footer';
 import style from "./home.module.css";
@@ -282,7 +282,7 @@ const NewHome = () => {
 
                             {/* CENTER: Giant R Logo (Absolute Center Bottom) */}
                             <div className="absolute z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: '800px', height: '800px', bottom: '-260px', left: '50%', transform: 'translateX(-55%)' }}>
-                                <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
+                                <SplineWithFallback scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                             </div>
 
                             {/* RIGHT: Transparency Card */}
@@ -349,7 +349,7 @@ const NewHome = () => {
 
                     {/* Giant R Logo */}
                     <div className="w-[450px] h-[450px] mb-0 relative overflow-hidden flex justify-center -mt-16 scale-110 pointer-events-none -translate-x-4">
-                        <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
+                        <SplineWithFallback scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                     </div>
                 </div>
 
@@ -893,7 +893,7 @@ const NewHome = () => {
                     <div className="relative min-h-[500px]">
                         {/* Central R Logo - decorative background */}
                         <div className="absolute z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: 'min(560px, 45vw)', height: 'min(560px, 45vw)', top: '100%', left: '50%', transform: 'translate(-54%, -65%)' }}>
-                            <Spline scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
+                            <SplineWithFallback scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                         </div>
 
                         {/* Eden AI Assistant Card - centered */}
