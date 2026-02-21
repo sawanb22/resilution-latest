@@ -1,16 +1,20 @@
-import React from 'react';
-import Spline from '@splinetool/react-spline';
+import React, { Suspense, lazy } from 'react';
+
+// Lazy-load Spline to avoid importing Three.js when WebGL is unavailable
+const Spline = lazy(() => import('@splinetool/react-spline'));
 
 /**
  * Detect if the browser supports WebGL by attempting to get a WebGL context
- * from an offscreen canvas.
+ * from an offscreen canvas. This avoids the fatal Three.js crash.
  */
 function isWebGLAvailable() {
     try {
         const canvas = document.createElement('canvas');
-        // Simple, robust check: just ensure getContext doesn't return null
-        return !!(window.WebGLRenderingContext &&
-            (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+        const gl =
+            canvas.getContext('webgl2') ||
+            canvas.getContext('webgl') ||
+            canvas.getContext('experimental-webgl');
+        return gl instanceof WebGLRenderingContext || gl instanceof WebGL2RenderingContext;
     } catch {
         return false;
     }
@@ -50,44 +54,96 @@ class SplineErrorBoundary extends React.Component {
 }
 
 /**
- * Safe wrapper around @splinetool/react-spline.
- *
- * - Checks WebGL availability before rendering (robust cross-browser)
- * - Wraps <Spline> in an Error Boundary so crashes are isolated
- * - Passes ALL props down to <Spline> safely to preserve styling/dimensions
+ * A loading placeholder shown while the Spline component is lazy-loaded.
  */
-export function SplineWithFallback(props) {
-    const { fallbackImage, fallbackAlt, ...splineProps } = props;
-
-    const fallbackElement = fallbackImage ? (
+function LoadingPlaceholder({ style, className }) {
+    return (
         <div
-            className={props.className}
+            className={className}
             style={{
-                ...props.style,
+                ...style,
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                opacity: 0.15,
             }}
-        >
-            <img
-                src={fallbackImage}
-                alt={fallbackAlt || '3D content unavailable'}
+        />
+    );
+}
+
+/**
+ * Fallback UI displayed when WebGL is unavailable or when Spline crashes.
+ * If a fallbackImage is provided, it renders the image; otherwise it renders
+ * a transparent placeholder so the surrounding layout isn't affected.
+ */
+function Fallback({ style, className, fallbackImage, fallbackAlt }) {
+    if (fallbackImage) {
+        return (
+            <div
+                className={className}
                 style={{
-                    maxWidth: '60%',
-                    maxHeight: '60%',
-                    objectFit: 'contain',
-                    opacity: 0.7,
+                    ...style,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                 }}
-            />
-        </div>
-    ) : (
+            >
+                <img
+                    src={fallbackImage}
+                    alt={fallbackAlt || '3D content unavailable'}
+                    style={{
+                        maxWidth: '60%',
+                        maxHeight: '60%',
+                        objectFit: 'contain',
+                        opacity: 0.7,
+                    }}
+                />
+            </div>
+        );
+    }
+
+    // Transparent placeholder — preserves layout without rendering anything visible
+    return (
         <div
-            className={props.className}
+            className={className}
             style={{
-                ...props.style,
+                ...style,
                 opacity: 0,
-                pointerEvents: 'none'
+                pointerEvents: 'none',
             }}
+        />
+    );
+}
+
+/**
+ * Safe wrapper around @splinetool/react-spline.
+ *
+ * - Checks WebGL availability before rendering
+ * - Wraps <Spline> in an Error Boundary so crashes are isolated
+ * - Shows a graceful fallback instead of killing the entire app
+ *
+ * Props:
+ *   scene         – Spline scene URL (required)
+ *   style         – inline styles passed to Spline / fallback
+ *   className     – className passed to the container
+ *   fallbackImage – optional static image to show when 3D is unavailable
+ *   fallbackAlt   – alt text for the fallback image
+ *   ...rest       – any additional props forwarded to <Spline>
+ */
+export function SplineWithFallback({
+    scene,
+    style,
+    className,
+    fallbackImage,
+    fallbackAlt,
+    ...rest
+}) {
+    const fallbackElement = (
+        <Fallback
+            style={style}
+            className={className}
+            fallbackImage={fallbackImage}
+            fallbackAlt={fallbackAlt}
         />
     );
 
@@ -98,7 +154,13 @@ export function SplineWithFallback(props) {
 
     return (
         <SplineErrorBoundary fallback={fallbackElement}>
-            <Spline {...splineProps} />
+            <Suspense
+                fallback={
+                    <LoadingPlaceholder style={style} className={className} />
+                }
+            >
+                <Spline scene={scene} style={style} {...rest} />
+            </Suspense>
         </SplineErrorBoundary>
     );
 }
