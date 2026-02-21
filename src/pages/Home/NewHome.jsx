@@ -472,21 +472,20 @@ const NewHome = () => {
                     <div className="flex flex-row gap-6 lg:gap-8 mb-20 w-full justify-center items-stretch">
                         {shortfalls.map((item, index) => (
                             <div key={index}
-                                className={`flex-1 bg-[#EAEAEA] border border-transparent flex flex-col items-start text-left group p-8 lg:p-10 rounded-[12px] relative overflow-hidden ${style['card-dark-hover']}`}
+                                className={`flex-1 bg-[#EAEAEA] border border-transparent flex flex-row items-start text-left group pt-8 pb-8 pr-8 pl-4 lg:pt-10 lg:pb-10 lg:pr-10 lg:pl-6 rounded-none relative overflow-hidden ${style['card-dark-hover']}`}
                                 style={{ minHeight: '230px' }}
                             >
-
-                                <div className="flex items-center gap-5 mb-6">
-                                    <div className="w-10 h-10 flex items-center justify-center bg-[#C4A4A4]/40 rounded-none transition-all duration-500 group-hover:bg-[#C4A4A4]/60">
-                                        <img src="/homepage_assets/icon_cross.svg" alt="Error" className="w-5 h-5 object-contain opacity-80 group-hover:opacity-100 transition-all duration-500" />
-                                    </div>
+                                <div className="w-10 h-10 flex items-center justify-center bg-[#C4A4A4]/40 rounded-none transition-all duration-500 group-hover:bg-[#C4A4A4]/60 shrink-0">
+                                    <img src="/homepage_assets/icon_cross.svg" alt="Error" className="w-5 h-5 object-contain opacity-80 group-hover:opacity-100 transition-all duration-500" />
+                                </div>
+                                <div className="flex flex-col gap-8 ml-5 text-left">
                                     <h3 className="font-['GACCO'] text-[16px] font-medium uppercase tracking-wide leading-[100%] text-black transition-colors duration-500">
                                         {item.title}
                                     </h3>
+                                    <p className="text-gray-600 transition-colors duration-500 pr-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
+                                        {item.description}
+                                    </p>
                                 </div>
-                                <p className="text-gray-600 transition-colors duration-500 pr-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
-                                    {item.description}
-                                </p>
                             </div>
                         ))}
                     </div>
@@ -507,11 +506,11 @@ const NewHome = () => {
 
                 <div className="flex flex-col gap-4 mb-12">
                     {shortfalls.map((item, index) => (
-                        <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-[#EAEAEA] px-5 py-8 rounded-sm text-left flex gap-4 items-start">
+                        <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-[#EAEAEA] py-8 pr-5 pl-2 rounded-none text-left flex gap-4 items-start">
                             <div className="w-6 h-6 flex items-center justify-center bg-[#C4A4A4] rounded-sm shrink-0 mt-0.5">
                                 <img src="/homepage_assets/icon_cross.svg" alt="Cross Icon" className="w-3 h-3 opacity-80" />
                             </div>
-                            <div className="flex flex-col gap-2">
+                            <div className="flex flex-col gap-4">
                                 <h3 className="font-['GACCO'] text-[10px] font-bold uppercase text-black tracking-wide leading-tight">
                                     {item.title}
                                 </h3>
@@ -681,10 +680,10 @@ const NewHome = () => {
                         Resilution creates value for both businesses seeking funding and investors looking for transparent opportunities.
                     </p>
                     <div className="flex flex-col lg:flex-row gap-10 justify-center w-full items-center lg:items-stretch">
-                        <div data-aos="fade-right" className="bg-[#EDE2E2] card-hover-light flex flex-col items-start text-left rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
+                        <div data-aos="fade-right" className="bg-[#EDE2E2] card-hover-light flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
                             <div className="mb-8 w-16 h-16"><img src="/homepage_assets/icon_user.svg" alt="icon_user.svg" className="w-full h-full object-contain" /></div>
-                            <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest text-left">FOR INVESTORS</h3>
-                            <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-5">
+                            <h3 className="font-['GACCO'] uppercase mb-8" style={{ fontWeight: 500, fontSize: '24px', lineHeight: '100%', letterSpacing: '0%' }}>FOR INVESTORS</h3>
+                            <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-[25px]">
                                 <li>Invest in verified businesses with full transparency.</li>
                                 <li>Track real-time performance and product data on-chain.</li>
                                 <li>Reduce risk through immutable records and smart contracts.</li>
@@ -692,10 +691,10 @@ const NewHome = () => {
                             </ul>
                             <button className="font-['GACCO'] bg-black text-white px-10 py-4 text-sm font-medium uppercase tracking-widest btn-white-hover transition-all duration-300 rounded-sm absolute bottom-16">Start Investing</button>
                         </div>
-                        <div data-aos="fade-left" className="bg-[#EDE2E2] card-hover-light flex flex-col items-start text-left rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
+                        <div data-aos="fade-left" className="bg-[#EDE2E2] card-hover-light flex flex-col items-center text-center rounded-sm relative w-full max-w-[522px]" style={{ minHeight: '650px', padding: '64px' }}>
                             <div className="mb-8 w-16 h-16"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
-                            <h3 className="font-['GACCO'] text-3xl font-normal uppercase mb-8 tracking-widest text-left">FOR BUSINESSES</h3>
-                            <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-5">
+                            <h3 className="font-['GACCO'] uppercase mb-8" style={{ fontWeight: 500, fontSize: '24px', lineHeight: '100%', letterSpacing: '0%' }}>FOR BUSINESSES</h3>
+                            <ul className="text-left text-gray-800 space-y-2 mb-12 flex-grow font-light text-base leading-relaxed list-disc pl-[25px]">
                                 <li>Raise capital directly from a global investor community without banks or intermediaries.</li>
                                 <li>Gain trust through transparent performance data recorded on blockchain.</li>
                                 <li>Automate revenue sharing and funding distribution with smart contracts.</li>
