@@ -225,7 +225,7 @@ const NewHome = () => {
                     {/* Content Container */}
                     <div className="relative z-10 w-full flex flex-col items-center pt-[78px]" style={{ minHeight: '700px' }}>
 
-                        {/* Ambient Radial Glow */}
+                        {/* Ambient Radial Glow --- glow gloww glow  */}
                         <div
                             className="absolute top-[-5%] left-1/2 -translate-x-1/2 w-[140%] max-w-[1800px] h-[500px] z-10 pointer-events-none rounded-[100%]"
                             style={{
