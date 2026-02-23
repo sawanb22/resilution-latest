@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 export const NewNavbar = () => {
     const navLinks = [
-        { name: 'Home', href: '#hero' },
-        { name: 'How It Works', href: '#how-it-works' },
-        { name: 'Solutions', href: '#engine' }, // Mapping to Engine for now
-        { name: 'Ecosystem', href: '#ecosystem' },
-        { name: 'Community', href: '#community' },
+        { name: 'Home', desktopId: 'hero', mobileId: 'hero-mobile' },
+        { name: 'How It Works', desktopId: 'how-it-works', mobileId: 'how-it-works-mobile' },
+        { name: 'Solutions', desktopId: 'engine', mobileId: 'engine-mobile' },
+        { name: 'Ecosystem', desktopId: 'ecosystem', mobileId: 'ecosystem-mobile' },
+        { name: 'Community', desktopId: 'community', mobileId: 'community-mobile' },
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,8 +36,30 @@ export const NewNavbar = () => {
         };
     }, [isMobileMenuOpen]);
 
+    const handleNavClick = (e, desktopId, mobileId) => {
+        e.preventDefault();
+        setIsMobileMenuOpen(false);
+
+        setTimeout(() => {
+            const isMobile = window.innerWidth < 768;
+            const targetId = isMobile ? mobileId : desktopId;
+
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                const fallbackElement = document.getElementById(isMobile ? desktopId : mobileId);
+                if (fallbackElement) {
+                    fallbackElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }, 50);
+    };
+
+    // Note: The navbar is already sticky due to "sticky top-0 z-50", 
+    // we just need to make sure the heights are set properly for the mobile view
     return (
-        <nav className="sticky top-0 z-50 bg-black border-b border-white/10 w-full" style={{ height: typeof window !== 'undefined' && window.innerWidth < 768 ? '44px' : '70px' }}>
+        <nav className="sticky top-0 z-50 bg-black border-b border-white/10 w-full" style={{ height: typeof window !== 'undefined' && window.innerWidth < 768 ? '54px' : '70px' }}>
             <div className="w-full mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-full">
 
                 {/* Logo Section */}
@@ -45,7 +67,8 @@ export const NewNavbar = () => {
                     <img
                         src="/homepage_assets/resilution heading.svg"
                         alt="RESILUTION"
-                        className="h-6 md:h-8 object-contain"
+                        className="h-6 md:h-8 object-contain cursor-pointer"
+                        onClick={(e) => handleNavClick(e, 'hero', 'hero-mobile')}
                     />
                 </div>
 
@@ -54,7 +77,8 @@ export const NewNavbar = () => {
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
-                            href={link.href}
+                            href={`#${link.desktopId}`}
+                            onClick={(e) => handleNavClick(e, link.desktopId, link.mobileId)}
                             className="text-white hover:text-[#C8FF80] transition-colors text-[13px] font-medium uppercase tracking-[0.05em]"
                             style={{ fontFamily: 'Arial, sans-serif' }}
                         >
@@ -93,13 +117,13 @@ export const NewNavbar = () => {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="md:hidden fixed inset-0 top-[44px] bg-black z-40 flex flex-col p-6 animate-in slide-in-from-right-10 duration-200 overflow-y-auto">
+                <div className="md:hidden fixed inset-0 top-[54px] bg-black z-40 flex flex-col p-6 animate-in slide-in-from-right-10 duration-200 overflow-y-auto">
                     <div className="flex flex-col gap-6 mt-4">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
-                                href={link.href}
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                href={`#${link.mobileId}`}
+                                onClick={(e) => handleNavClick(e, link.desktopId, link.mobileId)}
                                 className="text-white text-[16px] font-medium uppercase tracking-wide border-b border-white/10 pb-4"
                             >
                                 {link.name}
