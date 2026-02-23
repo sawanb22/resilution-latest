@@ -150,7 +150,7 @@ export const Footer = () => {
               required
             />
             <button
-              className="font-['GACCO'] w-[100%] py-3 text-[13px] sm:text-xl bg-(--savegreen) text-black mt-3 rounded"
+              className="font-['arial'] w-[100%] py-3 text-[13px] sm:text-xl bg-(--savegreen) text-black mt-3 rounded"
               type="submit"
               onClick={handleSubmit}
             >

@@ -24,6 +24,11 @@ const NewHome = () => {
             backdrop-filter: blur(10px) !important;
             -webkit-backdrop-filter: blur(10px) !important;
         }
+        @media (max-width: 767px) {
+            .hero-get-started {
+                border-radius: 0px !important;
+            }
+        }
         .hero-get-started:hover {
             background: rgba(255, 255, 255, 0.08) !important;
             color: #C8FF80 !important;
@@ -435,8 +440,8 @@ const NewHome = () => {
                     {/* Get Started Button */}
                     <button
                         onClick={() => window.open('https://discord.com/invite/KG5WKCnkWW', '_blank')}
-                        className="hero-get-started group flex items-center justify-center gap-3 px-8 py-3 mb-4 mx-auto" style={{ borderRadius: '18px' }}>
-                        <span style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Get Started</span>
+                        className="hero-get-started group flex items-center justify-center gap-3 px-8 py-3 mb-4 mx-auto">
+                        <span style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Get Started</span>
                         <svg className="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
                         </svg>
@@ -528,7 +533,7 @@ const NewHome = () => {
                     <div className="w-full flex justify-center">
                         <button
                             onClick={() => { document.getElementById('engine')?.scrollIntoView({ behavior: 'smooth' }) }}
-                            className="font-['GACCO'] inline-flex items-center justify-center font-normal transition-all duration-300 transform active:scale-95 bg-[#C8FF80] text-black border border-[#C8FF80] rounded-sm whitespace-nowrap" style={{ minWidth: '260px', height: '54px', fontSize: '16px' }}>
+                            className="font-['Arial'] inline-flex items-center justify-center font-normal transition-all duration-300 transform active:scale-95 bg-[#C8FF80] text-black border border-[#C8FF80] rounded-sm whitespace-nowrap" style={{ minWidth: '260px', height: '54px', fontSize: '16px' }}>
                             View the Solution
                         </button>
                     </div>
@@ -563,7 +568,7 @@ const NewHome = () => {
                 <div className="flex justify-center">
                     <button
                         onClick={() => { document.getElementById('engine-mobile')?.scrollIntoView({ behavior: 'smooth' }) }}
-                        className="font-['GACCO'] bg-[#C8FF80] text-black font-medium text-[12px] px-8 py-2.5 rounded-sm transition-colors whitespace-nowrap uppercase tracking-wider">
+                        className="font-['Arial'] bg-[#C8FF80] text-black font-medium text-[12px] px-8 py-2.5 rounded-sm transition-colors whitespace-nowrap uppercase tracking-wider">
                         View The Solution
                     </button>
                 </div>
@@ -578,7 +583,7 @@ const NewHome = () => {
                         <h2 className="font-['GACCO'] font-medium uppercase tracking-wide leading-relaxed" style={{ fontSize: 'clamp(22px, 2.8vw, 36px)' }}>
                             THE <span className="bg-[#C8FF80] text-black px-3 py-[7px] font-medium inline-block">RESILUTION</span><br />ENGINE
                         </h2>
-                        <p className="text-white max-w-lg font-light text-left md:text-right" style={{ fontSize: 'clamp(14px, 1.2vw, 18px)' }}>
+                        <p className="text-white max-w-lg font-light text-left transform translate-y-[-8px]" style={{ fontSize: 'clamp(14px, 1.2vw, 18px)' }}>
                             Resilution replaces traditional investment barriers with <br /> blockchain-powered transparency, automation, and trust.
                         </p>
                     </div>
@@ -611,7 +616,7 @@ const NewHome = () => {
                                     onClick={() => window.open('https://discord.com/invite/KG5WKCnkWW', '_blank')}
                                     className="bg-[#C8FF80] text-black transition-colors btn-light hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(200,255,128,0.4)] mb-8 lg:mb-0"
                                     style={{
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Arial',
                                         fontWeight: 400,
                                         fontStyle: 'normal',
                                         fontSize: '20px',
@@ -750,17 +755,17 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ BENEFITS (MOBILE) ═══════════════════ */}
-            <section id="benefits-mobile" className="block md:hidden bg-white py-16 px-6 text-black relative z-10 w-full text-left">
-                <h2 className="uppercase mb-6 text-left" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '16px', lineHeight: '23px', letterSpacing: '0%' }}>
+            <section id="benefits-mobile" className="block md:hidden bg-white py-16 px-6 text-black relative z-10 w-full text-center">
+                <h2 className="uppercase mb-6 text-center" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '16px', lineHeight: '23px', letterSpacing: '0%' }}>
                     BENEFITS FOR <span className="bg-[#C8FF80] px-2 py-[5px] inline-block">BUSINESSES & INVESTORS</span>
                 </h2>
-                <p className="text-gray-600 text-left mb-12" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
+                <p className="text-gray-600 text-center mb-12" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
                     Resilution creates value for both businesses seeking funding and investors looking for transparent opportunities.
                 </p>
                 <div className="flex flex-col gap-6">
                     <div data-aos="fade-up" className="bg-[#EDE2E2] p-8 rounded-sm text-left card-hover-light">
-                        <div className="mb-6 w-12 h-12 ml-0"><img src="/homepage_assets/icon_user.svg" alt="icon_user.svg" className="w-full h-full object-contain" /></div>
-                        <h3 className="uppercase mb-6 text-left" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '12px', lineHeight: '100%', letterSpacing: '0%' }}>FOR INVESTORS</h3>
+                        <div className="mb-6 w-12 h-12 mx-auto"><img src="/homepage_assets/icon_user.svg" alt="icon_user.svg" className="w-full h-full object-contain" /></div>
+                        <h3 className="uppercase mb-6 text-center" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '12px', lineHeight: '100%', letterSpacing: '0%' }}>FOR INVESTORS</h3>
                         <ul className="text-left text-gray-800 space-y-4 mb-8 list-disc pl-6" style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>
                             <li>Invest in verified businesses with full transparency.</li>
                             <li>Track real-time performance and product data on-chain.</li>
@@ -769,11 +774,11 @@ const NewHome = () => {
                         </ul>
                         <button
                             onClick={() => window.open('https://form.typeform.com/to/yHgU8wvD', '_blank')}
-                            className="bg-black text-white w-full py-4 uppercase rounded-sm btn-white-hover btn-black-shadow transition-all duration-300" style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Start Investing</button>
+                            className="bg-black text-white w-full py-4 uppercase rounded-sm btn-white-hover btn-black-shadow transition-all duration-300" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Start Investing</button>
                     </div>
                     <div data-aos="fade-up" data-aos-delay="100" className="bg-[#EDE2E2] p-8 rounded-sm text-left card-hover-light">
-                        <div className="mb-6 w-12 h-12 ml-0"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
-                        <h3 className="uppercase mb-6 text-left" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '12px', lineHeight: '100%', letterSpacing: '0%' }}>FOR BUSINESSES</h3>
+                        <div className="mb-6 w-12 h-12 mx-auto"><img src="/homepage_assets/icon_building.svg" alt="icon_building.svg" className="w-full h-full object-contain" /></div>
+                        <h3 className="uppercase mb-6 text-center" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '12px', lineHeight: '100%', letterSpacing: '0%' }}>FOR BUSINESSES</h3>
                         <ul className="text-left text-gray-800 space-y-4 mb-8 list-disc pl-6" style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>
                             <li>Raise capital directly from a global investor community without banks or intermediaries.</li>
                             <li>Gain trust through transparent performance data recorded on blockchain.</li>
@@ -782,7 +787,7 @@ const NewHome = () => {
                         </ul>
                         <button
                             onClick={() => window.open('https://form.typeform.com/to/STkYgYkb', '_blank')}
-                            className="bg-black text-white w-full py-4 uppercase rounded-sm btn-white-hover btn-black-shadow transition-all duration-300" style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Join As A Business</button>
+                            className="bg-black text-white w-full py-4 uppercase rounded-sm btn-white-hover btn-black-shadow transition-all duration-300" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Join As A Business</button>
                     </div>
                 </div>
             </section>
@@ -827,7 +832,7 @@ const NewHome = () => {
                 </h2>
 
                 <div className="flex items-end justify-between mb-8">
-                    <p className="text-gray-600 text-left max-w-[240px]" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
+                    <p className="text-black text-left max-w-[240px]" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
                         A simple and transparent process that connects businesses and investors through blockchain technology.
                     </p>
 
@@ -866,16 +871,21 @@ const NewHome = () => {
                     `}</style>
 
                     {howItWorksSteps.map((item, index) => (
-                        <div key={index} className="snap-center shrink-0 w-[280px]">
-                            <div className="bg-[#FBF5F5] p-8 rounded-[12px] h-[340px] flex flex-col items-start text-left relative group border border-[#0000001A] overflow-hidden">
-                                <span className="absolute top-4 left-4 text-xs text-gray-400 font-medium font-['Arial']">Step {index + 1}</span>
-                                <div className="relative w-20 h-20 flex justify-center items-center mb-6 mt-4">
+                        <div key={index} className="snap-center shrink-0 w-[310px]">
+                            <div className="bg-[#FBF5F5] p-6 rounded-[12px] h-[299px] flex flex-col items-start text-left relative group border border-[#0000001A] overflow-hidden">
+                                <span className="absolute top-4 left-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '12px', lineHeight: '100%', letterSpacing: '0%', color: '#000' }}>Step {index + 1}</span>
+                                <div className="relative w-full h-24 flex justify-center items-center mb-6 mt-4">
+                                    {/* Concentric Circles */}
+                                    <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+                                        <div className="how-works-circle" style={{ width: '100px', height: '100px', border: '1px solid rgba(200, 255, 128, 0.6)' }}></div>
+                                        <div className="how-works-circle" style={{ width: '160px', height: '160px', border: '1px solid rgba(200, 255, 128, 0.3)' }}></div>
+                                    </div>
                                     <div className="w-10 h-10 rounded-full bg-[#C8FF80] group-hover:bg-white flex justify-center items-center z-10 transition-colors duration-500">
                                         <img src={item.icon} alt={`${item.step} icon`} className="w-5 h-5 object-contain transition-all duration-500" />
                                     </div>
                                 </div>
-                                <h3 className="uppercase mb-3 text-left" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '12px', lineHeight: '100%', letterSpacing: '0%' }}>{item.title}</h3>
-                                <p className="text-gray-600 text-left" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>{item.description}</p>
+                                <h3 className="uppercase mb-3 pr-2" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '12px', lineHeight: '100%', letterSpacing: '0%', color: '#000' }}>{item.title}</h3>
+                                <p className="text-black pr-2" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>{item.description}</p>
                             </div>
                         </div>
                     ))}
@@ -1546,7 +1556,7 @@ const NewHome = () => {
                 </div>
 
                 {/* Carousel Container */}
-                <div className="relative w-full max-w-[340px] mx-auto">
+                <div className="relative w-full max-w-[383px] mx-auto">
 
                     {/* Navigation Arrows (Top Right) */}
                     <div className="flex justify-end items-center gap-4 mb-4 pr-2">
@@ -1582,14 +1592,13 @@ const NewHome = () => {
                                 display: none;
                             }
                         `}</style>
-                        {/* Access & Tiers Card */}
                         <div className="snap-center shrink-0 w-full p-2">
-                            <div className="h-full p-8 rounded-[16px] flex flex-col items-start text-left card-hover-light" style={{
-                                width: '90%', margin: '0 auto',
+                            <div className="p-8 rounded-[16px] flex flex-col items-center text-center card-hover-light" style={{
+                                width: '100%', height: '198px', margin: '0 auto',
                                 border: '1.5px solid transparent',
                                 background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
                             }}>
-                                <h3 className="text-white uppercase mb-4 flex items-center gap-1.5" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Access <span style={{ fontFamily: 'serif', fontStyle: 'italic', fontSize: '15px' }}>&</span> Tiers</h3>
+                                <h3 className="text-white uppercase mb-4 flex items-center justify-center gap-1.5" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Access <span style={{ fontFamily: 'serif', fontStyle: 'italic', fontSize: '15px' }}>&</span> Tiers</h3>
                                 <p className="text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '100%', letterSpacing: '0%' }}>
                                     $RESIL tokens unlock premium features, higher investment limits, and advanced platform tools through tier-based access.
                                 </p>
@@ -1598,8 +1607,8 @@ const NewHome = () => {
 
                         {/* Rewards System Card */}
                         <div className="snap-center shrink-0 w-full p-2">
-                            <div className="h-full p-8 rounded-[16px] flex flex-col items-start text-left card-hover-light" style={{
-                                width: '90%', margin: '0 auto',
+                            <div className="p-8 rounded-[16px] flex flex-col items-center text-center card-hover-light" style={{
+                                width: '100%', height: '198px', margin: '0 auto',
                                 border: '1.5px solid transparent',
                                 background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
                             }}>
@@ -1613,14 +1622,14 @@ const NewHome = () => {
 
                         {/* Staking Card */}
                         <div className="snap-center shrink-0 w-full p-2">
-                            <div className="h-full p-8 rounded-[16px] flex flex-col items-start text-left card-hover-light" style={{
-                                width: '90%', margin: '0 auto',
+                            <div className="p-8 rounded-[16px] flex flex-col items-center text-center card-hover-light" style={{
+                                width: '100%', height: '198px', margin: '0 auto',
                                 border: '1.5px solid transparent',
                                 background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
                             }}>
                                 <h3 className="text-white uppercase mb-4" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Staking</h3>
                                 <div className="text-left w-full">
-                                    <p className="font-['arial'] text-white text-[13px] mb-3 font-medium">Stake $RESIL tokens to receive:</p>
+                                    <p className="font-['arial'] text-white text-[13px] mb-3 font-medium text-center">Stake $RESIL tokens to receive:</p>
                                     <ul className="list-disc pl-5 space-y-2 text-white" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '100%', letterSpacing: '0%' }}>
                                         <li>Reduced platform fees</li>
                                         <li>Priority access to deals</li>
@@ -1632,8 +1641,8 @@ const NewHome = () => {
 
                         {/* Governance Card */}
                         <div className="snap-center shrink-0 w-full p-2">
-                            <div className="h-full p-8 rounded-[16px] flex flex-col items-start text-left card-hover-light" style={{
-                                width: '90%', margin: '0 auto',
+                            <div className="p-8 rounded-[16px] flex flex-col items-center text-center card-hover-light" style={{
+                                width: '100%', height: '198px', margin: '0 auto',
                                 border: '1.5px solid transparent',
                                 background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(45deg, rgba(200,255,128,0.9) 0%, transparent 25%, transparent 75%, rgba(200,255,128,0.9) 100%) border-box',
                             }}>
@@ -1658,7 +1667,7 @@ const NewHome = () => {
                         <h2 className="uppercase text-white" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '100%', letterSpacing: '0%' }}>
                             TOKEN <span className="bg-[#C8FF80] text-black px-3 py-[7px]">DISTRIBUTION</span>
                         </h2>
-                        <p className="text-white text-left lg:text-right max-w-lg" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
+                        <p className="text-white text-left max-w-lg w-full" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '150%' }}>
                             A balanced allocation model designed to prioritize ecosystem growth, long-term alignment, and platform sustainability.
                         </p>
                     </div>
@@ -1889,13 +1898,28 @@ const NewHome = () => {
                                 const rad = deg => (deg * Math.PI) / 180;
 
                                 return segmentsKey.map((seg, i) => {
-                                    const x1 = CX + R * Math.cos(rad(seg.start));
-                                    const y1 = CY + R * Math.sin(rad(seg.start));
-                                    const x2 = CX + R * Math.cos(rad(seg.end));
-                                    const y2 = CY + R * Math.sin(rad(seg.end));
+                                    const isHovered = hoveredSlice === i;
+                                    const radius = isHovered ? R + 10 : R;
+
+                                    const x1 = CX + radius * Math.cos(rad(seg.start));
+                                    const y1 = CY + radius * Math.sin(rad(seg.start));
+                                    const x2 = CX + radius * Math.cos(rad(seg.end));
+                                    const y2 = CY + radius * Math.sin(rad(seg.end));
                                     const largeArc = (seg.end - seg.start) > 180 ? 1 : 0;
-                                    const d = `M ${CX} ${CY} L ${x1} ${y1} A ${R} ${R} 0 ${largeArc} 1 ${x2} ${y2} Z`;
-                                    return <path key={i} d={d} fill={seg.color} stroke="none" />;
+                                    const d = `M ${CX} ${CY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`;
+                                    return (
+                                        <path
+                                            key={i}
+                                            d={d}
+                                            fill={seg.color}
+                                            stroke={isHovered ? "white" : "none"}
+                                            strokeWidth={isHovered ? "2" : "0"}
+                                            className="transition-all duration-300 ease-out cursor-pointer"
+                                            onMouseEnter={() => setHoveredSlice(i)}
+                                            onMouseLeave={() => setHoveredSlice(null)}
+                                            style={{ transformOrigin: `${CX}px ${CY}px` }}
+                                        />
+                                    );
                                 });
                             })()}
 
@@ -1910,7 +1934,7 @@ const NewHome = () => {
                     {/* 2x2 Grid for Legend */}
                     <div className="grid grid-cols-2 gap-x-4 gap-y-8 w-full mb-10">
                         {/* 1. INVESTORS */}
-                        <div className="flex flex-col items-start text-left">
+                        <div className="flex flex-col items-start text-left cursor-pointer group" onMouseEnter={() => setHoveredSlice(0)} onMouseLeave={() => setHoveredSlice(null)}>
                             <div className="flex items-center gap-2 mb-2">
                                 <div className="w-3 h-3 bg-[#D6E5A8] rounded-sm shrink-0"></div>
                                 <h3 className="text-white uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '15px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'left' }}>INVESTORS</h3>
@@ -1921,7 +1945,7 @@ const NewHome = () => {
                         </div>
 
                         {/* 2. TEAM & ADVISORS */}
-                        <div className="flex flex-col items-start text-left">
+                        <div className="flex flex-col items-start text-left cursor-pointer group" onMouseEnter={() => setHoveredSlice(3)} onMouseLeave={() => setHoveredSlice(null)}>
                             <div className="flex items-center gap-2 mb-2">
                                 <div className="w-3 h-3 bg-[#78994D] rounded-sm shrink-0"></div>
                                 <h3 className="text-white uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '15px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'left' }}>TEAM & ADVISORS</h3>
@@ -1932,7 +1956,7 @@ const NewHome = () => {
                         </div>
 
                         {/* 3. OPERATIONS & NETWORK */}
-                        <div className="flex flex-col items-start text-left">
+                        <div className="flex flex-col items-start text-left cursor-pointer group" onMouseEnter={() => setHoveredSlice(2)} onMouseLeave={() => setHoveredSlice(null)}>
                             <div className="flex items-center gap-2 mb-2">
                                 <div className="w-3 h-3 bg-[#9ACD32] rounded-sm shrink-0"></div>
                                 <h3 className="text-white uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '15px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'left' }}>OPERATIONS & NETWORK</h3>
@@ -1943,7 +1967,7 @@ const NewHome = () => {
                         </div>
 
                         {/* 4. COMMUNITY & ECOSYSTEM */}
-                        <div className="flex flex-col items-start text-left">
+                        <div className="flex flex-col items-start text-left cursor-pointer group" onMouseEnter={() => setHoveredSlice(1)} onMouseLeave={() => setHoveredSlice(null)}>
                             <div className="flex items-center gap-2 mb-2">
                                 <div className="w-3 h-3 bg-[#C8FF80] rounded-sm shrink-0"></div>
                                 <h3 className="text-white uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '15px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'left' }}>COMMUNITY & ECOSYSTEM</h3>
@@ -1966,18 +1990,18 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ ROADMAP (DESKTOP) ═══════════════════ */}
-            <section id="roadmap" className="hidden md:block relative overflow-hidden bg-[#F5F5F0] w-full py-24">
+            <section id="roadmap" className="hidden md:block relative overflow-hidden bg-[#FFFAFA] w-full py-24">
 
                 <div className="relative w-full px-8 lg:px-16">
                     {/* Header: PRODUCT ROADMAP & Subtext */}
-                    <div className="flex flex-col md:flex-row justify-between items-start lg:items-end gap-10 mb-16">
+                    <div className="flex flex-col md:flex-row justify-between items-start lg:items-end gap-10 mb-16 transform translate-y-[-15px]">
                         <div data-aos="fade-up">
                             <h2 className="text-black uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '36px', lineHeight: '100%', letterSpacing: '0%' }}>
                                 PRODUCT <span className="bg-[#C8FF80] px-3 py-[7px]">ROADMAP</span>
                             </h2>
                         </div>
-                        <div className="max-w-[412px]" data-aos="fade-up" data-aos-delay="100">
-                            <p className="text-black text-left md:text-right" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
+                        <div className="max-w-[412px] w-full" data-aos="fade-up" data-aos-delay="100">
+                            <p className="text-black text-left" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                                 Our phased development plan focuses on building a transparent, scalable, and community-driven investment ecosystem.
                             </p>
                         </div>
@@ -2027,37 +2051,39 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ ROADMAP (MOBILE) ═══════════════════ */}
-            <section id="roadmap-mobile" className="block md:hidden bg-[#F5F5F0] py-12 px-4 w-full">
-                <div className="text-center mb-10">
+            <section id="roadmap-mobile" className="block md:hidden bg-[#FFFAFA] py-12 px-4 w-full">
+                <div className="text-left mb-10">
                     <h2 className="text-black uppercase mb-4" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '16px', lineHeight: '23px', letterSpacing: '0%' }}>
                         PRODUCT <span className="bg-[#C8FF80] px-2 py-[5px]">ROADMAP</span>
                     </h2>
-                    <p className="text-black text-center" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
+                    <p className="text-black text-left" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                         Our phased development plan focuses on building a transparent, scalable, and community-driven investment ecosystem.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-8 relative ml-8 pl-0">
+                <div className="flex flex-col gap-10 relative w-fit mx-auto translate-x-[25px]">
                     {/* Vertical Line - Starts from Phase 1 node center and ends at Phase 4 node center */}
-                    <div className="absolute left-0 top-[12px] bottom-[120px] w-[1px] bg-[#C8FF80] z-0"></div>
+                    <div className="absolute left-0 top-[12px] bottom-[110px] w-[1px] bg-[#C8FF80] z-0"></div>
 
                     {roadmapPhases.map((phase, i) => (
-                        <div key={i} data-aos="fade-up" data-aos-delay={i * 100} className="relative pl-10">
+                        <div key={i} data-aos="fade-up" data-aos-delay={i * 100} className="relative">
                             {/* Node / Marker - Updated to Ring + Dot style aligned with vertical line */}
-                            <div className="absolute -left-[10px] top-[2px] w-5 h-5 rounded-full border border-[#C8FF80] bg-[#F5F5F0] flex items-center justify-center z-10">
-                                <div className="w-2 h-2 rounded-full bg-[#C8FF80]"></div>
+                            <div className="absolute -left-[10px] top-[0px] h-[20px] w-[20px] rounded-full border-[1px] border-[#C8FF80] bg-[#F5F5F0] flex items-center justify-center z-10">
+                                <div className="h-[8px] w-[8px] rounded-full bg-[#C8FF80]"></div>
                             </div>
 
-                            <span className="uppercase text-black mb-2 block" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '12px', lineHeight: '100%', letterSpacing: '0%' }}>
-                                {phase.phase}
-                            </span>
-                            <h3 className="text-black uppercase mb-3" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
-                                {phase.title}
-                            </h3>
-                            <ul className="space-y-2">
+                            <div className="flex items-center mb-4">
+                                <span className="absolute right-[calc(100%+15px)] uppercase text-black whitespace-nowrap mt-[2px]" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>
+                                    {phase.phase}
+                                </span>
+                                <h3 className="pl-6 text-black uppercase mt-[2px]" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '18px', lineHeight: '100%', letterSpacing: '0%' }}>
+                                    {phase.title}
+                                </h3>
+                            </div>
+                            <ul className="pl-6 space-y-[6px] mb-2">
                                 {phase.items.map((item, j) => (
-                                    <li key={j} className="flex items-start text-black" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '12px', lineHeight: '100%', letterSpacing: '0%' }}>
-                                        <span className="mr-2 text-[#C8FF80]">•</span>
+                                    <li key={j} className="flex items-start text-black" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '130%', letterSpacing: '0%' }}>
+                                        <span className="mr-2 text-black mt-[-1px] font-bold">•</span>
                                         {item}
                                     </li>
                                 ))}
@@ -2080,7 +2106,7 @@ const NewHome = () => {
                         </div>
                         <button
                             onClick={() => window.open('https://discord.com/invite/KG5WKCnkWW', '_blank')}
-                            className="font-['GACCO'] bg-[#C8FF80] text-black px-6 py-3 rounded hover:bg-[#b0e660] transition-colors shrink-0" style={{ fontWeight: 500, fontSize: '16px' }}>
+                            className="font-['Arial'] bg-[#C8FF80] text-black px-6 py-3 rounded hover:bg-[#b0e660] transition-colors shrink-0" style={{ fontWeight: 500, fontSize: '16px' }}>
                             Join Community
                         </button>
                     </div>
@@ -2095,47 +2121,44 @@ const NewHome = () => {
                     {/* Content: R Graphic + Cards */}
                     <div className="flex flex-col lg:flex-row items-end gap-8 relative flex-grow">
                         {/* Big R Graphic */}
-                        <div className="hidden lg:block pointer-events-none flex-shrink-0 absolute bottom-0 left-0 pr-20" style={{ width: '460px', height: '380px' }}>
+                        <div className="hidden md:block pointer-events-none flex-shrink-0 absolute bottom-0 left-0 pr-20" style={{ width: '460px', height: '380px' }}>
                             <img src="/homepage_assets/Union.svg" alt="Resilution R" className="w-full h-full object-contain" style={{ opacity: 1, objectPosition: 'left bottom' }} />
                         </div>
 
                         {/* Cards */}
                         <div className="flex flex-col md:flex-row gap-24 flex-1 justify-end lg:pr-16 relative z-20 mb-24">
                             {/* Card 1: Community Channels */}
-                            <div data-aos="fade-up" className="flex flex-col items-start p-8 card-hover-light w-full max-w-[310px]"
+                            <div data-aos="fade-up" className="flex flex-col items-start p-8 card-hover-light shrink-0"
                                 style={{
-                                    minHeight: '290px',
-                                    borderRadius: '6px',
+                                    width: '310px',
+                                    height: 'fit-content',
+                                    borderRadius: '24px',
                                     background: '#FBF5F5',
                                     border: '1px solid rgba(0,0,0,0.1)'
                                 }}>
                                 <div className="mb-6">
-                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" fill="#C8FF80" />
-                                        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" fill="#C8FF80" />
-                                        <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" fill="#C8FF80" />
-                                        <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.01 6.11683 19.01 7.005C19.01 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" fill="#C8FF80" />
-                                    </svg>
+                                    <img src="/homepage_assets/Vector.svg" alt="Community Channels Icon" className="w-[40px] h-[40px]" />
                                 </div>
-                                <h3 className="text-black mb-4 uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Community Channels</h3>
-                                <p className="text-gray-600" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '100%', letterSpacing: '0%' }}>
+                                <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>Community Channels</h3>
+                                <p className="text-gray-600 pb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                                     Connect with other users, businesses, and investors through our official community platforms.
                                 </p>
                             </div>
 
                             {/* Card 2: Platform Updates */}
-                            <div data-aos="fade-up" data-aos-delay="150" className="flex flex-col items-start p-8 card-hover-light w-full max-w-[310px]"
+                            <div data-aos="fade-up" data-aos-delay="150" className="flex flex-col items-start p-8 card-hover-light shrink-0"
                                 style={{
-                                    minHeight: '290px',
-                                    borderRadius: '6px',
+                                    width: '310px',
+                                    height: 'fit-content',
+                                    borderRadius: '24px',
                                     background: '#FBF5F5',
                                     border: '1px solid rgba(0,0,0,0.1)'
                                 }}>
                                 <div className="mb-6">
                                     <img src="/homepage_assets/Page-1.svg" alt="Platform Updates Icon" className="w-[40px] h-[40px]" />
                                 </div>
-                                <h3 className="text-black mb-4 uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Platform Updates</h3>
-                                <p className="text-gray-600" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '100%', letterSpacing: '0%' }}>
+                                <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>Platform Updates</h3>
+                                <p className="text-gray-600 pb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                                     Get the latest news, feature launches, and ecosystem progress directly from Resilution.
                                 </p>
                             </div>
@@ -2145,7 +2168,11 @@ const NewHome = () => {
             </section>
 
             {/* ═══════════════════ COMMUNITY (MOBILE) ═══════════════════ */}
-            <section id="community-mobile" className="block md:hidden bg-black py-16 px-4 w-full">
+            <section id="community-mobile" className="block md:hidden bg-black py-16 px-4 w-full relative overflow-hidden">
+                {/* Background R Logo for Mobile */}
+                <div className="absolute bottom-0 left-0 w-full pointer-events-none z-0 flex justify-center">
+                    <img src="/homepage_assets/Union.svg" alt="Resilution R" className="w-full h-auto opacity-100 scale-110 origin-bottom brightness-200" style={{ objectPosition: 'bottom' }} />
+                </div>
                 <div className="text-center mb-10">
                     <h2 className="uppercase text-[#C8FF80] mb-4" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '16px', lineHeight: '23px', letterSpacing: '0%' }}>
                         JOIN THE RESILUTION COMMUNITY
@@ -2155,35 +2182,30 @@ const NewHome = () => {
                     </p>
                     <button
                         onClick={() => window.open('https://discord.com/invite/KG5WKCnkWW', '_blank')}
-                        className="font-['GACCO'] bg-[#C8FF80] text-black px-8 py-3 rounded hover:bg-[#b0e660] transition-colors font-medium">
+                        className="font-['Arial'] bg-[#C8FF80] text-black px-8 py-3 rounded hover:bg-[#b0e660] transition-colors font-medium">
                         Join Community
                     </button>
                 </div>
 
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-6 items-center relative z-10">
                     {/* Card 1: Community Channels */}
-                    <div data-aos="fade-up" className="bg-[#FBF5F5] p-6 rounded-lg card-hover-light">
+                    <div data-aos="fade-up" className="bg-[#FBF5F5] p-8 rounded-[24px] card-hover-light flex flex-col items-start text-left w-[310px] h-fit">
                         <div className="mb-4">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.01 6.11683 19.01 7.005C19.01 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#C8FF80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
+                            <img src="/homepage_assets/Vector.svg" alt="Community Channels Icon" className="w-[32px] h-[32px]" />
                         </div>
-                        <h3 className="text-black mb-2 uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Community Channels</h3>
-                        <p className="text-gray-600" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '100%', letterSpacing: '0%' }}>
+                        <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>Community Channels</h3>
+                        <p className="text-gray-600 pb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                             Connect with other users, businesses, and investors through our official community platforms.
                         </p>
                     </div>
 
                     {/* Card 2: Platform Updates */}
-                    <div data-aos="fade-up" data-aos-delay="100" className="bg-[#FBF5F5] p-6 rounded-lg card-hover-light">
-                        <div className="mb-4">
-                            <img src="/homepage_assets/Page-1.svg" alt="Platform Updates Icon" className="w-[32px] h-[32px]" />
+                    <div data-aos="fade-up" data-aos-delay="100" className="bg-[#FBF5F5] p-8 rounded-[24px] card-hover-light flex flex-col items-start text-left w-[310px] h-fit">
+                        <div className="mb-6">
+                            <img src="/homepage_assets/Page-1.svg" alt="Platform Updates Icon" className="w-[40px] h-[40px]" />
                         </div>
-                        <h3 className="text-black mb-2 uppercase" style={{ fontFamily: 'GACCO', fontWeight: 500, fontSize: '13px', lineHeight: '100%', letterSpacing: '0%' }}>Platform Updates</h3>
-                        <p className="text-gray-600" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '14px', lineHeight: '100%', letterSpacing: '0%' }}>
+                        <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>Platform Updates</h3>
+                        <p className="text-gray-600 pb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                             Get the latest news, feature launches, and ecosystem progress directly from Resilution.
                         </p>
                     </div>

@@ -47,6 +47,13 @@ body {
   scroll-behavior: smooth;
 }
 
+button,
+button *,
+.button,
+[role="button"] {
+  font-family: "arial", sans-serif !important;
+}
+
 /* Ensure all sections stretch full-width in production builds */
 section {
   width: 100%;
