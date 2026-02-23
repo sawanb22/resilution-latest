@@ -1205,10 +1205,11 @@ const NewHome = () => {
                 <div className="relative w-full z-20 px-8 lg:px-16 pt-24 pb-64">
                     {/* 3D Token Image - BEHIND everything (z-index 1) */}
                     <div
-                        className="absolute pointer-events-none hidden lg:block left-1/2 -translate-x-1/2"
+                        className="absolute pointer-events-none hidden lg:block"
                         style={{
-                            width: '700px', // Set a fixed max width to prevent scaling up/down shifting
-                            top: '50px', // Fixed top position to perfectly align with cards
+                            right: 'calc(clamp(2rem, 4vw, 4rem) + 380px + 80px)', /* Increased offset to shift the image further to the left */
+                            width: 'clamp(550px, 49vw, 860px)',
+                            top: '-150px',
                             zIndex: 1,
                         }}
                     >
