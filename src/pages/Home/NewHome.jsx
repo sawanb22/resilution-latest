@@ -2131,15 +2131,15 @@ const NewHome = () => {
                             <div data-aos="fade-up" className="flex flex-col items-start p-8 card-hover-light shrink-0"
                                 style={{
                                     width: '310px',
-                                    height: 'fit-content',
-                                    borderRadius: '24px',
+                                    height: '290px',
+                                    borderRadius: '6px',
                                     background: '#FBF5F5',
                                     border: '1px solid rgba(0,0,0,0.1)'
                                 }}>
                                 <div className="mb-6">
                                     <img src="/homepage_assets/Vector.svg" alt="Community Channels Icon" className="w-[40px] h-[40px]" />
                                 </div>
-                                <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>Community Channels</h3>
+                                <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>COMMUNITY CHANNELS</h3>
                                 <p className="text-gray-600 pb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                                     Connect with other users, businesses, and investors through our official community platforms.
                                 </p>
@@ -2149,15 +2149,15 @@ const NewHome = () => {
                             <div data-aos="fade-up" data-aos-delay="150" className="flex flex-col items-start p-8 card-hover-light shrink-0"
                                 style={{
                                     width: '310px',
-                                    height: 'fit-content',
-                                    borderRadius: '24px',
+                                    height: '290px',
+                                    borderRadius: '6px',
                                     background: '#FBF5F5',
                                     border: '1px solid rgba(0,0,0,0.1)'
                                 }}>
                                 <div className="mb-6">
                                     <img src="/homepage_assets/Page-1.svg" alt="Platform Updates Icon" className="w-[40px] h-[40px]" />
                                 </div>
-                                <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>Platform Updates</h3>
+                                <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>PLATFORM UPDATES</h3>
                                 <p className="text-gray-600 pb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                                     Get the latest news, feature launches, and ecosystem progress directly from Resilution.
                                 </p>
@@ -2189,22 +2189,22 @@ const NewHome = () => {
 
                 <div className="flex flex-col gap-6 items-center relative z-10">
                     {/* Card 1: Community Channels */}
-                    <div data-aos="fade-up" className="bg-[#FBF5F5] p-8 rounded-[24px] card-hover-light flex flex-col items-start text-left w-[310px] h-fit">
-                        <div className="mb-4">
-                            <img src="/homepage_assets/Vector.svg" alt="Community Channels Icon" className="w-[32px] h-[32px]" />
+                    <div data-aos="fade-up" className="bg-[#FBF5F5] p-8 rounded-[6px] card-hover-light flex flex-col items-start text-left w-[310px] h-[290px]">
+                        <div className="mb-6">
+                            <img src="/homepage_assets/Vector.svg" alt="Community Channels Icon" className="w-[40px] h-[40px]" />
                         </div>
-                        <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>Community Channels</h3>
+                        <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>COMMUNITY CHANNELS</h3>
                         <p className="text-gray-600 pb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                             Connect with other users, businesses, and investors through our official community platforms.
                         </p>
                     </div>
 
                     {/* Card 2: Platform Updates */}
-                    <div data-aos="fade-up" data-aos-delay="100" className="bg-[#FBF5F5] p-8 rounded-[24px] card-hover-light flex flex-col items-start text-left w-[310px] h-fit">
+                    <div data-aos="fade-up" data-aos-delay="100" className="bg-[#FBF5F5] p-8 rounded-[6px] card-hover-light flex flex-col items-start text-left w-[310px] h-[290px]">
                         <div className="mb-6">
                             <img src="/homepage_assets/Page-1.svg" alt="Platform Updates Icon" className="w-[40px] h-[40px]" />
                         </div>
-                        <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>Platform Updates</h3>
+                        <h3 className="text-black mb-4" style={{ fontFamily: 'Arial', fontWeight: 700, fontSize: '24px', lineHeight: '120%', letterSpacing: '0%' }}>PLATFORM UPDATES</h3>
                         <p className="text-gray-600 pb-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '140%', letterSpacing: '0%' }}>
                             Get the latest news, feature launches, and ecosystem progress directly from Resilution.
                         </p>
