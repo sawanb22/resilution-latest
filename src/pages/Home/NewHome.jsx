@@ -1209,54 +1209,6 @@ const NewHome = () => {
                 ></div>
 
                 <div className="relative w-full z-20 px-8 lg:px-16 pt-24 pb-64">
-                    {/* 3D Token Image - BEHIND everything (z-index 1) */}
-                    <div
-                        className="absolute pointer-events-none hidden lg:block"
-                        style={{
-                            right: 'calc(clamp(2rem, 4vw, 4rem) + 380px + 80px)', /* Shifted 10px left as requested */
-                            width: 'clamp(550px, 49vw, 860px)',
-                            top: '-90px',
-                            zIndex: 1,
-                        }}
-                    >
-                        <img
-                            src="/homepage_assets/token_box_3d.svg"
-                            alt="3D Token Box"
-                            className="w-full h-auto object-contain"
-                            style={{
-                                opacity: 1,
-                                maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 97%, rgba(0,0,0,0) 100%)',
-                                WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 97%, rgba(0,0,0,0) 100%)'
-                            }}
-                        />
-                        {/* Black shade fade at bottom of image */}
-                        <div
-                            className="absolute bottom-0 left-0 right-0 pointer-events-none"
-                            style={{
-                                height: '50%',
-                                background: 'linear-gradient(to top, #000000 0%, #000000 15%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.5) 60%, transparent 100%)',
-                            }}
-                        ></div>
-                        {/* Shifting the blending overlays slightly to the right to preserve edge visibility */}
-                        <div
-                            className="absolute top-0 bottom-0 pointer-events-none"
-                            style={{
-                                right: '-30px', /* Shift the blend center further to the right */
-                                width: '60px',
-                                background: 'linear-gradient(to right, transparent 0%, #000000 50%, #000000 100%)',
-                            }}
-                        ></div>
-                        {/* Outward black shadow extension starting further right */}
-                        <div
-                            className="absolute top-0 bottom-0 pointer-events-none"
-                            style={{
-                                left: 'calc(100% + 30px)',
-                                width: '150px',
-                                background: 'linear-gradient(to right, #000000 0%, transparent 100%)',
-                            }}
-                        ></div>
-                    </div>
-
                     {/* Header */}
                     <div data-aos="fade-up" className="relative z-10 mb-4 flex justify-center w-full">
                         <h2
@@ -1273,7 +1225,7 @@ const NewHome = () => {
                     </div>
 
                     {/* Subtext */}
-                    <div className="relative z-10 mb-40 max-w-[607px] mx-auto">
+                    <div className="relative z-10 mb-16 max-w-[607px] mx-auto">
                         <p
                             className="text-center"
                             style={{
@@ -1288,15 +1240,15 @@ const NewHome = () => {
                         </p>
                     </div>
 
-                    {/* Cards Row */}
-                    <div className="relative z-10 flex flex-col items-center lg:flex-row lg:justify-between gap-8">
+                    {/* Cards & Image Row */}
+                    <div className="relative z-10 flex flex-col items-center lg:flex-row lg:justify-center lg:items-center gap-8 lg:gap-12 w-full max-w-[1250px] mx-auto">
                         {/* Left Card: Credits */}
                         <div
                             data-aos="fade-right"
-                            className="relative z-10 group flex-1 w-full max-w-[380px] lg:translate-x-12"
+                            className="relative z-10 group flex-1 w-full max-w-[380px]"
                         >
                             <div
-                                className="relative rounded-[16px] flex flex-col card-hover-light"
+                                className="relative rounded-[16px] flex flex-col card-hover-light h-full"
                                 style={{
                                     border: '1.5px solid transparent',
                                     background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(135deg, #C8FF80 0%, transparent 35%, transparent 65%, #C8FF80 100%) border-box',
@@ -1322,11 +1274,26 @@ const NewHome = () => {
                             </div>
                         </div>
 
+                        {/* Center Image - Only show on desktop since mobile handles things differently below */}
+                        <div className="relative z-10 hidden lg:flex flex-[1.2] justify-center items-center pointer-events-none px-2 xl:px-8">
+                            <img
+                                src="/homepage_assets/image 64.svg"
+                                alt="3D Token Box"
+                                className="w-full h-auto object-contain drop-shadow-2xl"
+                                style={{
+                                    maxWidth: '100%',
+                                    opacity: 1,
+                                    filter: 'drop-shadow(0px 20px 40px rgba(0,0,0,0.8))'
+                                }}
+                            />
+                        </div>
+
+                        {/* Right Card: Token */}
                         <div
                             data-aos="fade-left"
-                            className="relative z-10 group flex-1 w-full max-w-[380px] lg:ml-auto lg:-translate-x-12"
+                            className="relative z-10 group flex-1 w-full max-w-[380px]"
                         >
-                            <div className="relative rounded-[16px] flex flex-col card-hover-light" style={{ border: '1.5px solid transparent', background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(135deg, #C8FF80 0%, transparent 35%, transparent 65%, #C8FF80 100%) border-box', backdropFilter: 'blur(20px)', padding: '50px 30px', minHeight: '480px' }}>
+                            <div className="relative rounded-[16px] flex flex-col card-hover-light h-full" style={{ border: '1.5px solid transparent', background: 'linear-gradient(180deg, rgba(32, 43, 16, 1) 0%, #000000 100%) padding-box, linear-gradient(135deg, #C8FF80 0%, transparent 35%, transparent 65%, #C8FF80 100%) border-box', backdropFilter: 'blur(20px)', padding: '50px 30px', minHeight: '480px' }}>
                                 <div className="mb-6">
                                     {/* Swapped Icon */}
                                     <img src="/homepage_assets/icon_credits.svg" alt="Token" className="w-10 h-10 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(85%) sepia(20%) saturate(800%) hue-rotate(30deg)' }} />
