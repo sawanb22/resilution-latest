@@ -6,15 +6,14 @@ export const NewNavbar = () => {
         { name: 'How It Works', href: '#how-it-works' },
         { name: 'Solutions', href: '#engine' }, // Mapping to Engine for now
         { name: 'Ecosystem', href: '#ecosystem' },
-        { name: 'Community', href: '#' },
-        { name: 'Resources', href: '#' },
+        { name: 'Community', href: '#community' },
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
     return (
         <nav className="sticky top-0 z-50 bg-black border-b border-white/10 w-full" style={{ height: typeof window !== 'undefined' && window.innerWidth < 768 ? '44px' : '70px' }}>
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16 flex items-center justify-between h-full">
+            <div className="w-full mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-full">
 
                 {/* Logo Section */}
                 <div className="flex items-center">
@@ -41,7 +40,9 @@ export const NewNavbar = () => {
 
                 {/* Desktop Get Started Button */}
                 <div className="hidden md:block">
-                    <button className="bg-[#C8FF80] text-black px-8 py-3 rounded-sm font-bold uppercase text-[13px] tracking-wider hover:bg-[#b0e660] transition-colors">
+                    <button
+                        onClick={() => window.open('https://discord.com/invite/KG5WKCnkWW', '_blank')}
+                        className="bg-[#C8FF80] text-black px-8 py-3 rounded-sm font-bold uppercase text-[13px] tracking-wider hover:bg-[#b0e660] transition-colors">
                         Get Started
                     </button>
                 </div>
@@ -79,7 +80,9 @@ export const NewNavbar = () => {
                                 {link.name}
                             </a>
                         ))}
-                        <button className="bg-[#C8FF80] text-black w-full py-4 mt-4 rounded-sm font-bold uppercase text-[13px] tracking-wider">
+                        <button
+                            onClick={() => window.open('https://discord.com/invite/KG5WKCnkWW', '_blank')}
+                            className="bg-[#C8FF80] text-black w-full py-4 mt-4 rounded-sm font-bold uppercase text-[13px] tracking-wider">
                             Get Started
                         </button>
                     </div>
