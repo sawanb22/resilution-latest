@@ -1007,12 +1007,7 @@ const NewHome = () => {
             {/* ═══════════════════ ECOSYSTEM ═══════════════════ */}
             {/* ═══════════════════ ECOSYSTEM ═══════════════════ */}
             {/* ═══════════════════ ECOSYSTEM (DESKTOP) ═══════════════════ */}
-            <section id="ecosystem" className="hidden md:block bg-black relative overflow-hidden w-full" style={{ minHeight: '864px' }}>
-                {/* Background Glow (Optional - kept for ambience) */}
-                <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
-                    <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full object-cover opacity-60" />
-                </div>
-
+            <section id="ecosystem" className="hidden md:block bg-black relative w-full" style={{ minHeight: '864px' }}>
                 <div className="relative w-full z-20 px-8 lg:px-16 pt-24 pb-16">
                     {/* Headline */}
                     <div data-aos="fade-up" className="text-center mb-6 flex justify-center w-full">
@@ -1028,7 +1023,12 @@ const NewHome = () => {
                     </div>
 
                     {/* Cards + R Logo Layout */}
-                    <div className="relative min-h-[500px]">
+                    <div className="relative min-h-[500px] max-w-[1000px] mx-auto flex flex-col items-center">
+                        {/* Background Glow moved inside to fit elements proportionally */}
+                        <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none w-full h-full">
+                            <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full lg:h-auto object-contain opacity-60 scale-110" />
+                        </div>
+
                         {/* Central R Logo - decorative background */}
                         <div className="absolute z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: 'min(560px, 45vw)', height: 'min(560px, 45vw)', top: '100%', left: '50%', transform: 'translate(-54%, -65%)' }}>
                             <SplineWithFallback scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
@@ -1055,7 +1055,7 @@ const NewHome = () => {
                         </div>
 
                         {/* ResilPay + ResilMall side by side */}
-                        <div className="flex flex-col items-center lg:flex-row lg:justify-between gap-6 relative z-20 mt-16">
+                        <div className="flex flex-col items-center lg:flex-row lg:justify-between w-full gap-6 relative z-20 mt-16">
                             {/* ResilPay Card */}
                             <div data-aos="fade-right" data-aos-delay="200" className="bg-[#0A0A0A] p-6 pt-7 px-8 rounded-[9px] flex gap-5 items-start card-hover-light w-full max-w-[421px]"
                                 style={{
@@ -1099,8 +1099,8 @@ const NewHome = () => {
             {/* ═══════════════════ ECOSYSTEM (MOBILE) ═══════════════════ */}
             <section id="ecosystem-mobile" className="block md:hidden bg-black py-12 px-4 relative overflow-hidden w-full">
                 {/* Background Glow */}
-                <div className="absolute inset-0 z-0 pointer-events-none">
-                    <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full object-cover opacity-60" />
+                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-0 pointer-events-none flex items-center justify-center">
+                    <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-auto object-contain opacity-60 scale-125" />
                 </div>
 
                 <div className="relative z-20 flex flex-col items-center text-center">
@@ -1274,18 +1274,40 @@ const NewHome = () => {
                             </div>
                         </div>
 
-                        {/* Center Image - Only show on desktop since mobile handles things differently below */}
                         <div className="relative z-10 hidden lg:flex flex-[1.2] justify-center items-center pointer-events-none px-2 xl:px-8">
-                            <img
-                                src="/homepage_assets/image 64.svg"
-                                alt="3D Token Box"
-                                className="w-full h-auto object-contain drop-shadow-2xl"
-                                style={{
-                                    maxWidth: '100%',
-                                    opacity: 1,
-                                    filter: 'drop-shadow(0px 20px 40px rgba(0,0,0,0.8))'
-                                }}
-                            />
+                            <div className="relative w-full">
+                                <img
+                                    src="/homepage_assets/image 64.svg"
+                                    alt="3D Token Box"
+                                    className="w-full h-auto object-contain drop-shadow-2xl"
+                                    style={{
+                                        maxWidth: '100%',
+                                        opacity: 1,
+                                        filter: 'drop-shadow(0px 20px 40px rgba(0,0,0,0.8))'
+                                    }}
+                                />
+                                {/* Bottom Fade Overlays */}
+                                <div
+                                    className="absolute bottom-[-5px] left-0 right-0 h-[100px] z-20"
+                                    style={{
+                                        background: 'linear-gradient(to top, #000 15%, rgba(0,0,0,0.7) 45%, transparent 100%)'
+                                    }}
+                                ></div>
+                                {/* Left Corner Light Fade */}
+                                <div
+                                    className="absolute bottom-[-5px] left-[-2px] w-[25%] h-[70px] z-20"
+                                    style={{
+                                        background: 'radial-gradient(ellipse at bottom left, rgba(0,0,0,0.6) 0%, transparent 75%)'
+                                    }}
+                                ></div>
+                                {/* Right Corner Light Fade */}
+                                <div
+                                    className="absolute bottom-[-5px] right-[-2px] w-[25%] h-[70px] z-20"
+                                    style={{
+                                        background: 'radial-gradient(ellipse at bottom right, rgba(0,0,0,0.6) 0%, transparent 75%)'
+                                    }}
+                                ></div>
+                            </div>
                         </div>
 
                         {/* Right Card: Token */}
