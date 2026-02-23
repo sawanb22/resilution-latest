@@ -1023,14 +1023,14 @@ const NewHome = () => {
                     </div>
 
                     {/* Cards + R Logo Layout */}
-                    <div className="relative min-h-[500px] max-w-[1000px] mx-auto flex flex-col items-center">
+                    <div className="relative min-h-[500px] max-w-[1060px] mx-auto flex flex-col items-center">
                         {/* Background Glow moved inside to fit elements proportionally */}
                         <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none w-full h-full">
-                            <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full lg:h-auto object-contain opacity-60 scale-110" />
+                            <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full lg:h-auto object-contain opacity-60 scale-125" />
                         </div>
 
                         {/* Central R Logo - decorative background */}
-                        <div className="absolute z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: 'min(560px, 45vw)', height: 'min(560px, 45vw)', top: '100%', left: '50%', transform: 'translate(-54%, -65%)' }}>
+                        <div className="absolute z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: 'min(620px, 50vw)', height: 'min(600px, 50vw)', top: '100%', left: '50%', transform: 'translate(-54%, -65%)' }}>
                             <SplineWithFallback scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                         </div>
 
@@ -1286,25 +1286,25 @@ const NewHome = () => {
                                         filter: 'drop-shadow(0px 20px 40px rgba(0,0,0,0.8))'
                                     }}
                                 />
-                                {/* Bottom Fade Overlays */}
+                                {/* Bottom Fade Overlays - Increased height and intensity */}
                                 <div
-                                    className="absolute bottom-[-5px] left-0 right-0 h-[100px] z-20"
+                                    className="absolute bottom-[-10px] left-0 right-0 h-[160px] z-20"
                                     style={{
-                                        background: 'linear-gradient(to top, #000 15%, rgba(0,0,0,0.7) 45%, transparent 100%)'
+                                        background: 'linear-gradient(to top, #000 25%, rgba(0,0,0,0.8) 60%, transparent 100%)'
                                     }}
                                 ></div>
-                                {/* Left Corner Light Fade */}
+                                {/* Left Side Very Light Fade */}
                                 <div
-                                    className="absolute bottom-[-5px] left-[-2px] w-[25%] h-[70px] z-20"
+                                    className="absolute top-0 bottom-0 left-[-2px] w-[60px] z-20"
                                     style={{
-                                        background: 'radial-gradient(ellipse at bottom left, rgba(0,0,0,0.6) 0%, transparent 75%)'
+                                        background: 'linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 100%)'
                                     }}
                                 ></div>
-                                {/* Right Corner Light Fade */}
+                                {/* Right Side Very Light Fade */}
                                 <div
-                                    className="absolute bottom-[-5px] right-[-2px] w-[25%] h-[70px] z-20"
+                                    className="absolute top-0 bottom-0 right-[-2px] w-[60px] z-20"
                                     style={{
-                                        background: 'radial-gradient(ellipse at bottom right, rgba(0,0,0,0.6) 0%, transparent 75%)'
+                                        background: 'linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 100%)'
                                     }}
                                 ></div>
                             </div>
