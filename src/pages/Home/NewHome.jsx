@@ -1213,9 +1213,9 @@ const NewHome = () => {
                     <div
                         className="absolute pointer-events-none hidden lg:block"
                         style={{
-                            right: 'calc(clamp(2rem, 4vw, 4rem) + 380px + 100px)', /* Increased offset to shift the image further to the left */
+                            right: 'calc(clamp(2rem, 4vw, 4rem) + 380px + 70px)', /* Adjusted to shift 30px right from previous position */
                             width: 'clamp(550px, 49vw, 860px)',
-                            top: '-130px',
+                            top: '-100px', /* Adjusted to shift 30px down from previous position */
                             zIndex: 1,
                         }}
                     >
