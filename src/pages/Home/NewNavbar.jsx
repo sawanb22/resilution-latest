@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const NewNavbar = () => {
     const navLinks = [
@@ -9,7 +9,32 @@ export const NewNavbar = () => {
         { name: 'Community', href: '#community' },
     ];
 
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
+            document.body.style.width = '100%';
+        } else {
+            const scrollY = document.body.style.top;
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            if (scrollY) {
+                window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            }
+        }
+
+        return () => {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+        };
+    }, [isMobileMenuOpen]);
 
     return (
         <nav className="sticky top-0 z-50 bg-black border-b border-white/10 w-full" style={{ height: typeof window !== 'undefined' && window.innerWidth < 768 ? '44px' : '70px' }}>
@@ -68,7 +93,7 @@ export const NewNavbar = () => {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="md:hidden fixed inset-0 top-[44px] bg-black z-40 flex flex-col p-6 animate-in slide-in-from-right-10 duration-200">
+                <div className="md:hidden fixed inset-0 top-[44px] bg-black z-40 flex flex-col p-6 animate-in slide-in-from-right-10 duration-200 overflow-y-auto">
                     <div className="flex flex-col gap-6 mt-4">
                         {navLinks.map((link) => (
                             <a

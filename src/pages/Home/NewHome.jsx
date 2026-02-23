@@ -130,15 +130,17 @@ const NewHome = () => {
             transition: border-color 0.4s ease;
         }
 
-        /* Mobile specific: Force sharp corners for all rectangular buttons */
-        @media (max-width: 768px) {
-            .new-home-page button,
-            .new-home-page .btn-light,
-            .new-home-page .btn-dark,
-            .new-home-page .btn-white-hover,
-            .new-home-page .hero-get-started {
-                border-radius: 0px !important;
-            }
+        /* Force sharp corners for all rectangular buttons on all screen sizes */
+        .new-home-page button.btn-light,
+        .new-home-page button.btn-dark,
+        .new-home-page button.btn-white-hover,
+        .new-home-page button[class*="rounded-sm"],
+        .new-home-page button[class*="rounded-[2px]"],
+        .new-home-page button.bg-\\[\\#C8FF80\\]:not(.hero-get-started),
+        .new-home-page button[class*="bg-[#C8FF80]"]:not(.hero-get-started),
+        .new-home-page button.bg-black:not(.hero-get-started),
+        .new-home-page button[class*="bg-black"]:not(.hero-get-started) {
+            border-radius: 0px !important;
         }
     `;
 
@@ -1045,12 +1047,12 @@ const NewHome = () => {
                     {/* Cards + R Logo Layout */}
                     <div className="relative min-h-[500px] max-w-[1200px] mx-auto flex flex-col items-center">
                         {/* Background Glow moved inside to fit elements proportionally */}
-                        <div className="absolute inset-[45px] z-0 flex justify-center items-center pointer-events-none w-auto h-auto">
-                            <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full lg:h-auto object-contain opacity-60 scale-100" />
+                        <div className="absolute top-[35px] left-[35px] right-[35px] bottom-[40px] z-0 flex justify-center items-end pointer-events-none">
+                            <img src="/homepage_assets/ecosystem_bg.png" alt="Background Glow" className="w-full h-full lg:h-auto object-contain opacity-60 origin-bottom" />
                         </div>
 
                         {/* Central R Logo - decorative background */}
-                        <div className="absolute z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: 'min(860px, 60vw)', height: 'min(860px, 60vw)', top: '100%', left: '50%', transform: 'translate(-56%, -65%)' }}>
+                        <div className="absolute z-10 flex items-center justify-center overflow-hidden pointer-events-none" style={{ width: 'calc(min(860px, 60vw) - 20px)', height: 'calc(min(860px, 60vw) - 20px)', top: 'calc(100% - (0.65 * min(860px, 60vw)) - 30px)', left: '50%', transform: 'translate(calc(-56% - 10px), 0)' }}>
                             <SplineWithFallback scene='https://prod.spline.design/KCsPFYpldBZIJ4sy/scene.splinecode' style={{ width: '100%', height: '100%' }} />
                         </div>
 
@@ -1756,7 +1758,7 @@ const NewHome = () => {
                         </div>
 
                         <div className="absolute z-20 flex flex-col items-start text-left" style={{ left: '71%', top: '57.27%', width: '25%' }}>
-                            <p className="text-white mb-6" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
+                            <p className="text-white mb-6 mx-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
                                 Detailed allocation breakdown and vesting schedules are available in the Resilution Litepaper.
                             </p>
                             <button className="flex items-center justify-center gap-3 bg-[#C8FF80] text-black px-5 py-3 rounded-[4px] font-bold text-[14px] hover:bg-[#b0e660] transition-colors btn-white-hover w-max">
@@ -1841,7 +1843,7 @@ const NewHome = () => {
                             </div>
 
                             <div className="flex flex-col items-center mt-4">
-                                <p className="text-white mb-6" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
+                                <p className="text-white mb-6 mx-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
                                     Detailed allocation breakdown and vesting schedules are available in the Resilution Litepaper.
                                 </p>
                                 <button className="flex items-center justify-center gap-3 bg-[#C8FF80] text-black px-5 py-3 rounded-[4px] font-bold text-[14px] hover:bg-[#b0e660] transition-colors btn-white-hover">
@@ -1953,7 +1955,7 @@ const NewHome = () => {
                     </div>
 
                     {/* Footer Text & Button */}
-                    <p className="text-white text-center mb-6 max-w-[280px] mx-auto" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
+                    <p className="text-white text-center mb-6 mx-4" style={{ fontFamily: 'Arial', fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
                         Detailed allocation breakdown and vesting schedules are available in the Resilution Litepaper.
                     </p>
 
