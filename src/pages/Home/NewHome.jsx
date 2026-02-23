@@ -1213,9 +1213,9 @@ const NewHome = () => {
                     <div
                         className="absolute pointer-events-none hidden lg:block"
                         style={{
-                            right: 'calc(clamp(2rem, 4vw, 4rem) + 380px + 70px)', /* Adjusted to shift 30px right from previous position */
+                            right: 'calc(clamp(2rem, 4vw, 4rem) + 380px + 80px)', /* Shifted 10px left as requested */
                             width: 'clamp(550px, 49vw, 860px)',
-                            top: '-100px', /* Adjusted to shift 30px down from previous position */
+                            top: '-100px',
                             zIndex: 1,
                         }}
                     >
